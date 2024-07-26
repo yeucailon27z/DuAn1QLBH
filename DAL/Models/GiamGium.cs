@@ -5,11 +5,15 @@ namespace DAL.Models;
 
 public partial class GiamGium
 {
-    public int GiamGiaId { get; set; }
+    public string GiamGiaId { get; set; } = null!;
 
     public string? MaGiamGia { get; set; }
 
     public string? MoTa { get; set; }
+
+    public decimal? TienMin { get; set; }
+
+    public decimal? TienMax { get; set; }
 
     public decimal? PhanTramGiam { get; set; }
 

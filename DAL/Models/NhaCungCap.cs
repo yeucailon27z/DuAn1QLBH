@@ -5,7 +5,7 @@ namespace DAL.Models;
 
 public partial class NhaCungCap
 {
-    public int MaNhaCungCap { get; set; }
+    public string MaNhaCungCap { get; set; } = null!;
 
     public string TenNhaCungCap { get; set; } = null!;
 

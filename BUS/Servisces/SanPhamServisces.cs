@@ -41,7 +41,7 @@ namespace BUS.Servisces
         }
         public string Updatee(SanPham sp, string id)
         {
-            if (_Repo.Update(sp, id))
+            if (_Repo.UpdateSP(sp, id))
             {
                 return "Sửa Thành Công";
             }

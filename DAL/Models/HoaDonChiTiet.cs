@@ -5,11 +5,11 @@ namespace DAL.Models;
 
 public partial class HoaDonChiTiet
 {
-    public int HoaDonChiTietId { get; set; }
+    public string HoaDonChiTietId { get; set; } = null!;
 
-    public int? HoaDonId { get; set; }
+    public Guid? HoaDonId { get; set; }
 
-    public int? SanPhamId { get; set; }
+    public string? SanPhamId { get; set; }
 
     public int? SoLuong { get; set; }
 

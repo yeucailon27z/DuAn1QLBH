@@ -34,15 +34,17 @@
             txt_Search = new TextBox();
             btn_Them = new Button();
             btn_Sua = new Button();
-            btn_Xoa = new Button();
+            btn_Search = new Button();
             btn_Reset = new Button();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
-            textBox3 = new TextBox();
+            dtp_Ngay = new DateTimePicker();
+            label12 = new Label();
+            txt_Ma = new TextBox();
             label8 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            numericUpDown1 = new NumericUpDown();
+            txt_NCC = new TextBox();
+            txt_Loai = new TextBox();
+            nUD_SoLuong = new NumericUpDown();
             cbb_TrangThai = new ComboBox();
             label5 = new Label();
             label4 = new Label();
@@ -55,16 +57,16 @@
             txt_Mota = new TextBox();
             txt_Ten = new TextBox();
             groupBox3 = new GroupBox();
-            label9 = new Label();
-            label10 = new Label();
-            comboBox1 = new ComboBox();
+            cbb_tt = new ComboBox();
+            cbb_Loai = new ComboBox();
             label11 = new Label();
-            comboBox2 = new ComboBox();
+            label10 = new Label();
+            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgv_SanPham).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptb_SanPham).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nUD_SoLuong).BeginInit();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,7 +78,7 @@
             dgv_SanPham.Name = "dgv_SanPham";
             dgv_SanPham.Size = new Size(1286, 299);
             dgv_SanPham.TabIndex = 0;
-            dgv_SanPham.CellContentClick += dataGridView1_CellContentClick;
+            dgv_SanPham.CellClick += dgv_SanPham_CellClick;
             // 
             // ptb_SanPham
             // 
@@ -110,6 +112,7 @@
             btn_Them.TabIndex = 9;
             btn_Them.Text = "  Thêm mới";
             btn_Them.UseVisualStyleBackColor = false;
+            btn_Them.Click += btn_Them_Click;
             // 
             // btn_Sua
             // 
@@ -124,20 +127,21 @@
             btn_Sua.TabIndex = 10;
             btn_Sua.Text = "Sửa";
             btn_Sua.UseVisualStyleBackColor = false;
+            btn_Sua.Click += btn_Sua_Click;
             // 
-            // btn_Xoa
+            // btn_Search
             // 
-            btn_Xoa.BackColor = Color.FromArgb(255, 128, 255);
-            btn_Xoa.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            btn_Xoa.ForeColor = Color.Black;
-            btn_Xoa.Image = (Image)resources.GetObject("btn_Xoa.Image");
-            btn_Xoa.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Xoa.Location = new Point(659, 44);
-            btn_Xoa.Name = "btn_Xoa";
-            btn_Xoa.Size = new Size(146, 44);
-            btn_Xoa.TabIndex = 11;
-            btn_Xoa.Text = "Tìm kiếm";
-            btn_Xoa.UseVisualStyleBackColor = false;
+            btn_Search.BackColor = Color.FromArgb(255, 128, 255);
+            btn_Search.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btn_Search.ForeColor = Color.Black;
+            btn_Search.Image = (Image)resources.GetObject("btn_Search.Image");
+            btn_Search.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_Search.Location = new Point(659, 44);
+            btn_Search.Name = "btn_Search";
+            btn_Search.Size = new Size(146, 44);
+            btn_Search.TabIndex = 11;
+            btn_Search.Text = "Tìm kiếm";
+            btn_Search.UseVisualStyleBackColor = false;
             // 
             // btn_Reset
             // 
@@ -152,6 +156,7 @@
             btn_Reset.TabIndex = 12;
             btn_Reset.Text = "Làm mới";
             btn_Reset.UseVisualStyleBackColor = false;
+            btn_Reset.Click += btn_Reset_Click;
             // 
             // groupBox1
             // 
@@ -166,11 +171,13 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox3);
+            groupBox2.Controls.Add(dtp_Ngay);
+            groupBox2.Controls.Add(label12);
+            groupBox2.Controls.Add(txt_Ma);
             groupBox2.Controls.Add(label8);
-            groupBox2.Controls.Add(textBox2);
-            groupBox2.Controls.Add(textBox1);
-            groupBox2.Controls.Add(numericUpDown1);
+            groupBox2.Controls.Add(txt_NCC);
+            groupBox2.Controls.Add(txt_Loai);
+            groupBox2.Controls.Add(nUD_SoLuong);
             groupBox2.Controls.Add(cbb_TrangThai);
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(label4);
@@ -190,58 +197,73 @@
             groupBox2.TabIndex = 17;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin sản phẩm";
-            groupBox2.Enter += groupBox2_Enter;
             // 
-            // textBox3
+            // dtp_Ngay
             // 
-            textBox3.Location = new Point(374, 77);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Mã sản phẩm...";
-            textBox3.Size = new Size(281, 29);
-            textBox3.TabIndex = 31;
+            dtp_Ngay.Format = DateTimePickerFormat.Short;
+            dtp_Ngay.Location = new Point(673, 149);
+            dtp_Ngay.Name = "dtp_Ngay";
+            dtp_Ngay.Size = new Size(281, 29);
+            dtp_Ngay.TabIndex = 33;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(672, 119);
+            label12.Name = "label12";
+            label12.Size = new Size(118, 21);
+            label12.TabIndex = 32;
+            label12.Text = "Ngày cập nhật:";
+            // 
+            // txt_Ma
+            // 
+            txt_Ma.Location = new Point(374, 69);
+            txt_Ma.Name = "txt_Ma";
+            txt_Ma.PlaceholderText = "Mã sản phẩm...";
+            txt_Ma.Size = new Size(281, 29);
+            txt_Ma.TabIndex = 31;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(374, 47);
+            label8.Location = new Point(374, 39);
             label8.Name = "label8";
             label8.Size = new Size(110, 21);
             label8.TabIndex = 30;
             label8.Text = "Mã sản phẩm:";
             // 
-            // textBox2
+            // txt_NCC
             // 
-            textBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            textBox2.Location = new Point(976, 157);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Mã nhà cung cấp...";
-            textBox2.Size = new Size(281, 29);
-            textBox2.TabIndex = 29;
+            txt_NCC.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            txt_NCC.Location = new Point(976, 149);
+            txt_NCC.Name = "txt_NCC";
+            txt_NCC.PlaceholderText = "Mã nhà cung cấp...";
+            txt_NCC.Size = new Size(281, 29);
+            txt_NCC.TabIndex = 29;
             // 
-            // textBox1
+            // txt_Loai
             // 
-            textBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            textBox1.Location = new Point(976, 76);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Mã sản phẩm...";
-            textBox1.Size = new Size(281, 29);
-            textBox1.TabIndex = 28;
+            txt_Loai.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            txt_Loai.Location = new Point(976, 68);
+            txt_Loai.Name = "txt_Loai";
+            txt_Loai.PlaceholderText = "Mã sản phẩm...";
+            txt_Loai.Size = new Size(281, 29);
+            txt_Loai.TabIndex = 28;
             // 
-            // numericUpDown1
+            // nUD_SoLuong
             // 
-            numericUpDown1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            numericUpDown1.Location = new Point(673, 77);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(281, 29);
-            numericUpDown1.TabIndex = 27;
-            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
+            nUD_SoLuong.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            nUD_SoLuong.Location = new Point(673, 69);
+            nUD_SoLuong.Name = "nUD_SoLuong";
+            nUD_SoLuong.Size = new Size(281, 29);
+            nUD_SoLuong.TabIndex = 27;
             // 
             // cbb_TrangThai
             // 
             cbb_TrangThai.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             cbb_TrangThai.FormattingEnabled = true;
-            cbb_TrangThai.Items.AddRange(new object[] { "Sắp hết hàng" });
-            cbb_TrangThai.Location = new Point(976, 238);
+            cbb_TrangThai.Items.AddRange(new object[] { "Hoạt động", "Không hoạt động", "Tạm ngừng", "Ngừng sản xuất" });
+            cbb_TrangThai.Location = new Point(976, 230);
             cbb_TrangThai.Name = "cbb_TrangThai";
             cbb_TrangThai.Size = new Size(281, 29);
             cbb_TrangThai.TabIndex = 26;
@@ -251,7 +273,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label5.Location = new Point(673, 47);
+            label5.Location = new Point(673, 39);
             label5.Name = "label5";
             label5.Size = new Size(76, 21);
             label5.TabIndex = 19;
@@ -261,7 +283,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label4.Location = new Point(976, 207);
+            label4.Location = new Point(976, 199);
             label4.Name = "label4";
             label4.Size = new Size(86, 21);
             label4.TabIndex = 20;
@@ -271,7 +293,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label7.Location = new Point(976, 125);
+            label7.Location = new Point(976, 117);
             label7.Name = "label7";
             label7.Size = new Size(113, 21);
             label7.TabIndex = 21;
@@ -281,7 +303,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label6.Location = new Point(976, 47);
+            label6.Location = new Point(976, 39);
             label6.Name = "label6";
             label6.Size = new Size(117, 21);
             label6.TabIndex = 22;
@@ -291,7 +313,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label3.Location = new Point(673, 125);
+            label3.Location = new Point(673, 175);
             label3.Name = "label3";
             label3.Size = new Size(57, 21);
             label3.TabIndex = 23;
@@ -301,7 +323,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label2.Location = new Point(374, 207);
+            label2.Location = new Point(374, 199);
             label2.Name = "label2";
             label2.Size = new Size(68, 21);
             label2.TabIndex = 24;
@@ -311,7 +333,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label1.Location = new Point(374, 125);
+            label1.Location = new Point(374, 117);
             label1.Name = "label1";
             label1.Size = new Size(112, 21);
             label1.TabIndex = 25;
@@ -320,7 +342,7 @@
             // txt_Gia
             // 
             txt_Gia.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            txt_Gia.Location = new Point(374, 238);
+            txt_Gia.Location = new Point(374, 230);
             txt_Gia.Name = "txt_Gia";
             txt_Gia.PlaceholderText = "Giá bán...";
             txt_Gia.Size = new Size(281, 29);
@@ -329,17 +351,17 @@
             // txt_Mota
             // 
             txt_Mota.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            txt_Mota.Location = new Point(673, 157);
+            txt_Mota.Location = new Point(673, 199);
             txt_Mota.Multiline = true;
             txt_Mota.Name = "txt_Mota";
             txt_Mota.PlaceholderText = "Mô tả...";
-            txt_Mota.Size = new Size(281, 110);
+            txt_Mota.Size = new Size(281, 60);
             txt_Mota.TabIndex = 17;
             // 
             // txt_Ten
             // 
             txt_Ten.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            txt_Ten.Location = new Point(374, 157);
+            txt_Ten.Location = new Point(374, 149);
             txt_Ten.Name = "txt_Ten";
             txt_Ten.PlaceholderText = "Tên sản phẩm...";
             txt_Ten.Size = new Size(281, 29);
@@ -347,8 +369,8 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(comboBox2);
-            groupBox3.Controls.Add(comboBox1);
+            groupBox3.Controls.Add(cbb_tt);
+            groupBox3.Controls.Add(cbb_Loai);
             groupBox3.Controls.Add(label11);
             groupBox3.Controls.Add(label10);
             groupBox3.Controls.Add(label9);
@@ -356,7 +378,7 @@
             groupBox3.Controls.Add(txt_Search);
             groupBox3.Controls.Add(btn_Sua);
             groupBox3.Controls.Add(btn_Them);
-            groupBox3.Controls.Add(btn_Xoa);
+            groupBox3.Controls.Add(btn_Search);
             groupBox3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox3.Location = new Point(18, 319);
             groupBox3.Name = "groupBox3";
@@ -365,31 +387,21 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Chức năng";
             // 
-            // label9
+            // cbb_tt
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(17, 33);
-            label9.Name = "label9";
-            label9.Size = new Size(112, 21);
-            label9.TabIndex = 13;
-            label9.Text = "Tên sản phẩm:";
+            cbb_tt.FormattingEnabled = true;
+            cbb_tt.Location = new Point(515, 59);
+            cbb_tt.Name = "cbb_tt";
+            cbb_tt.Size = new Size(121, 29);
+            cbb_tt.TabIndex = 16;
             // 
-            // label10
+            // cbb_Loai
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(375, 26);
-            label10.Name = "label10";
-            label10.Size = new Size(117, 21);
-            label10.TabIndex = 14;
-            label10.Text = "Loại sản phẩm:";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(375, 59);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(117, 29);
-            comboBox1.TabIndex = 15;
+            cbb_Loai.FormattingEnabled = true;
+            cbb_Loai.Location = new Point(375, 59);
+            cbb_Loai.Name = "cbb_Loai";
+            cbb_Loai.Size = new Size(117, 29);
+            cbb_Loai.TabIndex = 15;
             // 
             // label11
             // 
@@ -400,13 +412,23 @@
             label11.TabIndex = 14;
             label11.Text = "Trạng thái:";
             // 
-            // comboBox2
+            // label10
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(515, 59);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 29);
-            comboBox2.TabIndex = 16;
+            label10.AutoSize = true;
+            label10.Location = new Point(375, 26);
+            label10.Name = "label10";
+            label10.Size = new Size(117, 21);
+            label10.TabIndex = 14;
+            label10.Text = "Loại sản phẩm:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(17, 33);
+            label9.Name = "label9";
+            label9.Size = new Size(112, 21);
+            label9.TabIndex = 13;
+            label9.Text = "Tên sản phẩm:";
             // 
             // FormSanPham
             // 
@@ -420,12 +442,13 @@
             Name = "FormSanPham";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sản Phẩm";
+            Load += FormSanPham_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_SanPham).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptb_SanPham).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nUD_SoLuong).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             ResumeLayout(false);
@@ -438,13 +461,13 @@
         private TextBox txt_Search;
         private Button btn_Them;
         private Button btn_Sua;
-        private Button btn_Xoa;
+        private Button btn_Search;
         private Button btn_Reset;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private NumericUpDown numericUpDown1;
+        private TextBox txt_NCC;
+        private TextBox txt_Loai;
+        private NumericUpDown nUD_SoLuong;
         private ComboBox cbb_TrangThai;
         private Label label5;
         private Label label4;
@@ -456,13 +479,15 @@
         private TextBox txt_Gia;
         private TextBox txt_Mota;
         private TextBox txt_Ten;
-        private TextBox textBox3;
+        private TextBox txt_Ma;
         private Label label8;
         private GroupBox groupBox3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox cbb_tt;
+        private ComboBox cbb_Loai;
         private Label label11;
         private Label label10;
         private Label label9;
+        private DateTimePicker dtp_Ngay;
+        private Label label12;
     }
 }

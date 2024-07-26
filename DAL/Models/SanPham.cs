@@ -1,17 +1,25 @@
-﻿using System;
+﻿
+
+
+
+
+
+
+
+using System;
 using System.Collections.Generic;
 
 namespace DAL.Models;
 
 public partial class SanPham
 {
-    public int SanPhamId { get; set; }
+    public string SanPhamId { get; set; } = null!;
 
     public string? TenSanPham { get; set; }
 
-    public int? LoaiSanPhamId { get; set; }
+    public string? LoaiSanPhamId { get; set; }
 
-    public int? MaNhaCungCap { get; set; }
+    public string? MaNhaCungCap { get; set; }
 
     public decimal? Gia { get; set; }
 
@@ -19,7 +27,7 @@ public partial class SanPham
 
     public string? Anh { get; set; }
 
-    public string? Mota { get; set; }
+    public string? MoTa { get; set; }
 
     public DateOnly? NgayCapNhat { get; set; }
 

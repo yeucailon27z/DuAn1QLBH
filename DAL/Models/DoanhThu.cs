@@ -10,4 +10,8 @@ public partial class DoanhThu
     public DateOnly? Ngay { get; set; }
 
     public decimal? TongDoanhThu { get; set; }
+
+    public Guid? HoaDonId { get; set; }
+
+    public virtual HoaDon? HoaDon { get; set; }
 }

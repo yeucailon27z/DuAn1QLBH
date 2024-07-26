@@ -10,25 +10,25 @@ namespace DAL.Repositories
 {
     public class SanPhamRepositories
     {
-        QuanLyCuaHangContext _qlCuahang;
+        Da1quanLyCuaHangContext _context;
         public SanPhamRepositories()
         {
-            _qlCuahang = new QuanLyCuaHangContext();
+            _context = new Da1quanLyCuaHangContext();
         }
         public List<SanPham> GetAll()
         {
-            return _qlCuahang.SanPhams.ToList();
+            return _context.SanPhams.ToList();
         }
         public SanPham Get(int id)
         {
-            return _qlCuahang.SanPhams.Find(id);
+            return _context.SanPhams.Find(id);
         }
         public bool Create(SanPham sp)
         {
             try
             {
-                _qlCuahang.SanPhams.Add(sp);
-                _qlCuahang.SaveChanges();
+                _context.SanPhams.Add(sp);
+                _context.SaveChanges();
                 return true;
             }
             catch (Exception)
@@ -40,9 +40,9 @@ namespace DAL.Repositories
         {
             try
             {
-                var delete = _qlCuahang.SanPhams.Find(id); // Phương Thức này tìm kiếm đối tượng theo khóa chính
-                _qlCuahang.SanPhams.Remove(delete);
-                _qlCuahang.SaveChanges(); // lưu lại db
+                var delete = _context.SanPhams.Find(id); // Phương Thức này tìm kiếm đối tượng theo khóa chính
+                _context.SanPhams.Remove(delete);
+                _context.SaveChanges(); // lưu lại db
                 return true;
             }
             catch (Exception)
@@ -50,14 +50,22 @@ namespace DAL.Repositories
                 return false;
             }
         }
-        public bool Update(SanPham sp, string id) // Sản phẩm đc truyền vào thuộc tính mới
+        public bool UpdateSP(SanPham sp, string id) // Sản phẩm đc truyền vào thuộc tính mới
         {
             try
             {
-                var update = _qlCuahang.SanPhams.Find(id); // Phương Thức này tìm kiếm đối tượng theo khóa chính
-                update = sp;
-                _qlCuahang.SanPhams.Update(update);
-                _qlCuahang.SaveChanges(); // lưu lại db
+                var updateItems = _context.SanPhams.Find(id); // Phương Thức này tìm kiếm đối tượng theo khóa chính
+                  updateItems.TenSanPham=sp.TenSanPham;
+                 updateItems.LoaiSanPham=sp.LoaiSanPham;
+                updateItems.MaNhaCungCap = sp.MaNhaCungCap;
+                updateItems.NgayCapNhat = sp.NgayCapNhat;
+                updateItems.Anh = sp.Anh;
+                updateItems.MoTa = sp.MoTa;
+                updateItems.SoLuong = sp.SoLuong;
+                updateItems.Gia = sp.Gia;
+                updateItems.TrangThai = sp.TrangThai;
+                _context.SanPhams.Update(updateItems);
+                _context.SaveChanges(); // lưu lại db
                 return true;
             }
             catch (Exception)
@@ -65,5 +73,6 @@ namespace DAL.Repositories
                 return false;
             }
         }
+
     }
 }

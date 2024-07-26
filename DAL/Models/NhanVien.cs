@@ -5,7 +5,7 @@ namespace DAL.Models;
 
 public partial class NhanVien
 {
-    public int NhanVienId { get; set; }
+    public string NhanVienId { get; set; } = null!;
 
     public string Username { get; set; } = null!;
 

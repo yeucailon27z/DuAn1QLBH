@@ -5,21 +5,23 @@ namespace DAL.Models;
 
 public partial class HoaDon
 {
-    public int HoaDonId { get; set; }
+    public Guid HoaDonId { get; set; }
 
-    public DateOnly? NgayLap { get; set; }
+    public DateTime NgayLap { get; set; }
 
-    public int? KhachHangId { get; set; }
+    public string? KhachHangId { get; set; }
 
-    public int? NhanVienId { get; set; }
+    public string? NhanVienId { get; set; }
 
-    public int? GiamGiaId { get; set; }
+    public string? GiamGiaId { get; set; }
 
     public string? HinhThucThanhToan { get; set; }
 
     public decimal? TongTien { get; set; }
 
     public byte? TrangThai { get; set; }
+
+    public virtual ICollection<DoanhThu> DoanhThus { get; set; } = new List<DoanhThu>();
 
     public virtual GiamGium? GiamGia { get; set; }
 

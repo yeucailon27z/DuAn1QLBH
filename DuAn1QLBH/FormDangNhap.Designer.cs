@@ -74,7 +74,7 @@
             panel1.Location = new Point(159, 111);
             panel1.Name = "panel1";
             panel1.Size = new Size(367, 310);
-            panel1.TabIndex = 2;
+            panel1.TabIndex = 1;
             // 
             // lbl_QuenMK
             // 
@@ -127,9 +127,10 @@
             chk_HienThiMk.Location = new Point(37, 146);
             chk_HienThiMk.Name = "chk_HienThiMk";
             chk_HienThiMk.Size = new Size(127, 21);
-            chk_HienThiMk.TabIndex = 3;
+            chk_HienThiMk.TabIndex = 2;
             chk_HienThiMk.Text = "Hiện thị mật khẩu";
             chk_HienThiMk.UseVisualStyleBackColor = true;
+            chk_HienThiMk.CheckedChanged += chk_HienThiMk_CheckedChanged;
             // 
             // label2
             // 
@@ -156,6 +157,7 @@
             txt_Password.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txt_Password.Location = new Point(37, 107);
             txt_Password.Name = "txt_Password";
+            txt_Password.PasswordChar = '*';
             txt_Password.PlaceholderText = "Password";
             txt_Password.Size = new Size(298, 33);
             txt_Password.TabIndex = 1;
@@ -167,7 +169,7 @@
             txt_Username.Name = "txt_Username";
             txt_Username.PlaceholderText = "Username";
             txt_Username.Size = new Size(298, 33);
-            txt_Username.TabIndex = 1;
+            txt_Username.TabIndex = 0;
             // 
             // btn_DangNhap
             // 
@@ -177,7 +179,7 @@
             btn_DangNhap.Location = new Point(102, 173);
             btn_DangNhap.Name = "btn_DangNhap";
             btn_DangNhap.Size = new Size(172, 39);
-            btn_DangNhap.TabIndex = 0;
+            btn_DangNhap.TabIndex = 3;
             btn_DangNhap.Text = "Đăng Nhập";
             btn_DangNhap.UseVisualStyleBackColor = false;
             btn_DangNhap.Click += btn_DangNhap_Click;
@@ -204,6 +206,7 @@
             // 
             // FormDangNhap
             // 
+            AcceptButton = btn_DangNhap;
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(684, 461);
@@ -215,6 +218,7 @@
             Name = "FormDangNhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng Nhập Tài Khoản";
+            Load += FormDangNhap_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

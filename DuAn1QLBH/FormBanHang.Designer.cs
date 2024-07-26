@@ -463,6 +463,7 @@
             Name = "FormBanHang";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormBanHang";
+            Load += FormBanHang_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

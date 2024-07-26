@@ -38,21 +38,23 @@
             label1 = new Label();
             textBox1 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
-            dataGridView1 = new DataGridView();
+            dgv_HoaDon = new DataGridView();
             groupBox2 = new GroupBox();
-            comboBox2 = new ComboBox();
+            cbb_httt = new ComboBox();
+            cbb_TrangThai = new ComboBox();
+            label18 = new Label();
             label17 = new Label();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
+            txt_TongTien = new TextBox();
+            txt_MaGG = new TextBox();
             label8 = new Label();
             label7 = new Label();
-            textBox4 = new TextBox();
+            txt_MaKH = new TextBox();
             label6 = new Label();
-            textBox3 = new TextBox();
+            txt_MaNV = new TextBox();
             label5 = new Label();
-            dateTimePicker3 = new DateTimePicker();
+            dtp_Ngay = new DateTimePicker();
             label4 = new Label();
-            textBox2 = new TextBox();
+            txt_Ma = new TextBox();
             label3 = new Label();
             groupBox3 = new GroupBox();
             numericUpDown1 = new NumericUpDown();
@@ -69,15 +71,15 @@
             label9 = new Label();
             groupBox4 = new GroupBox();
             groupBox5 = new GroupBox();
-            dataGridView2 = new DataGridView();
+            dgv_HDCT = new DataGridView();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_HoaDon).BeginInit();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             groupBox4.SuspendLayout();
             groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_HDCT).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -98,7 +100,6 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Tìm kiếm";
-            groupBox1.Enter += groupBox1_Enter;
             // 
             // comboBox1
             // 
@@ -126,7 +127,6 @@
             button2.TabIndex = 6;
             button2.Text = "Lọc";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
             // 
             // dateTimePicker2
             // 
@@ -183,162 +183,185 @@
             dateTimePicker1.Size = new Size(171, 29);
             dateTimePicker1.TabIndex = 2;
             // 
-            // dataGridView1
+            // dgv_HoaDon
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridView1.BackgroundColor = Color.FromArgb(128, 255, 128);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 24);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(944, 309);
-            dataGridView1.TabIndex = 1;
+            dgv_HoaDon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgv_HoaDon.BackgroundColor = Color.FromArgb(128, 255, 128);
+            dgv_HoaDon.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_HoaDon.Location = new Point(6, 24);
+            dgv_HoaDon.Name = "dgv_HoaDon";
+            dgv_HoaDon.RowHeadersWidth = 51;
+            dgv_HoaDon.Size = new Size(944, 339);
+            dgv_HoaDon.TabIndex = 1;
+            dgv_HoaDon.CellClick += dgv_HoaDon_CellClick;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(comboBox2);
+            groupBox2.Controls.Add(cbb_httt);
+            groupBox2.Controls.Add(cbb_TrangThai);
+            groupBox2.Controls.Add(label18);
             groupBox2.Controls.Add(label17);
-            groupBox2.Controls.Add(textBox6);
-            groupBox2.Controls.Add(textBox5);
+            groupBox2.Controls.Add(txt_TongTien);
+            groupBox2.Controls.Add(txt_MaGG);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(textBox4);
+            groupBox2.Controls.Add(txt_MaKH);
             groupBox2.Controls.Add(label6);
-            groupBox2.Controls.Add(textBox3);
+            groupBox2.Controls.Add(txt_MaNV);
             groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(dateTimePicker3);
+            groupBox2.Controls.Add(dtp_Ngay);
             groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(txt_Ma);
             groupBox2.Controls.Add(label3);
             groupBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             groupBox2.Location = new Point(12, 127);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(342, 350);
+            groupBox2.Size = new Size(342, 369);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin hóa đơn";
             // 
-            // comboBox2
+            // cbb_httt
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(128, 304);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(202, 29);
-            comboBox2.TabIndex = 14;
+            cbb_httt.FormattingEnabled = true;
+            cbb_httt.Items.AddRange(new object[] { "Tiền mặt", "Chuyển khoản ngân hàng", "Quẹt thẻ tín dụng" });
+            cbb_httt.Location = new Point(128, 287);
+            cbb_httt.Name = "cbb_httt";
+            cbb_httt.Size = new Size(202, 29);
+            cbb_httt.TabIndex = 15;
+            // 
+            // cbb_TrangThai
+            // 
+            cbb_TrangThai.FormattingEnabled = true;
+            cbb_TrangThai.Items.AddRange(new object[] { "Chưa thanh toán", "Đã thanh toán", "Quá hạn", "Đã hủy" });
+            cbb_TrangThai.Location = new Point(128, 325);
+            cbb_TrangThai.Name = "cbb_TrangThai";
+            cbb_TrangThai.Size = new Size(202, 29);
+            cbb_TrangThai.TabIndex = 14;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            label18.Location = new Point(11, 287);
+            label18.Name = "label18";
+            label18.Size = new Size(53, 21);
+            label18.TabIndex = 13;
+            label18.Text = "HTTT:";
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label17.Location = new Point(6, 304);
+            label17.Location = new Point(6, 328);
             label17.Name = "label17";
             label17.Size = new Size(86, 21);
             label17.TabIndex = 13;
             label17.Text = "Trạng thái:";
             // 
-            // textBox6
+            // txt_TongTien
             // 
-            textBox6.Location = new Point(128, 259);
-            textBox6.Name = "textBox6";
-            textBox6.ReadOnly = true;
-            textBox6.Size = new Size(203, 29);
-            textBox6.TabIndex = 11;
+            txt_TongTien.Location = new Point(128, 244);
+            txt_TongTien.Name = "txt_TongTien";
+            txt_TongTien.ReadOnly = true;
+            txt_TongTien.Size = new Size(203, 29);
+            txt_TongTien.TabIndex = 11;
             // 
-            // textBox5
+            // txt_MaGG
             // 
-            textBox5.Location = new Point(128, 213);
-            textBox5.Name = "textBox5";
-            textBox5.ReadOnly = true;
-            textBox5.Size = new Size(203, 29);
-            textBox5.TabIndex = 10;
+            txt_MaGG.Location = new Point(128, 202);
+            txt_MaGG.Name = "txt_MaGG";
+            txt_MaGG.ReadOnly = true;
+            txt_MaGG.Size = new Size(203, 29);
+            txt_MaGG.TabIndex = 10;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label8.Location = new Point(6, 262);
+            label8.Location = new Point(6, 247);
             label8.Name = "label8";
-            label8.Size = new Size(125, 21);
+            label8.Size = new Size(84, 21);
             label8.TabIndex = 9;
-            label8.Text = "Tên khách hàng:";
+            label8.Text = "Tổng tiền:";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label7.Location = new Point(6, 216);
+            label7.Location = new Point(6, 205);
             label7.Name = "label7";
-            label7.Size = new Size(112, 21);
+            label7.Size = new Size(103, 21);
             label7.TabIndex = 8;
-            label7.Text = "Tên nhân viên:";
+            label7.Text = "Mã giảm giá:";
             // 
-            // textBox4
+            // txt_MaKH
             // 
-            textBox4.Location = new Point(128, 167);
-            textBox4.Name = "textBox4";
-            textBox4.ReadOnly = true;
-            textBox4.Size = new Size(203, 29);
-            textBox4.TabIndex = 7;
+            txt_MaKH.Location = new Point(128, 157);
+            txt_MaKH.Name = "txt_MaKH";
+            txt_MaKH.ReadOnly = true;
+            txt_MaKH.Size = new Size(203, 29);
+            txt_MaKH.TabIndex = 7;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label6.Location = new Point(6, 170);
+            label6.Location = new Point(6, 160);
             label6.Name = "label6";
             label6.Size = new Size(123, 21);
             label6.TabIndex = 6;
             label6.Text = "Mã khách hàng:";
             // 
-            // textBox3
+            // txt_MaNV
             // 
-            textBox3.Location = new Point(128, 121);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(203, 29);
-            textBox3.TabIndex = 5;
+            txt_MaNV.Location = new Point(128, 113);
+            txt_MaNV.Name = "txt_MaNV";
+            txt_MaNV.ReadOnly = true;
+            txt_MaNV.Size = new Size(203, 29);
+            txt_MaNV.TabIndex = 5;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label5.Location = new Point(6, 124);
+            label5.Location = new Point(6, 116);
             label5.Name = "label5";
             label5.Size = new Size(115, 21);
             label5.TabIndex = 4;
             label5.Text = "Mã Nhân Viên:";
             // 
-            // dateTimePicker3
+            // dtp_Ngay
             // 
-            dateTimePicker3.Format = DateTimePickerFormat.Short;
-            dateTimePicker3.Location = new Point(128, 76);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(203, 29);
-            dateTimePicker3.TabIndex = 3;
+            dtp_Ngay.Format = DateTimePickerFormat.Short;
+            dtp_Ngay.Location = new Point(128, 70);
+            dtp_Ngay.Name = "dtp_Ngay";
+            dtp_Ngay.Size = new Size(203, 29);
+            dtp_Ngay.TabIndex = 3;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label4.Location = new Point(6, 82);
+            label4.Location = new Point(11, 76);
             label4.Name = "label4";
             label4.Size = new Size(78, 21);
             label4.TabIndex = 2;
             label4.Text = "Ngày lập:";
             // 
-            // textBox2
+            // txt_Ma
             // 
-            textBox2.Location = new Point(128, 32);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(203, 29);
-            textBox2.TabIndex = 1;
+            txt_Ma.Location = new Point(128, 29);
+            txt_Ma.Name = "txt_Ma";
+            txt_Ma.ReadOnly = true;
+            txt_Ma.Size = new Size(203, 29);
+            txt_Ma.TabIndex = 1;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label3.Location = new Point(6, 35);
+            label3.Location = new Point(6, 32);
             label3.Name = "label3";
             label3.Size = new Size(105, 21);
             label3.TabIndex = 0;
@@ -359,7 +382,7 @@
             groupBox3.Controls.Add(label10);
             groupBox3.Controls.Add(label9);
             groupBox3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox3.Location = new Point(11, 483);
+            groupBox3.Location = new Point(11, 502);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(343, 295);
             groupBox3.TabIndex = 3;
@@ -476,42 +499,41 @@
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(dataGridView1);
+            groupBox4.Controls.Add(dgv_HoaDon);
             groupBox4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox4.Location = new Point(360, 127);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(962, 350);
+            groupBox4.Size = new Size(962, 369);
             groupBox4.TabIndex = 4;
             groupBox4.TabStop = false;
             groupBox4.Text = "Hóa đơn";
             // 
             // groupBox5
             // 
-            groupBox5.Controls.Add(dataGridView2);
+            groupBox5.Controls.Add(dgv_HDCT);
             groupBox5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox5.Location = new Point(366, 483);
+            groupBox5.Location = new Point(366, 502);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(956, 295);
             groupBox5.TabIndex = 5;
             groupBox5.TabStop = false;
             groupBox5.Text = "Hóa đơn chi tiết";
-            groupBox5.Enter += groupBox5_Enter;
             // 
-            // dataGridView2
+            // dgv_HDCT
             // 
-            dataGridView2.BackgroundColor = Color.FromArgb(128, 255, 128);
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(6, 26);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(938, 263);
-            dataGridView2.TabIndex = 0;
+            dgv_HDCT.BackgroundColor = Color.FromArgb(128, 255, 128);
+            dgv_HDCT.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_HDCT.Location = new Point(6, 26);
+            dgv_HDCT.Name = "dgv_HDCT";
+            dgv_HDCT.RowHeadersWidth = 51;
+            dgv_HDCT.Size = new Size(938, 263);
+            dgv_HDCT.TabIndex = 0;
             // 
             // FormHoaDon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1334, 790);
+            ClientSize = new Size(1334, 811);
             Controls.Add(groupBox5);
             Controls.Add(groupBox3);
             Controls.Add(groupBox4);
@@ -524,7 +546,7 @@
             Load += FormHoaDon_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_HoaDon).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -532,7 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             groupBox4.ResumeLayout(false);
             groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_HDCT).EndInit();
             ResumeLayout(false);
         }
 
@@ -545,20 +567,16 @@
         private DateTimePicker dateTimePicker2;
         private Label label2;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgv_HoaDon;
         private GroupBox groupBox2;
-        private DateTimePicker dateTimePicker3;
+        private DateTimePicker dtp_Ngay;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox txt_Ma;
         private Label label3;
-        private TextBox textBox4;
+        private TextBox txt_MaKH;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox txt_MaNV;
         private Label label5;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private Label label8;
-        private Label label7;
         private GroupBox groupBox3;
         private TextBox textBox12;
         private TextBox textBox10;
@@ -574,11 +592,17 @@
         private NumericUpDown numericUpDown1;
         private GroupBox groupBox4;
         private GroupBox groupBox5;
-        private DataGridView dataGridView2;
+        private DataGridView dgv_HDCT;
         private ComboBox comboBox1;
         private Label label15;
         private Label label16;
         private Label label17;
-        private ComboBox comboBox2;
+        private ComboBox cbb_TrangThai;
+        private TextBox txt_TongTien;
+        private TextBox txt_MaGG;
+        private Label label8;
+        private Label label7;
+        private ComboBox cbb_httt;
+        private Label label18;
     }
 }

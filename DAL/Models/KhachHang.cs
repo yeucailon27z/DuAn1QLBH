@@ -5,7 +5,7 @@ namespace DAL.Models;
 
 public partial class KhachHang
 {
-    public int KhachHangId { get; set; }
+    public string KhachHangId { get; set; } = null!;
 
     public string? HoTen { get; set; }
 
