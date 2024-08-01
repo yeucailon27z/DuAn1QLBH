@@ -192,36 +192,45 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.Fuchsia;
             button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            button1.Image = Properties.Resources.Add;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(38, 32);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(144, 42);
             button1.TabIndex = 13;
             button1.Text = "Thêm ";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
+            button2.BackColor = Color.Fuchsia;
             button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            button2.Image = Properties.Resources.Edit;
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
             button2.Location = new Point(210, 32);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(144, 42);
             button2.TabIndex = 14;
             button2.Text = "Sửa";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
+            button3.BackColor = Color.Fuchsia;
             button3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            button3.Image = Properties.Resources.Delete;
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
             button3.Location = new Point(386, 32);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(144, 42);
             button3.TabIndex = 15;
             button3.Text = "Xóa";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             // 
             // textBox4
             // 
@@ -305,12 +314,15 @@
             // 
             // button4
             // 
+            button4.BackColor = Color.Yellow;
+            button4.Image = Properties.Resources.Search;
+            button4.ImageAlign = ContentAlignment.MiddleLeft;
             button4.Location = new Point(1014, 32);
             button4.Name = "button4";
             button4.Size = new Size(144, 42);
             button4.TabIndex = 20;
-            button4.Text = "Tìm";
-            button4.UseVisualStyleBackColor = true;
+            button4.Text = "Lọc";
+            button4.UseVisualStyleBackColor = false;
             // 
             // textBox6
             // 
@@ -341,7 +353,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Times New Roman", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label10.Location = new Point(366, 48);
+            label10.Location = new Point(355, 60);
             label10.Name = "label10";
             label10.Size = new Size(534, 54);
             label10.TabIndex = 28;

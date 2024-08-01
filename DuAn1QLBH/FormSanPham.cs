@@ -8,13 +8,16 @@ namespace PRL
 {
     public partial class FormSanPham : Form
     {
-        SanPhamServisces _service; // Đảm bảo tên chính xác là "Services"
+        LoaiHangServices _servicesLH;
+        NhaCungCapServices _servicesNCC;
+        SanPhamServisces _service;
 
         public FormSanPham()
         {
+            _servicesLH = new LoaiHangServices();
+            _servicesNCC = new NhaCungCapServices();
             _service = new SanPhamServisces();
             InitializeComponent();
-            // Đảm bảo tên chính xác là "Services"
         }
 
         private void ptb_SanPham_Click(object sender, EventArgs e)
@@ -37,6 +40,14 @@ namespace PRL
 
         private void FormSanPham_Load(object sender, EventArgs e)
         {
+            List<string> loaiHangName = _servicesLH.GetLoaiHangIDs();
+            cbb_LoaiSP.DataSource = loaiHangName;
+
+            List<string> NCCName = _servicesNCC.GetMaNCC();
+            cbb_NCC.DataSource = NCCName;
+
+            
+            cbb_Loai.DataSource = loaiHangName;
             LoadData();
             ptb_SanPham.SizeMode = PictureBoxSizeMode.StretchImage;
         }
@@ -48,10 +59,10 @@ namespace PRL
                 string ma = txt_Ma.Text;
                 string ten = txt_Ten.Text;
                 decimal gia = Convert.ToDecimal(txt_Gia.Text);
-                int soluong = (int)nUD_SoLuong.Value;
+                int soluong = Convert.ToInt32(txt_SoLuong.Text);
                 string mota = txt_Mota.Text;
-                string loai = txt_Loai.Text;
-                string ncc = txt_NCC.Text;
+                string loai = cbb_LoaiSP.Text;
+                string ncc = cbb_NCC.Text;
                 DateOnly ngay = DateOnly.FromDateTime(dtp_Ngay.Value);
                 string anh = ptb_SanPham.ImageLocation;
                 byte trangthai = (byte)cbb_TrangThai.SelectedIndex;
@@ -103,8 +114,6 @@ namespace PRL
             {
                 i++;
                 int rowIndex = dgv_SanPham.Rows.Add(i, data.SanPhamId, data.TenSanPham, data.LoaiSanPhamId, data.MaNhaCungCap, data.Gia, data.SoLuong, data.Anh, data.MoTa, data.NgayCapNhat, data.TrangThai);
-
-                // Kiểm tra điều kiện và tô màu hàng
                 if (data.SoLuong > 0 && data.SoLuong <= 20)
                 {
                     dgv_SanPham.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
@@ -132,10 +141,10 @@ namespace PRL
                 DataGridViewRow row = dgv_SanPham.Rows[e.RowIndex];
                 txt_Ma.Text = row.Cells[1].Value.ToString();
                 txt_Ten.Text = row.Cells[2].Value.ToString();
-                txt_Loai.Text = row.Cells[3].Value.ToString();
-                txt_NCC.Text = row.Cells[4].Value.ToString();
+                cbb_LoaiSP.Text = row.Cells[3].Value.ToString();
+                cbb_NCC.Text = row.Cells[4].Value.ToString();
                 txt_Gia.Text = row.Cells[5].Value.ToString();
-                nUD_SoLuong.Value = Convert.ToInt32(row.Cells[6].Value);
+                txt_SoLuong.Text = row.Cells[6].Value.ToString();
 
                 string imagePath = row.Cells[7].Value.ToString();
                 if (System.IO.File.Exists(imagePath))
@@ -160,10 +169,10 @@ namespace PRL
                 string ma = txt_Ma.Text;
                 string ten = txt_Ten.Text;
                 decimal gia = Convert.ToDecimal(txt_Gia.Text);
-                int soluong = (int)nUD_SoLuong.Value;
+                int soluong = Convert.ToInt32(txt_SoLuong.Text);
                 string mota = txt_Mota.Text;
-                string loai = txt_Loai.Text;
-                string ncc = txt_NCC.Text;
+                string loai = cbb_LoaiSP.Text;
+                string ncc = cbb_NCC.Text;
                 DateOnly ngay = DateOnly.FromDateTime(dtp_Ngay.Value);
                 string anh = ptb_SanPham.ImageLocation;
                 byte trangthai = (byte)cbb_TrangThai.SelectedIndex;
@@ -194,10 +203,10 @@ namespace PRL
         {
             txt_Ma.Text = "";
             txt_Ten.Text = "";
-            txt_Loai.Text = "";
-            txt_NCC.Text = "";
+            cbb_LoaiSP.Text = "";
+            cbb_NCC.Text = "";
             txt_Gia.Text = "";
-            nUD_SoLuong.Value = 0;
+            txt_SoLuong.Text = "";
             ptb_SanPham.Image = null;
             txt_Mota.Text = "";
             dtp_Ngay.Value = DateTime.Now;
@@ -206,20 +215,43 @@ namespace PRL
 
         private void dgv_SanPham_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dgv_SanPham.Columns[e.ColumnIndex].Name == "Số Lượng" && e.Value != null)
+
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            // Clear the DataGridView control
+            dgv_SanPham.Rows.Clear();
+
+            // Get the selected index of the combo box for TrangThai
+            int trangthai = cbb_tt.SelectedIndex;
+
+            // Get the search text, converted to lower case for case-insensitive comparison
+            string ten = txt_Search.Text.ToLower();
+
+            // Get the selected text from the combo box for Loai
+            string loai = cbb_Loai.Text;
+
+            // Retrieve and filter the data
+            var searchResults = _service.GetALL()
+                .Where(sp => (trangthai == -1 || sp.TrangThai == trangthai) &&
+                             (string.IsNullOrEmpty(ten) || sp.TenSanPham.ToLower().Contains(ten)) &&
+                             (string.IsNullOrEmpty(loai) || sp.LoaiSanPhamId==loai))
+                .ToList();
+
+            // Initialize a counter
+            int i = 0;
+
+            // Iterate through the filtered results and add them to the DataGridView
+            foreach (var data in searchResults)
             {
-                if (int.TryParse(e.Value.ToString(), out int soLuong))
-                {
-                    if (soLuong > 40 && soLuong < 50)
-                    {
-                        dgv_SanPham.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
-                    }
-                    else
-                    {
-                        dgv_SanPham.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
-                    }
-                }
+                i++;
+                dgv_SanPham.Rows.Add(i, data.SanPhamId, data.TenSanPham, data.LoaiSanPhamId, data.MaNhaCungCap, data.Gia, data.SoLuong, data.Anh, data.MoTa, data.NgayCapNhat, data.TrangThai);
             }
+
+            cbb_Loai.Text = "";
+            cbb_LoaiSP.Text = "";
+            txt_Search.Text = "";
         }
     }
 }

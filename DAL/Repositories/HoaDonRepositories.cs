@@ -18,5 +18,41 @@ namespace DAL.Repositories
         {
             return _context.HoaDons.ToList();
         }
+        public HoaDon Get(string ma)
+        {
+            return _context.HoaDons.Find(ma);
+        }
+        public bool Create(HoaDon hoaDon)
+        {
+            try
+            {
+                _context.HoaDons.Add(hoaDon);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+        public bool UpdateHD(Guid id, byte statuc, long? totalMoney)
+        {
+            try
+            {
+                var hd = _context.HoaDons.Find(id);
+                hd.TrangThai = statuc;
+                if (totalMoney != null)
+                {
+                    hd.TongTien = totalMoney;
+                }
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -31,9 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDangNhap));
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            lbl_QuenMK = new LinkLabel();
-            lblDangKi = new LinkLabel();
-            label4 = new Label();
+            button1 = new Button();
             label3 = new Label();
             chk_HienThiMk = new CheckBox();
             label2 = new Label();
@@ -61,9 +59,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(lbl_QuenMK);
-            panel1.Controls.Add(lblDangKi);
-            panel1.Controls.Add(label4);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(chk_HienThiMk);
             panel1.Controls.Add(label2);
@@ -76,45 +72,24 @@
             panel1.Size = new Size(367, 310);
             panel1.TabIndex = 1;
             // 
-            // lbl_QuenMK
+            // button1
             // 
-            lbl_QuenMK.AutoSize = true;
-            lbl_QuenMK.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_QuenMK.Location = new Point(102, 267);
-            lbl_QuenMK.Name = "lbl_QuenMK";
-            lbl_QuenMK.Size = new Size(124, 21);
-            lbl_QuenMK.TabIndex = 7;
-            lbl_QuenMK.TabStop = true;
-            lbl_QuenMK.Text = "Quên mật khẩu?";
-            // 
-            // lblDangKi
-            // 
-            lblDangKi.AutoSize = true;
-            lblDangKi.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDangKi.Location = new Point(248, 243);
-            lblDangKi.Name = "lblDangKi";
-            lblDangKi.Size = new Size(64, 21);
-            lblDangKi.TabIndex = 6;
-            lblDangKi.TabStop = true;
-            lblDangKi.Text = "Đăng Kí";
-            lblDangKi.LinkClicked += lblDangKi_LinkClicked;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(37, 243);
-            label4.Name = "label4";
-            label4.Size = new Size(168, 21);
-            label4.TabIndex = 5;
-            label4.Text = "Bạn chưa có tài khoản?";
+            button1.BackColor = SystemColors.ActiveBorder;
+            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(113, 236);
+            button1.Name = "button1";
+            button1.Size = new Size(143, 39);
+            button1.TabIndex = 7;
+            button1.Text = "Thoát";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Maroon;
-            label3.Location = new Point(163, 215);
+            label3.Location = new Point(169, 215);
             label3.Name = "label3";
             label3.Size = new Size(32, 21);
             label3.TabIndex = 4;
@@ -230,9 +205,6 @@
         #endregion
         private PictureBox pictureBox1;
         private Panel panel1;
-        private LinkLabel lbl_QuenMK;
-        private LinkLabel lblDangKi;
-        private Label label4;
         private Label label3;
         private CheckBox chk_HienThiMk;
         private Label label2;
@@ -242,5 +214,6 @@
         private Button btn_DangNhap;
         private Panel panel2;
         private Label label5;
+        private Button button1;
     }
 }

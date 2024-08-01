@@ -38,13 +38,13 @@
             btn_Reset = new Button();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
+            cbb_NCC = new ComboBox();
+            cbb_LoaiSP = new ComboBox();
+            txt_SoLuong = new TextBox();
             dtp_Ngay = new DateTimePicker();
             label12 = new Label();
             txt_Ma = new TextBox();
             label8 = new Label();
-            txt_NCC = new TextBox();
-            txt_Loai = new TextBox();
-            nUD_SoLuong = new NumericUpDown();
             cbb_TrangThai = new ComboBox();
             label5 = new Label();
             label4 = new Label();
@@ -66,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)ptb_SanPham).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nUD_SoLuong).BeginInit();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
@@ -142,6 +141,7 @@
             btn_Search.TabIndex = 11;
             btn_Search.Text = "Tìm kiếm";
             btn_Search.UseVisualStyleBackColor = false;
+            btn_Search.Click += btn_Search_Click;
             // 
             // btn_Reset
             // 
@@ -171,13 +171,13 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(cbb_NCC);
+            groupBox2.Controls.Add(cbb_LoaiSP);
+            groupBox2.Controls.Add(txt_SoLuong);
             groupBox2.Controls.Add(dtp_Ngay);
             groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(txt_Ma);
             groupBox2.Controls.Add(label8);
-            groupBox2.Controls.Add(txt_NCC);
-            groupBox2.Controls.Add(txt_Loai);
-            groupBox2.Controls.Add(nUD_SoLuong);
             groupBox2.Controls.Add(cbb_TrangThai);
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(label4);
@@ -197,6 +197,29 @@
             groupBox2.TabIndex = 17;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin sản phẩm";
+            // 
+            // cbb_NCC
+            // 
+            cbb_NCC.FormattingEnabled = true;
+            cbb_NCC.Location = new Point(976, 149);
+            cbb_NCC.Name = "cbb_NCC";
+            cbb_NCC.Size = new Size(281, 29);
+            cbb_NCC.TabIndex = 36;
+            // 
+            // cbb_LoaiSP
+            // 
+            cbb_LoaiSP.FormattingEnabled = true;
+            cbb_LoaiSP.Location = new Point(976, 69);
+            cbb_LoaiSP.Name = "cbb_LoaiSP";
+            cbb_LoaiSP.Size = new Size(281, 29);
+            cbb_LoaiSP.TabIndex = 35;
+            // 
+            // txt_SoLuong
+            // 
+            txt_SoLuong.Location = new Point(672, 69);
+            txt_SoLuong.Name = "txt_SoLuong";
+            txt_SoLuong.Size = new Size(282, 29);
+            txt_SoLuong.TabIndex = 34;
             // 
             // dtp_Ngay
             // 
@@ -231,32 +254,6 @@
             label8.Size = new Size(110, 21);
             label8.TabIndex = 30;
             label8.Text = "Mã sản phẩm:";
-            // 
-            // txt_NCC
-            // 
-            txt_NCC.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            txt_NCC.Location = new Point(976, 149);
-            txt_NCC.Name = "txt_NCC";
-            txt_NCC.PlaceholderText = "Mã nhà cung cấp...";
-            txt_NCC.Size = new Size(281, 29);
-            txt_NCC.TabIndex = 29;
-            // 
-            // txt_Loai
-            // 
-            txt_Loai.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            txt_Loai.Location = new Point(976, 68);
-            txt_Loai.Name = "txt_Loai";
-            txt_Loai.PlaceholderText = "Mã sản phẩm...";
-            txt_Loai.Size = new Size(281, 29);
-            txt_Loai.TabIndex = 28;
-            // 
-            // nUD_SoLuong
-            // 
-            nUD_SoLuong.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            nUD_SoLuong.Location = new Point(673, 69);
-            nUD_SoLuong.Name = "nUD_SoLuong";
-            nUD_SoLuong.Size = new Size(281, 29);
-            nUD_SoLuong.TabIndex = 27;
             // 
             // cbb_TrangThai
             // 
@@ -390,6 +387,7 @@
             // cbb_tt
             // 
             cbb_tt.FormattingEnabled = true;
+            cbb_tt.Items.AddRange(new object[] { "Hoạt động", "Không hoạt động", "Tạm ngừng", "Ngừng sản xuất" });
             cbb_tt.Location = new Point(515, 59);
             cbb_tt.Name = "cbb_tt";
             cbb_tt.Size = new Size(121, 29);
@@ -448,7 +446,6 @@
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nUD_SoLuong).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             ResumeLayout(false);
@@ -465,9 +462,6 @@
         private Button btn_Reset;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private TextBox txt_NCC;
-        private TextBox txt_Loai;
-        private NumericUpDown nUD_SoLuong;
         private ComboBox cbb_TrangThai;
         private Label label5;
         private Label label4;
@@ -489,5 +483,8 @@
         private Label label9;
         private DateTimePicker dtp_Ngay;
         private Label label12;
+        private TextBox txt_SoLuong;
+        private ComboBox cbb_NCC;
+        private ComboBox cbb_LoaiSP;
     }
 }

@@ -30,41 +30,41 @@
         {
             groupBox3 = new GroupBox();
             button4 = new Button();
-            textBox6 = new TextBox();
             label9 = new Label();
             label8 = new Label();
             button5 = new Button();
             button6 = new Button();
             button7 = new Button();
-            textBox7 = new TextBox();
+            txt_TenloaiSearch = new TextBox();
             groupBox2 = new GroupBox();
-            dataGridView2 = new DataGridView();
+            dgv_LoaiSP = new DataGridView();
             groupBox1 = new GroupBox();
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox4 = new TextBox();
+            txt_Mota = new TextBox();
+            txt_MaLoai = new TextBox();
             label3 = new Label();
-            comboBox2 = new ComboBox();
-            textBox11 = new TextBox();
+            cbb_TrangThai = new ComboBox();
+            txt_TenLoai = new TextBox();
             label7 = new Label();
             label14 = new Label();
             label2 = new Label();
+            cb_trangThai = new ComboBox();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_LoaiSP).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(cb_trangThai);
             groupBox3.Controls.Add(button4);
-            groupBox3.Controls.Add(textBox6);
             groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(label8);
             groupBox3.Controls.Add(button5);
             groupBox3.Controls.Add(button6);
             groupBox3.Controls.Add(button7);
-            groupBox3.Controls.Add(textBox7);
+            groupBox3.Controls.Add(txt_TenloaiSearch);
             groupBox3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox3.Location = new Point(73, 144);
             groupBox3.Name = "groupBox3";
@@ -75,19 +75,15 @@
             // 
             // button4
             // 
+            button4.BackColor = Color.Yellow;
+            button4.Image = Properties.Resources.Search;
+            button4.ImageAlign = ContentAlignment.MiddleLeft;
             button4.Location = new Point(1014, 32);
             button4.Name = "button4";
             button4.Size = new Size(140, 42);
             button4.TabIndex = 20;
-            button4.Text = "Tìm";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(781, 45);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(210, 29);
-            textBox6.TabIndex = 19;
+            button4.Text = "Lọc";
+            button4.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
@@ -109,50 +105,59 @@
             // 
             // button5
             // 
+            button5.BackColor = Color.Fuchsia;
             button5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            button5.Image = Properties.Resources.Add;
+            button5.ImageAlign = ContentAlignment.MiddleLeft;
             button5.Location = new Point(38, 32);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(140, 42);
             button5.TabIndex = 13;
             button5.Text = "Thêm ";
-            button5.UseVisualStyleBackColor = true;
+            button5.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
+            button6.BackColor = Color.Fuchsia;
             button6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            button6.Image = Properties.Resources.Edit;
+            button6.ImageAlign = ContentAlignment.MiddleLeft;
             button6.Location = new Point(210, 32);
             button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
             button6.Size = new Size(140, 42);
             button6.TabIndex = 14;
             button6.Text = "Sửa";
-            button6.UseVisualStyleBackColor = true;
+            button6.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
+            button7.BackColor = Color.Fuchsia;
             button7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            button7.Image = Properties.Resources.Delete;
+            button7.ImageAlign = ContentAlignment.MiddleLeft;
             button7.Location = new Point(386, 32);
             button7.Margin = new Padding(3, 2, 3, 2);
             button7.Name = "button7";
             button7.Size = new Size(140, 42);
             button7.TabIndex = 15;
             button7.Text = "Xóa";
-            button7.UseVisualStyleBackColor = true;
+            button7.UseVisualStyleBackColor = false;
             // 
-            // textBox7
+            // txt_TenloaiSearch
             // 
-            textBox7.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox7.Location = new Point(559, 47);
-            textBox7.Margin = new Padding(3, 2, 3, 2);
-            textBox7.Name = "textBox7";
-            textBox7.PlaceholderText = "Tìm kiếm...";
-            textBox7.Size = new Size(206, 27);
-            textBox7.TabIndex = 16;
+            txt_TenloaiSearch.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txt_TenloaiSearch.Location = new Point(559, 47);
+            txt_TenloaiSearch.Margin = new Padding(3, 2, 3, 2);
+            txt_TenloaiSearch.Name = "txt_TenloaiSearch";
+            txt_TenloaiSearch.PlaceholderText = "Tìm kiếm...";
+            txt_TenloaiSearch.Size = new Size(206, 27);
+            txt_TenloaiSearch.TabIndex = 16;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dataGridView2);
+            groupBox2.Controls.Add(dgv_LoaiSP);
             groupBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox2.Location = new Point(581, 244);
             groupBox2.Name = "groupBox2";
@@ -161,25 +166,25 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh sách loại sản phẩm";
             // 
-            // dataGridView2
+            // dgv_LoaiSP
             // 
-            dataGridView2.BackgroundColor = Color.FromArgb(192, 255, 192);
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(6, 27);
-            dataGridView2.Margin = new Padding(3, 2, 3, 2);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(651, 391);
-            dataGridView2.TabIndex = 20;
+            dgv_LoaiSP.BackgroundColor = Color.FromArgb(192, 255, 192);
+            dgv_LoaiSP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_LoaiSP.Location = new Point(6, 27);
+            dgv_LoaiSP.Margin = new Padding(3, 2, 3, 2);
+            dgv_LoaiSP.Name = "dgv_LoaiSP";
+            dgv_LoaiSP.RowHeadersWidth = 51;
+            dgv_LoaiSP.Size = new Size(651, 391);
+            dgv_LoaiSP.TabIndex = 20;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(txt_Mota);
+            groupBox1.Controls.Add(txt_MaLoai);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(comboBox2);
-            groupBox1.Controls.Add(textBox11);
+            groupBox1.Controls.Add(cbb_TrangThai);
+            groupBox1.Controls.Add(txt_TenLoai);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label14);
             groupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -199,21 +204,21 @@
             label1.TabIndex = 29;
             label1.Text = "Mô tả:";
             // 
-            // textBox1
+            // txt_Mota
             // 
-            textBox1.Location = new Point(141, 164);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(289, 97);
-            textBox1.TabIndex = 28;
+            txt_Mota.Location = new Point(141, 164);
+            txt_Mota.Multiline = true;
+            txt_Mota.Name = "txt_Mota";
+            txt_Mota.Size = new Size(289, 97);
+            txt_Mota.TabIndex = 28;
             // 
-            // textBox4
+            // txt_MaLoai
             // 
-            textBox4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(141, 69);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(289, 29);
-            textBox4.TabIndex = 27;
+            txt_MaLoai.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txt_MaLoai.Location = new Point(141, 69);
+            txt_MaLoai.Name = "txt_MaLoai";
+            txt_MaLoai.Size = new Size(289, 29);
+            txt_MaLoai.TabIndex = 27;
             // 
             // label3
             // 
@@ -224,24 +229,24 @@
             label3.TabIndex = 26;
             label3.Text = "Mã loại:";
             // 
-            // comboBox2
+            // cbb_TrangThai
             // 
-            comboBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(141, 285);
-            comboBox2.Margin = new Padding(3, 2, 3, 2);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(289, 29);
-            comboBox2.TabIndex = 25;
+            cbb_TrangThai.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            cbb_TrangThai.FormattingEnabled = true;
+            cbb_TrangThai.Location = new Point(141, 285);
+            cbb_TrangThai.Margin = new Padding(3, 2, 3, 2);
+            cbb_TrangThai.Name = "cbb_TrangThai";
+            cbb_TrangThai.Size = new Size(289, 29);
+            cbb_TrangThai.TabIndex = 25;
             // 
-            // textBox11
+            // txt_TenLoai
             // 
-            textBox11.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            textBox11.Location = new Point(141, 115);
-            textBox11.Margin = new Padding(3, 2, 3, 2);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(289, 29);
-            textBox11.TabIndex = 21;
+            txt_TenLoai.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            txt_TenLoai.Location = new Point(141, 115);
+            txt_TenLoai.Margin = new Padding(3, 2, 3, 2);
+            txt_TenLoai.Name = "txt_TenLoai";
+            txt_TenLoai.Size = new Size(289, 29);
+            txt_TenLoai.TabIndex = 21;
             // 
             // label7
             // 
@@ -273,6 +278,14 @@
             label2.TabIndex = 27;
             label2.Text = "Quản Lý Loại Sản Phẩm";
             // 
+            // cb_trangThai
+            // 
+            cb_trangThai.FormattingEnabled = true;
+            cb_trangThai.Location = new Point(781, 45);
+            cb_trangThai.Name = "cb_trangThai";
+            cb_trangThai.Size = new Size(191, 29);
+            cb_trangThai.TabIndex = 21;
+            // 
             // FormLoaiSP
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -285,10 +298,11 @@
             Name = "FormLoaiSP";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormLoaiSP";
+            Load += FormLoaiSP_Load_1;
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_LoaiSP).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -299,24 +313,24 @@
 
         private GroupBox groupBox3;
         private Button button4;
-        private TextBox textBox6;
         private Label label9;
         private Label label8;
         private Button button5;
         private Button button6;
         private Button button7;
-        private TextBox textBox7;
+        private TextBox txt_TenloaiSearch;
         private GroupBox groupBox2;
-        private DataGridView dataGridView2;
+        private DataGridView dgv_LoaiSP;
         private GroupBox groupBox1;
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox4;
+        private TextBox txt_Mota;
+        private TextBox txt_MaLoai;
         private Label label3;
-        private ComboBox comboBox2;
-        private TextBox textBox11;
+        private ComboBox cbb_TrangThai;
+        private TextBox txt_TenLoai;
         private Label label7;
         private Label label14;
         private Label label2;
+        private ComboBox cb_trangThai;
     }
 }

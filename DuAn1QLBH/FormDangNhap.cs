@@ -27,8 +27,6 @@ namespace DuAn1QLBH
         {
             string username = txt_Username.Text;
             string password = txt_Password.Text;
-
-            bool isRegistered = _service.Login(username, password);
             if (username == "")
             {
                 MessageBox.Show("Vui lòng điền tài khoản");
@@ -37,19 +35,32 @@ namespace DuAn1QLBH
             {
                 MessageBox.Show("Vui lòng điền mật khẩu");
             }
-            if (isRegistered)
+            if (_service.Login(username, password) == "0")
             {
-                MessageBox.Show("Đăng nhập thành công!");
-                FormTrangChu f = new FormTrangChu();
-                // Điều hướng đến form đăng nhập hoặc form chínhFormTrangChu f = new FormTrangChu();
-                f.ShowDialog();
-                this.Close();
+                MessageBox.Show("Đăng nhập thất bại, sai thông tin");
+            }
+            else if (_service.Login(username, password) == "1")
+            {
+                MessageBox.Show("Đăng nhập thất bại, có ít nhất 2 tài khoản trùng");
             }
             else
             {
-                MessageBox.Show("Tên đăng nhập đã tồn tại!");
+                string maNV = _service.GetNVID(username,password);
+                string tenNV = _service.GetNVName(username,password);
+                FormTrangChu f = new FormTrangChu(maNV,tenNV);
+                this.Hide();
+                f.Show();
+                // Điều hướng đến form đăng nhập hoặc form chínhFormTrangChu f = new FormTrangChu();
+                f.FormClosed += F_FormClosed;
+
             }
 
+
+        }
+
+        private void F_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
 
         private void chk_HienThiMk_CheckedChanged(object sender, EventArgs e)
@@ -67,6 +78,11 @@ namespace DuAn1QLBH
         private void FormDangNhap_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

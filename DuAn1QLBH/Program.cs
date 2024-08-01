@@ -1,4 +1,5 @@
 using PRL;
+using System.Globalization;
 
 namespace DuAn1QLBH
 {
@@ -10,9 +11,14 @@ namespace DuAn1QLBH
         [STAThread]
         static void Main()
         {
+            
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            ApplicationConfiguration.Initialize();Thread.CurrentThread.CurrentCulture = new CultureInfo("vi-VN");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("vi-VN");
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormDangNhap());
         }
     }

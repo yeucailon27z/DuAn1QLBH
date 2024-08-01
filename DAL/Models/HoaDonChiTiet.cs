@@ -5,7 +5,7 @@ namespace DAL.Models;
 
 public partial class HoaDonChiTiet
 {
-    public string HoaDonChiTietId { get; set; } = null!;
+    public Guid HoaDonChiTietId { get; set; } = null!;
 
     public Guid? HoaDonId { get; set; }
 

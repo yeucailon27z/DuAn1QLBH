@@ -12,11 +12,16 @@ namespace PRL
 {
     public partial class FormTrangChu : Form
     {
-        public FormTrangChu()
+        string idNVs;
+        string tenNVs;
+        public FormTrangChu(string idNV,string tenNV)
         {
-            InitializeComponent();
-        }
 
+            InitializeComponent();
+            this.idNVs = idNV;
+            this.tenNVs=tenNV;
+        }
+        
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -120,10 +125,8 @@ namespace PRL
         private void tool_BanHang_Click(object sender, EventArgs e)
         {
             pn_content.Controls.Clear();
-
-            FormBanHang f = new FormBanHang();
+            FormBanHang f = new FormBanHang(idNVs);
             f.BackColor = Color.FromArgb(255, 224, 192);
-
             f.TopLevel = false;
             pn_content.Controls.Add(f);
             f.FormBorderStyle = FormBorderStyle.None;
@@ -137,6 +140,9 @@ namespace PRL
 
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
+            lbl_TenNV.Text = tenNVs;
+            lb_Time.TopLevelControl.Text = Text; lb_Time.Visible = true;
+            timer1.Start();
 
         }
 
@@ -149,6 +155,17 @@ namespace PRL
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void lb_Time_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Interval = 1000;
+            lb_Time.Text = DateTime.Now.ToString();
         }
     }
 }

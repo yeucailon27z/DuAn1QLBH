@@ -15,10 +15,24 @@ namespace BUS.Servisces
             _repos = new NhanVienRepositories(); 
         }
 
-        public bool Login(string username, string password)
+        public string Login(string username, string password)
         {
             // Thêm các logic nghiệp vụ nếu cần
             return _repos.ValidateUser(username, password);
+        }
+        public string GetNVID(string? username, string? password)
+        {
+           
+                return _repos.GetNhanVienId(username,password); 
+        }
+        public string GetNVName(string? username, string? password)
+        {
+
+            return _repos.GetNhanVienName(username, password);
+        }
+        public List<string> GetNhanVienId()
+        {
+            return _repos.GetNhanVienId();
         }
 
     }
