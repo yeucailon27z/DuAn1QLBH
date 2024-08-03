@@ -16,17 +16,17 @@ namespace DAL.Repositories
         }
         public List<HoaDonChiTiet> GetHDCTbyIDHD(Guid id)
         {
-            return _context.HoaDonChiTiets.Where(p => p.HoaDonId == id).ToList();
+            return _context.HoaDonChiTiets.Where(p => p.HoaDonID == id).ToList();
         }
-        public bool UpdateSL(int soluong, string idHDCT)
+        public bool UpdateSL(int soluong, int idHDCT)
         {
             try
             {
                 var hdct = _context.HoaDonChiTiets.Find(idHDCT);
-                hdct.SoLuong = soluong + hdct.SoLuong;
-
-                var sp = _context.SanPhams.Find(hdct.SanPhamId);
-                hdct.SoLuong = hdct.SoLuong - soluong;
+                hdct.SoLuong =hdct.SoLuong+soluong;
+                _context.SaveChanges();
+                var sp = _context.SanPhams.Find(hdct.SanPhamID);
+                sp.SoLuong = sp.SoLuong - soluong;
                 _context.SaveChanges();
                 return true;
             }
@@ -40,10 +40,9 @@ namespace DAL.Repositories
             SanPham sp = _context.SanPhams.Find(maSP);
             HoaDonChiTiet hdct = new HoaDonChiTiet()
             {
-                HoaDonChiTietId="HDCT001",
                 SoLuong = soluong,
-                SanPhamId = maSP,
-                HoaDonId = MaHD,
+                SanPhamID = maSP,
+                HoaDonID = MaHD,
                 DonGia = sp.Gia
             };
             try

@@ -35,7 +35,7 @@ public partial class Da1quanLyCuaHangContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-Q6N4J46;Database=DA1QuanLyCuaHang_1;User Id=sa;Password=123456;TrustServerCertificate=true;");
+        => optionsBuilder.UseSqlServer("Server=DESKTOP-Q6N4J46;Database=DA1QuanLyCuaHang_5;User Id=sa;Password=123456;TrustServerCertificate=true;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -108,27 +108,27 @@ public partial class Da1quanLyCuaHangContext : DbContext
 
         modelBuilder.Entity<HoaDonChiTiet>(entity =>
         {
-            entity.HasKey(e => e.HoaDonChiTietId).HasName("PK__HoaDonCh__603A404A7EC4FAC0");
+            entity.HasKey(e => e.HoaDonChiTietID).HasName("PK__HoaDonCh__603A404A7EC4FAC0");
 
             entity.ToTable("HoaDonChiTiet");
 
-            entity.Property(e => e.HoaDonChiTietId)
+            entity.Property(e => e.HoaDonChiTietID)
                 .HasMaxLength(50)
                 .HasColumnName("HoaDonChiTietID");
             entity.Property(e => e.DonGia).HasColumnType("decimal(10, 2)");
-            entity.Property(e => e.HoaDonId)
+            entity.Property(e => e.HoaDonID)
                 .HasMaxLength(50)
                 .HasColumnName("HoaDonID");
-            entity.Property(e => e.SanPhamId)
+            entity.Property(e => e.SanPhamID)
                 .HasMaxLength(50)
                 .HasColumnName("SanPhamID");
 
             entity.HasOne(d => d.HoaDon).WithMany(p => p.HoaDonChiTiets)
-                .HasForeignKey(d => d.HoaDonId)
+                .HasForeignKey(d => d.HoaDonID)
                 .HasConstraintName("FK__HoaDonChi__HoaDo__49C3F6B7");
 
             entity.HasOne(d => d.SanPham).WithMany(p => p.HoaDonChiTiets)
-                .HasForeignKey(d => d.SanPhamId)
+                .HasForeignKey(d => d.SanPhamID)
                 .HasConstraintName("FK__HoaDonChi__SanPh__4AB81AF0");
         });
 

@@ -68,7 +68,7 @@ namespace PRL
                 foreach (var data in allDatas)
                 {
                     i++;
-                    dgv_HDCT.Rows.Add(i, data.HoaDonChiTietId, data.HoaDonId, data.SanPhamId, data.SoLuong, data.DonGia);
+                    dgv_HDCT.Rows.Add(i, data.HoaDonChiTietID, data.HoaDonID, data.SanPhamID, data.SoLuong, data.DonGia);
                 }
             }
 

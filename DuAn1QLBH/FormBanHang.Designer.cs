@@ -142,7 +142,7 @@
             // 
             lbl_MaHD.AutoSize = true;
             lbl_MaHD.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_MaHD.Location = new Point(149, -3);
+            lbl_MaHD.Location = new Point(137, -3);
             lbl_MaHD.Name = "lbl_MaHD";
             lbl_MaHD.Size = new Size(17, 17);
             lbl_MaHD.TabIndex = 4;

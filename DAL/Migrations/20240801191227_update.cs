@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdateForeignKeyType : Migration
+    public partial class update : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -183,9 +183,10 @@ namespace DAL.Migrations
                 name: "HoaDonChiTiet",
                 columns: table => new
                 {
-                    HoaDonChiTietID = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    HoaDonID = table.Column<Guid>(type: "uniqueidentifier", maxLength: 50, nullable: true),
-                    SanPhamID = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    HoaDonChiTietID = table.Column<int>(type: "int", maxLength: 50, nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SanPhamID = table.Column<Guid>(type: "uniqueidentifier", maxLength: 50, nullable: true),
+                    SanPhamID1 = table.Column<string>(type: "nvarchar(50)", nullable: true),
                     SoLuong = table.Column<int>(type: "int", nullable: true),
                     DonGia = table.Column<decimal>(type: "decimal(10,2)", nullable: true)
                 },
@@ -194,12 +195,12 @@ namespace DAL.Migrations
                     table.PrimaryKey("PK__HoaDonCh__603A404A7EC4FAC0", x => x.HoaDonChiTietID);
                     table.ForeignKey(
                         name: "FK__HoaDonChi__HoaDo__49C3F6B7",
-                        column: x => x.HoaDonID,
+                        column: x => x.SanPhamID,
                         principalTable: "HoaDon",
                         principalColumn: "HoaDonID");
                     table.ForeignKey(
                         name: "FK__HoaDonChi__SanPh__4AB81AF0",
-                        column: x => x.SanPhamID,
+                        column: x => x.SanPhamID1,
                         principalTable: "SanPham",
                         principalColumn: "SanPhamID");
                 });
@@ -225,14 +226,14 @@ namespace DAL.Migrations
                 column: "NhanVienID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_HoaDonChiTiet_HoaDonID",
-                table: "HoaDonChiTiet",
-                column: "HoaDonID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_HoaDonChiTiet_SanPhamID",
                 table: "HoaDonChiTiet",
                 column: "SanPhamID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HoaDonChiTiet_SanPhamID1",
+                table: "HoaDonChiTiet",
+                column: "SanPhamID1");
 
             migrationBuilder.CreateIndex(
                 name: "UQ__NhanVien__536C85E4E5DD5949",

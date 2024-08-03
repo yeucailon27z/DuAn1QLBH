@@ -52,7 +52,6 @@ namespace PRL
 
             FormSanPham f = new FormSanPham();
             f.BackColor = Color.FromArgb(255, 224, 192);
-
             f.TopLevel = false;
             pn_content.Controls.Add(f);
             f.FormBorderStyle = FormBorderStyle.None;
@@ -140,8 +139,13 @@ namespace PRL
 
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
-            lbl_TenNV.Text = tenNVs;
+            /*if (idNVs == "NV001")
+            {
+                thoátToolStripMenuItem.Visible = false;
+            }*/
+            lbl_TenNV.Text = tenNVs+" ("+idNVs+")";
             lb_Time.TopLevelControl.Text = Text; lb_Time.Visible = true;
+            
             timer1.Start();
 
         }

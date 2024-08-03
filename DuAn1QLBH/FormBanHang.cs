@@ -118,6 +118,8 @@ namespace PRL
             pn.Size = new Size(260, 240);
             pn.BorderStyle = BorderStyle.Fixed3D;
             ptb.Size = new Size(260, 240);
+            
+            
             ptb.Image = Image.FromFile(sp.Anh);
             ptb.SizeMode = PictureBoxSizeMode.StretchImage;
             ptb.Location = new Point(3, 3);
@@ -287,7 +289,6 @@ namespace PRL
                     MessageBox.Show(_HDservices.Update(currentBillId, 1, money));
                     LoadDataHD();
                 }
-                t.Text = "0";
             }
             catch (Exception ex)
             {

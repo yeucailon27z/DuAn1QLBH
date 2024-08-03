@@ -194,7 +194,7 @@
             // lb_Time
             // 
             lb_Time.AutoSize = true;
-            lb_Time.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lb_Time.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             lb_Time.Location = new Point(352, 1);
             lb_Time.Name = "lb_Time";
             lb_Time.Size = new Size(50, 21);
@@ -210,7 +210,7 @@
             // 
             lbl_TenNV.AutoSize = true;
             lbl_TenNV.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            lbl_TenNV.Location = new Point(1366, 0);
+            lbl_TenNV.Location = new Point(1288, -1);
             lbl_TenNV.Name = "lbl_TenNV";
             lbl_TenNV.Size = new Size(22, 21);
             lbl_TenNV.TabIndex = 21;
@@ -242,7 +242,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(1284, 0);
+            label2.Location = new Point(1213, 0);
             label2.Name = "label2";
             label2.Size = new Size(76, 21);
             label2.TabIndex = 23;
@@ -251,10 +251,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label3.Location = new Point(265, 1);
             label3.Name = "label3";
-            label3.Size = new Size(81, 21);
+            label3.Size = new Size(82, 21);
             label3.TabIndex = 24;
             label3.Text = "Thời gian:";
             // 

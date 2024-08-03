@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(Da1quanLyCuaHangContext))]
-    [Migration("20240725120612_UpdateForeignKeyType")]
-    partial class UpdateForeignKeyType
+    [Migration("20240801191227_update")]
+    partial class update
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -143,35 +143,40 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("DAL.Models.HoaDonChiTiet", b =>
                 {
-                    b.Property<string>("HoaDonChiTietId")
+                    b.Property<int>("HoaDonChiTietID")
+                        .ValueGeneratedOnAdd()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasColumnType("int")
                         .HasColumnName("HoaDonChiTietID");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HoaDonChiTietID"));
 
                     b.Property<decimal?>("DonGia")
                         .HasColumnType("decimal(10, 2)");
 
-                    b.Property<Guid?>("HoaDonId")
+                    b.Property<Guid?>("HoaDonID")
                         .HasMaxLength(50)
                         .HasColumnType("uniqueidentifier")
-                        .HasColumnName("HoaDonID");
-
-                    b.Property<string>("SanPhamId")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("SanPhamID");
+
+                    b.Property<string>("SanPhamID")
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int?>("SoLuong")
                         .HasColumnType("int");
 
-                    b.HasKey("HoaDonChiTietId")
+                    b.HasKey("HoaDonChiTietID")
                         .HasName("PK__HoaDonCh__603A404A7EC4FAC0");
 
-                    b.HasIndex("HoaDonId");
+                    b.HasIndex("HoaDonID");
 
-                    b.HasIndex("SanPhamId");
+                    b.HasIndex("SanPhamID");
 
-                    b.ToTable("HoaDonChiTiet", (string)null);
+                    b.ToTable("HoaDonChiTiet", null, t =>
+                        {
+                            t.Property("SanPhamID")
+                                .HasColumnName("SanPhamID1");
+                        });
                 });
 
             modelBuilder.Entity("DAL.Models.KhachHang", b =>
@@ -411,12 +416,12 @@ namespace DAL.Migrations
                 {
                     b.HasOne("DAL.Models.HoaDon", "HoaDon")
                         .WithMany("HoaDonChiTiets")
-                        .HasForeignKey("HoaDonId")
+                        .HasForeignKey("HoaDonID")
                         .HasConstraintName("FK__HoaDonChi__HoaDo__49C3F6B7");
 
                     b.HasOne("DAL.Models.SanPham", "SanPham")
                         .WithMany("HoaDonChiTiets")
-                        .HasForeignKey("SanPhamId")
+                        .HasForeignKey("SanPhamID")
                         .HasConstraintName("FK__HoaDonChi__SanPh__4AB81AF0");
 
                     b.Navigation("HoaDon");

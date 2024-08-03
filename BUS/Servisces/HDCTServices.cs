@@ -24,12 +24,12 @@ namespace BUS.Servisces
         public string CheckSPinHD(string idsp, Guid idhd, int soluong)
         {
             var allhdct = _repos.GetHDCTbyIDHD(idhd);
-            var hdct = allhdct.FirstOrDefault(p => p.SanPhamId == idsp);
+            var hdct = allhdct.FirstOrDefault(p => p.SanPhamID == idsp);
             //return hdct != null;//nếu nó không null nghĩa là tồn tại rồi => true nếu chưa thí false
             if (hdct != null)
             {
                 HDCTRepositories repos = new HDCTRepositories();
-                repos.UpdateSL(soluong, hdct.HoaDonChiTietId);
+                repos.UpdateSL(soluong, hdct.HoaDonChiTietID);
                 return "Thành công";
             }
             else
