@@ -85,7 +85,6 @@
             cbb_SearcTT.Name = "cbb_SearcTT";
             cbb_SearcTT.Size = new Size(185, 29);
             cbb_SearcTT.TabIndex = 21;
-            cbb_SearcTT.SelectedIndexChanged += cbb_SearcTT_SelectedIndexChanged;
             // 
             // btn_Search
             // 
@@ -172,7 +171,6 @@
             txt_SearchTen.PlaceholderText = "Tìm kiếm...";
             txt_SearchTen.Size = new Size(206, 27);
             txt_SearchTen.TabIndex = 16;
-            txt_SearchTen.TextChanged += txt_SearchTen_TextChanged;
             // 
             // groupBox2
             // 
@@ -218,7 +216,6 @@
             groupBox1.TabIndex = 21;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin nhà cung cấp";
-            groupBox1.Enter += groupBox1_Enter;
             // 
             // txt_Ma
             // 

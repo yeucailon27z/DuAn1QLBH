@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            textBox2 = new TextBox();
+            tbt_makhachhang = new TextBox();
             label7 = new Label();
-            comboBox1 = new ComboBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox1 = new TextBox();
+            cbb_trangthai = new ComboBox();
+            tbt_email = new TextBox();
+            tbt_sdt = new TextBox();
+            tbt_diachi = new TextBox();
+            tbt_hovaten = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             label6 = new Label();
             label5 = new Label();
@@ -46,14 +46,14 @@
             groupBox2 = new GroupBox();
             dataGridView1 = new DataGridView();
             groupBox3 = new GroupBox();
+            cb_search = new ComboBox();
             button4 = new Button();
-            textBox6 = new TextBox();
             label9 = new Label();
             label8 = new Label();
             button5 = new Button();
             button6 = new Button();
             button7 = new Button();
-            textBox7 = new TextBox();
+            tb_searchTen = new TextBox();
             label10 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -63,13 +63,13 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(tbt_makhachhang);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(textBox5);
-            groupBox1.Controls.Add(textBox4);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(cbb_trangthai);
+            groupBox1.Controls.Add(tbt_email);
+            groupBox1.Controls.Add(tbt_sdt);
+            groupBox1.Controls.Add(tbt_diachi);
+            groupBox1.Controls.Add(tbt_hovaten);
             groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
@@ -85,13 +85,13 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin khách hàng";
             // 
-            // textBox2
+            // tbt_makhachhang
             // 
-            textBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(143, 38);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(289, 29);
-            textBox2.TabIndex = 27;
+            tbt_makhachhang.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbt_makhachhang.Location = new Point(143, 38);
+            tbt_makhachhang.Name = "tbt_makhachhang";
+            tbt_makhachhang.Size = new Size(289, 29);
+            tbt_makhachhang.TabIndex = 27;
             // 
             // label7
             // 
@@ -103,51 +103,52 @@
             label7.TabIndex = 26;
             label7.Text = "Mã khách hàng:";
             // 
-            // comboBox1
+            // cbb_trangthai
             // 
-            comboBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(143, 346);
-            comboBox1.Margin = new Padding(3, 2, 3, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(289, 29);
-            comboBox1.TabIndex = 25;
+            cbb_trangthai.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            cbb_trangthai.FormattingEnabled = true;
+            cbb_trangthai.Items.AddRange(new object[] { "Khách mới", "Khách lâu năm" });
+            cbb_trangthai.Location = new Point(143, 346);
+            cbb_trangthai.Margin = new Padding(3, 2, 3, 2);
+            cbb_trangthai.Name = "cbb_trangthai";
+            cbb_trangthai.Size = new Size(289, 29);
+            cbb_trangthai.TabIndex = 25;
             // 
-            // textBox5
+            // tbt_email
             // 
-            textBox5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            textBox5.Location = new Point(143, 290);
-            textBox5.Margin = new Padding(3, 2, 3, 2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(289, 29);
-            textBox5.TabIndex = 24;
+            tbt_email.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            tbt_email.Location = new Point(143, 290);
+            tbt_email.Margin = new Padding(3, 2, 3, 2);
+            tbt_email.Name = "tbt_email";
+            tbt_email.Size = new Size(289, 29);
+            tbt_email.TabIndex = 24;
             // 
-            // textBox4
+            // tbt_sdt
             // 
-            textBox4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            textBox4.Location = new Point(143, 191);
-            textBox4.Margin = new Padding(3, 2, 3, 2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(289, 29);
-            textBox4.TabIndex = 23;
+            tbt_sdt.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            tbt_sdt.Location = new Point(143, 191);
+            tbt_sdt.Margin = new Padding(3, 2, 3, 2);
+            tbt_sdt.Name = "tbt_sdt";
+            tbt_sdt.Size = new Size(289, 29);
+            tbt_sdt.TabIndex = 23;
             // 
-            // textBox3
+            // tbt_diachi
             // 
-            textBox3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            textBox3.Location = new Point(143, 239);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(289, 29);
-            textBox3.TabIndex = 22;
+            tbt_diachi.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            tbt_diachi.Location = new Point(143, 239);
+            tbt_diachi.Margin = new Padding(3, 2, 3, 2);
+            tbt_diachi.Name = "tbt_diachi";
+            tbt_diachi.Size = new Size(289, 29);
+            tbt_diachi.TabIndex = 22;
             // 
-            // textBox1
+            // tbt_hovaten
             // 
-            textBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            textBox1.Location = new Point(143, 93);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(289, 29);
-            textBox1.TabIndex = 21;
+            tbt_hovaten.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            tbt_hovaten.Location = new Point(143, 93);
+            tbt_hovaten.Margin = new Padding(3, 2, 3, 2);
+            tbt_hovaten.Name = "tbt_hovaten";
+            tbt_hovaten.Size = new Size(289, 29);
+            tbt_hovaten.TabIndex = 21;
             // 
             // dateTimePicker1
             // 
@@ -240,17 +241,18 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(651, 391);
             dataGridView1.TabIndex = 20;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(cb_search);
             groupBox3.Controls.Add(button4);
-            groupBox3.Controls.Add(textBox6);
             groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(label8);
             groupBox3.Controls.Add(button5);
             groupBox3.Controls.Add(button6);
             groupBox3.Controls.Add(button7);
-            groupBox3.Controls.Add(textBox7);
+            groupBox3.Controls.Add(tb_searchTen);
             groupBox3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox3.Location = new Point(85, 115);
             groupBox3.Name = "groupBox3";
@@ -258,6 +260,14 @@
             groupBox3.TabIndex = 20;
             groupBox3.TabStop = false;
             groupBox3.Text = "Các chức năng";
+            // 
+            // cb_search
+            // 
+            cb_search.FormattingEnabled = true;
+            cb_search.Location = new Point(783, 45);
+            cb_search.Name = "cb_search";
+            cb_search.Size = new Size(180, 29);
+            cb_search.TabIndex = 21;
             // 
             // button4
             // 
@@ -270,22 +280,16 @@
             button4.TabIndex = 20;
             button4.Text = "Lọc";
             button4.UseVisualStyleBackColor = false;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(781, 45);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(210, 29);
-            textBox6.TabIndex = 19;
+            button4.Click += button4_Click;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Location = new Point(781, 24);
             label9.Name = "label9";
-            label9.Size = new Size(123, 21);
+            label9.Size = new Size(86, 21);
             label9.TabIndex = 18;
-            label9.Text = "Mã khách hàng:";
+            label9.Text = "Trạng thái:";
             // 
             // label8
             // 
@@ -309,6 +313,7 @@
             button5.TabIndex = 13;
             button5.Text = "Thêm ";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
@@ -323,6 +328,7 @@
             button6.TabIndex = 14;
             button6.Text = "Sửa";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button7
             // 
@@ -337,16 +343,17 @@
             button7.TabIndex = 15;
             button7.Text = "Xóa";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
-            // textBox7
+            // tb_searchTen
             // 
-            textBox7.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox7.Location = new Point(559, 47);
-            textBox7.Margin = new Padding(3, 2, 3, 2);
-            textBox7.Name = "textBox7";
-            textBox7.PlaceholderText = "Tìm kiếm...";
-            textBox7.Size = new Size(206, 27);
-            textBox7.TabIndex = 16;
+            tb_searchTen.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tb_searchTen.Location = new Point(559, 47);
+            tb_searchTen.Margin = new Padding(3, 2, 3, 2);
+            tb_searchTen.Name = "tb_searchTen";
+            tb_searchTen.PlaceholderText = "Tìm kiếm...";
+            tb_searchTen.Size = new Size(206, 27);
+            tb_searchTen.TabIndex = 16;
             // 
             // label10
             // 
@@ -370,6 +377,7 @@
             Name = "FormKhachHang";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormKhachHang";
+            Load += FormKhachHang_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -382,11 +390,11 @@
 
         #endregion
         private GroupBox groupBox1;
-        private ComboBox comboBox1;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox1;
+        private ComboBox cbb_trangthai;
+        private TextBox tbt_email;
+        private TextBox tbt_sdt;
+        private TextBox tbt_diachi;
+        private TextBox tbt_hovaten;
         private DateTimePicker dateTimePicker1;
         private Label label6;
         private Label label5;
@@ -398,15 +406,15 @@
         private DataGridView dataGridView1;
         private GroupBox groupBox3;
         private Button button4;
-        private TextBox textBox6;
         private Label label9;
         private Label label8;
         private Button button5;
         private Button button6;
         private Button button7;
-        private TextBox textBox7;
-        private TextBox textBox2;
+        private TextBox tb_searchTen;
+        private TextBox tbt_makhachhang;
         private Label label7;
         private Label label10;
+        private ComboBox cb_search;
     }
 }

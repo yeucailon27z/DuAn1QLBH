@@ -3,64 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\duAn1a\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\repositories\\giamgiarepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\giamgiarepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|C:\\Users\\Admin\\Desktop\\duAn1a\\duan1qlbh\\formsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\models\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\models\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|C:\\Users\\Admin\\Desktop\\duAn1a\\duan1qlbh\\formkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formgiamgia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formgiamgia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\models\\giamgium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\models\\giamgium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\models\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\models\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\models\\doanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\models\\doanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|C:\\Users\\Admin\\Desktop\\duAn1a\\duan1qlbh\\formdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|C:\\Users\\Admin\\Desktop\\duAn1a\\duan1qlbh\\formtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|C:\\Users\\Admin\\Desktop\\duAn1a\\duan1qlbh\\formbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|C:\\Users\\Admin\\Desktop\\duAn1a\\duan1qlbh\\formgiamgia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formgiamgia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\repositories\\hdctrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\hdctrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formloaisp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formloaisp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\repositories\\loaihangrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\loaihangrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|C:\\Users\\Admin\\Desktop\\duAn1a\\duan1qlbh\\formloaisp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formloaisp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|C:\\Users\\Admin\\Desktop\\duAn1a\\duan1qlbh\\formsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|C:\\Users\\Admin\\Desktop\\duAn1a\\duan1qlbh\\formhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\models\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\models\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|C:\\Users\\Admin\\Desktop\\duAn1a\\duan1qlbh\\formkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formbanhang.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formbanhang.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\repositories\\hoadonrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -71,36 +75,36 @@
       "RelativeMoniker": "D:0:0:{31057A36-6B35-4029-B83F-5BECB69F3377}|BUS\\BUS.csproj|solutionrelative:bus\\servisces\\hoadonservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{31057A36-6B35-4029-B83F-5BECB69F3377}|BUS\\BUS.csproj|c:\\users\\admin\\desktop\\duan1a\\bus\\servisces\\hdctservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31057A36-6B35-4029-B83F-5BECB69F3377}|BUS\\BUS.csproj|solutionrelative:bus\\servisces\\hdctservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formbanhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\repositories\\sanphamrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\sanphamrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\repositories\\nhanvienrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\nhanvienrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\models\\da1quanlycuahangcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\models\\da1quanlycuahangcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\models\\hoadonchitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\models\\hoadonchitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\duan1a\\dal\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCEEE75F-348E-4D6B-A79A-38139AEB21A9}|DAL\\DAL.csproj|solutionrelative:dal\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|C:\\Users\\Admin\\Desktop\\duAn1a\\duan1qlbh\\formhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{31057A36-6B35-4029-B83F-5BECB69F3377}|BUS\\BUS.csproj|c:\\users\\admin\\desktop\\duan1a\\bus\\servisces\\nhanvienservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31057A36-6B35-4029-B83F-5BECB69F3377}|BUS\\BUS.csproj|solutionrelative:bus\\servisces\\nhanvienservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|c:\\users\\admin\\desktop\\duan1a\\duan1qlbh\\formloaisp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formloaisp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|C:\\Users\\Admin\\Desktop\\duAn1a\\duan1qlbh\\formloaisp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formloaisp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|C:\\Users\\Admin\\Desktop\\duAn1a\\duan1qlbh\\formnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3D745A1-C6D6-4645-A88E-631278A6309E}|DuAn1QLBH\\PRL.csproj|solutionrelative:duan1qlbh\\formnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -110,7 +114,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 292,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -138,301 +142,329 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormSanPham.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormSanPham.cs",
-              "RelativeDocumentMoniker": "DuAn1QLBH\\FormSanPham.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormSanPham.cs",
-              "RelativeToolTip": "DuAn1QLBH\\FormSanPham.cs",
-              "ViewState": "AQIAAN4AAAAAAAAAAAAkwPEAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T13:38:23.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormSanPham.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormSanPham.cs",
-              "RelativeDocumentMoniker": "DuAn1QLBH\\FormSanPham.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormSanPham.cs [Design]",
-              "RelativeToolTip": "DuAn1QLBH\\FormSanPham.cs [Design]",
+              "Title": "NhanVien.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\NhanVien.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\NhanVien.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\NhanVien.cs",
+              "RelativeToolTip": "DAL\\Models\\NhanVien.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T13:38:14.601Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormKhachHang.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormKhachHang.cs",
-              "RelativeDocumentMoniker": "DuAn1QLBH\\FormKhachHang.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormKhachHang.cs [Design]",
-              "RelativeToolTip": "DuAn1QLBH\\FormKhachHang.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T13:38:12.658Z"
+              "WhenOpened": "2024-08-10T07:25:20.941Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
-              "Title": "Da1quanLyCuaHangContext.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\Da1quanLyCuaHangContext.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Da1quanLyCuaHangContext.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\Da1quanLyCuaHangContext.cs",
-              "RelativeToolTip": "DAL\\Models\\Da1quanLyCuaHangContext.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAmwCUAAABaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T19:00:34.192Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "FormBanHang.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormBanHang.cs",
-              "RelativeDocumentMoniker": "DuAn1QLBH\\FormBanHang.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormBanHang.cs [Design]",
-              "RelativeToolTip": "DuAn1QLBH\\FormBanHang.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T08:56:57.752Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "HoaDonRepositories.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\HoaDonRepositories.cs",
-              "RelativeDocumentMoniker": "DAL\\Repositories\\HoaDonRepositories.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\HoaDonRepositories.cs",
-              "RelativeToolTip": "DAL\\Repositories\\HoaDonRepositories.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAjwCYAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T08:47:08.696Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "HoaDonServices.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\BUS\\Servisces\\HoaDonServices.cs",
-              "RelativeDocumentMoniker": "BUS\\Servisces\\HoaDonServices.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\BUS\\Servisces\\HoaDonServices.cs",
-              "RelativeToolTip": "BUS\\Servisces\\HoaDonServices.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAWwDEAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T08:39:19.999Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "KhachHang.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\KhachHang.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\KhachHang.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\KhachHang.cs",
-              "RelativeToolTip": "DAL\\Models\\KhachHang.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T08:28:34.195Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "HoaDon.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\HoaDon.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\HoaDon.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\HoaDon.cs",
-              "RelativeToolTip": "DAL\\Models\\HoaDon.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAwwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T08:28:26.642Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GiamGium.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\GiamGium.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\GiamGium.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\GiamGium.cs",
-              "RelativeToolTip": "DAL\\Models\\GiamGium.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAqwBMAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T08:28:23.881Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DoanhThu.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\DoanhThu.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\DoanhThu.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\DoanhThu.cs",
-              "RelativeToolTip": "DAL\\Models\\DoanhThu.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T08:28:21.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "HoaDonChiTiet.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\HoaDonChiTiet.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\HoaDonChiTiet.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\HoaDonChiTiet.cs",
-              "RelativeToolTip": "DAL\\Models\\HoaDonChiTiet.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAiwA8AAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T08:12:19.865Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "HDCTRepositories.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\HDCTRepositories.cs",
-              "RelativeDocumentMoniker": "DAL\\Repositories\\HDCTRepositories.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\HDCTRepositories.cs",
-              "RelativeToolTip": "DAL\\Repositories\\HDCTRepositories.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAWwBoAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T08:03:05.757Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "HDCTServices.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\BUS\\Servisces\\HDCTServices.cs",
-              "RelativeDocumentMoniker": "BUS\\Servisces\\HDCTServices.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\BUS\\Servisces\\HDCTServices.cs",
-              "RelativeToolTip": "BUS\\Servisces\\HDCTServices.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAjwDEAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T08:01:04.347Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormHoaDon.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormHoaDon.cs",
-              "RelativeDocumentMoniker": "DuAn1QLBH\\FormHoaDon.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormHoaDon.cs",
-              "RelativeToolTip": "DuAn1QLBH\\FormHoaDon.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAIAwwDEAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T07:44:26.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "FormHoaDon.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormHoaDon.cs",
-              "RelativeDocumentMoniker": "DuAn1QLBH\\FormHoaDon.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormHoaDon.cs [Design]",
-              "RelativeToolTip": "DuAn1QLBH\\FormHoaDon.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T07:44:22.556Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "NhanVienServices.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\BUS\\Servisces\\NhanVienServices.cs",
-              "RelativeDocumentMoniker": "BUS\\Servisces\\NhanVienServices.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\BUS\\Servisces\\NhanVienServices.cs",
-              "RelativeToolTip": "BUS\\Servisces\\NhanVienServices.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAqwB4AAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T07:26:59.85Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "NhanVienRepositories.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\NhanVienRepositories.cs",
-              "RelativeDocumentMoniker": "DAL\\Repositories\\NhanVienRepositories.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\NhanVienRepositories.cs",
-              "RelativeToolTip": "DAL\\Repositories\\NhanVienRepositories.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T07:26:56.829Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FormDangNhap.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormDangNhap.cs",
-              "RelativeDocumentMoniker": "DuAn1QLBH\\FormDangNhap.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormDangNhap.cs",
-              "RelativeToolTip": "DuAn1QLBH\\FormDangNhap.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAADgv08AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T07:22:34.158Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "FormDangNhap.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormDangNhap.cs",
-              "RelativeDocumentMoniker": "DuAn1QLBH\\FormDangNhap.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormDangNhap.cs [Design]",
-              "RelativeToolTip": "DuAn1QLBH\\FormDangNhap.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T07:22:32.03Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FormTrangChu.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormTrangChu.cs",
-              "RelativeDocumentMoniker": "DuAn1QLBH\\FormTrangChu.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormTrangChu.cs",
-              "RelativeToolTip": "DuAn1QLBH\\FormTrangChu.cs",
-              "ViewState": "AQIAAIEAAAAAAAAAAAAAAI8AAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T06:54:23.291Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "FormTrangChu.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormTrangChu.cs",
               "RelativeDocumentMoniker": "DuAn1QLBH\\FormTrangChu.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormTrangChu.cs [Design]",
               "RelativeToolTip": "DuAn1QLBH\\FormTrangChu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T06:53:37.155Z"
+              "WhenOpened": "2024-08-10T06:10:13.85Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
+              "Title": "FormBanHang.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormBanHang.Designer.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormBanHang.Designer.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormBanHang.Designer.cs",
+              "RelativeToolTip": "DuAn1QLBH\\FormBanHang.Designer.cs",
+              "ViewState": "AQIAAJYAAAAAAAAAAAArwKQAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T04:24:41.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FormHoaDon.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormHoaDon.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormHoaDon.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormHoaDon.cs",
+              "RelativeToolTip": "DuAn1QLBH\\FormHoaDon.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwCMAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T03:38:23.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GiamGiaRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\GiamGiaRepositories.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\GiamGiaRepositories.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\GiamGiaRepositories.cs",
+              "RelativeToolTip": "DAL\\Repositories\\GiamGiaRepositories.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAUwEYAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T02:29:06.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "FormBanHang.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormBanHang.cs",
               "RelativeDocumentMoniker": "DuAn1QLBH\\FormBanHang.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormBanHang.cs",
               "RelativeToolTip": "DuAn1QLBH\\FormBanHang.cs",
-              "ViewState": "AQIAABQBAAAAAAAAAAAewBwBAAA5AAAA",
+              "ViewState": "AQIAAOcBAAAAAAAAAADgv/sBAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T06:49:18.679Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "FormLoaiSP.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormLoaiSP.cs",
-              "RelativeDocumentMoniker": "DuAn1QLBH\\FormLoaiSP.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormLoaiSP.cs",
-              "RelativeToolTip": "DuAn1QLBH\\FormLoaiSP.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAIwFAAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T11:07:32.251Z",
+              "WhenOpened": "2024-08-10T02:11:09.813Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormBanHang.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormBanHang.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormBanHang.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormBanHang.cs [Design]",
+              "RelativeToolTip": "DuAn1QLBH\\FormBanHang.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T02:11:06.138Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "HoaDonServices.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\BUS\\Servisces\\HoaDonServices.cs",
+              "RelativeDocumentMoniker": "BUS\\Servisces\\HoaDonServices.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\BUS\\Servisces\\HoaDonServices.cs",
+              "RelativeToolTip": "BUS\\Servisces\\HoaDonServices.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAASwC8AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T02:08:55.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "HoaDonRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\HoaDonRepositories.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\HoaDonRepositories.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\HoaDonRepositories.cs",
+              "RelativeToolTip": "DAL\\Repositories\\HoaDonRepositories.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAASwC0AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T02:08:32.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HoaDon.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\HoaDon.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\HoaDon.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\HoaDon.cs",
+              "RelativeToolTip": "DAL\\Models\\HoaDon.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T02:08:05.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FormHoaDon.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormHoaDon.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormHoaDon.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormHoaDon.cs [Design]",
+              "RelativeToolTip": "DuAn1QLBH\\FormHoaDon.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T02:04:49.074Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "NhanVienRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\NhanVienRepositories.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\NhanVienRepositories.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\NhanVienRepositories.cs",
+              "RelativeToolTip": "DAL\\Repositories\\NhanVienRepositories.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T01:51:23.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "FormDangNhap.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormDangNhap.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormDangNhap.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormDangNhap.cs",
+              "RelativeToolTip": "DuAn1QLBH\\FormDangNhap.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAIA9wBUAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T17:56:00.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormGiamGia.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormGiamGia.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormGiamGia.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormGiamGia.cs",
+              "RelativeToolTip": "DuAn1QLBH\\FormGiamGia.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAWwFgAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T17:54:05.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormGiamGia.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormGiamGia.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormGiamGia.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormGiamGia.cs [Design]",
+              "RelativeToolTip": "DuAn1QLBH\\FormGiamGia.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T17:54:01.647Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormKhachHang.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormKhachHang.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormKhachHang.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormKhachHang.cs",
+              "RelativeToolTip": "DuAn1QLBH\\FormKhachHang.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAgwLQAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T17:47:18.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FormKhachHang.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormKhachHang.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormKhachHang.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormKhachHang.cs [Design]",
+              "RelativeToolTip": "DuAn1QLBH\\FormKhachHang.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T17:47:14.447Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 24,
+              "Title": "SanPham.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\SanPham.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\SanPham.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Models\\SanPham.cs",
+              "RelativeToolTip": "DAL\\Models\\SanPham.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T17:19:34.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FormNhaCungCap.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormNhaCungCap.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormNhaCungCap.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormNhaCungCap.cs",
+              "RelativeToolTip": "DuAn1QLBH\\FormNhaCungCap.cs",
+              "ViewState": "AQIAAK0AAAAAAAAAAAAwwL4AAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T16:38:29.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "FormNhaCungCap.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormNhaCungCap.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormNhaCungCap.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormNhaCungCap.cs [Design]",
+              "RelativeToolTip": "DuAn1QLBH\\FormNhaCungCap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T16:38:26.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoaiHangRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\LoaiHangRepositories.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\LoaiHangRepositories.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\LoaiHangRepositories.cs",
+              "RelativeToolTip": "DAL\\Repositories\\LoaiHangRepositories.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAlwDkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T16:04:38.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "FormLoaiSP.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormLoaiSP.cs",
               "RelativeDocumentMoniker": "DuAn1QLBH\\FormLoaiSP.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormLoaiSP.cs [Design]",
               "RelativeToolTip": "DuAn1QLBH\\FormLoaiSP.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T11:06:14.803Z"
+              "WhenOpened": "2024-08-09T15:38:16.424Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormLoaiSP.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormLoaiSP.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormLoaiSP.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormLoaiSP.cs",
+              "RelativeToolTip": "DuAn1QLBH\\FormLoaiSP.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAAAE4AAABpAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T15:33:36.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SanPhamRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\SanPhamRepositories.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\SanPhamRepositories.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DAL\\Repositories\\SanPhamRepositories.cs",
+              "RelativeToolTip": "DAL\\Repositories\\SanPhamRepositories.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAYwDQAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T15:32:56.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FormSanPham.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormSanPham.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormSanPham.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormSanPham.cs",
+              "RelativeToolTip": "DuAn1QLBH\\FormSanPham.cs",
+              "ViewState": "AQIAAJgAAAAAAAAAAAApwKgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T15:20:52.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FormSanPham.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormSanPham.cs",
+              "RelativeDocumentMoniker": "DuAn1QLBH\\FormSanPham.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\FormSanPham.cs [Design]",
+              "RelativeToolTip": "DuAn1QLBH\\FormSanPham.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T15:19:42.047Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

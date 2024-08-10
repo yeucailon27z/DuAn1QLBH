@@ -1,4 +1,5 @@
 ﻿using BUS.Servisces;
+using DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,11 +30,16 @@ namespace PRL
 
         private void FormHoaDon_Load(object sender, EventArgs e)
         {
-            List<string> KHName = khachHangServices.GetKhachHangNames();
-            cbb_TenKH.DataSource = KHName;
-
+            List<KhachHang> KHName = khachHangServices.GetALL();
+            foreach (var item in KHName)
+            {
+                 cbb_TenKH.Items.Add(item.KhachHangId);
+            }
             List<string> NVName = NhanVienServices.GetNhanVienId();
-            cbb_TenNV.DataSource = NVName;
+            foreach (var item in NVName)
+            {
+                cbb_TenNV.Items.Add(item);
+            }
             LoadData();
         }
 
@@ -46,15 +52,17 @@ namespace PRL
                 txt_Ma.Text = row.Cells[1].Value.ToString();
                 dtp_Ngay.Value = DateTime.Parse(row.Cells[2].Value.ToString());
                 txt_MaNV.Text = row.Cells[3].Value.ToString();
+               
                 txt_MaKH.Text = row.Cells[4].Value.ToString();
-                txt_MaGG.Text = row.Cells[5].Value.ToString();
-                txt_TongTien.Text = row.Cells[6].Value.ToString();
-                cbb_httt.Text = row.Cells[7].Value.ToString();
+      
+               txt_MaGG.Text= row.Cells[5].Value.ToString();
+                txt_TongTien.Text = row.Cells[7].Value.ToString();
+                cbb_httt.Text = row.Cells[6].Value.ToString();
                 cbb_TrangThai.SelectedIndex = Convert.ToInt32(row.Cells[8].Value);
 
                 // Assuming txt_Ma holds the HoaDonId (change this if it's a different control)
                 Guid idHD = Guid.Parse(txt_Ma.Text);
-
+                dgv_HDCT.Rows.Clear();
                 int i = 0;
                 var allDatas = HDCTServices.GetHDCTbyIDHD(idHD);
                 dgv_HDCT.ColumnCount = 6;
@@ -106,27 +114,20 @@ namespace PRL
 
         private void btn_Loc_Click(object sender, EventArgs e)
         {
-            // Clear existing rows from the DataGridView
             dgv_HoaDon.Rows.Clear();
-
-            // Get selected values from ComboBoxes
-            string tenkh = cbb_TenKH.Text; // Assuming the text represents the customer's name or ID
-            string tennv = cbb_TenNV.Text; // Assuming the text represents the employee's name or ID
-            int trangthai = cbb_TrangThai.SelectedIndex;
-
-            // Get selected dates from DateTimePickers and convert to DateTime
+            string tenkh = cbb_TenKH.Text;
+            string tennv = cbb_TenNV.Text;
+            byte trangthai = (byte)cbb_TrangThai.SelectedIndex;
             DateTime firstDate = dtp_Fngay.Value;
             DateTime endDate = dtp_Engay.Value;
 
-            // Filter data based on selected criteria
             var searchResults = _services.GetALL().Where(hd =>
                 (trangthai == -1 || hd.TrangThai == trangthai) &&
-                (string.IsNullOrEmpty(tenkh) || hd.KhachHangId == tenkh) && // Ensure this matches your data model
-                (string.IsNullOrEmpty(tennv) || hd.NhanVienId == tennv) &&  // Ensure this matches your data model
-                (hd.NgayLap >= firstDate && hd.NgayLap <= endDate) // Ensure this matches your data model
+                (string.IsNullOrEmpty(tenkh) || hd.KhachHangId == tenkh) &&
+                (string.IsNullOrEmpty(tennv) || hd.NhanVienId == tennv) &&
+                (hd.NgayLap >= firstDate && hd.NgayLap <= endDate)
             ).ToList();
 
-            // Populate DataGridView with filtered results
             int i = 0;
             foreach (var data in searchResults)
             {

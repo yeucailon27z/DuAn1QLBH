@@ -25,11 +25,9 @@ namespace BUS.Servisces
             HoaDon hoaDon = new HoaDon()
             {
                 HoaDonId = idHD,
-                
-                NhanVienId = idNV,KhachHangId = idKH,
+                NhanVienId = idNV, KhachHangId = idKH,
                 NgayLap = DateTime.Now,
                 TongTien = 0,
-                HinhThucThanhToan = "",
                 TrangThai = 1
             };
             if (_repos.Create(hoaDon))
@@ -45,9 +43,9 @@ namespace BUS.Servisces
         {
             return _repos.GetAll().Where(p => p.TrangThai == 1).ToList();
         }
-        public string Update(Guid idHD, byte trangthai, long? totolMoney)
+        public string Update(Guid idHD, byte trangthai, decimal? totolMoney, string? httt, string magg)
         {
-            if (_repos.UpdateHD(idHD, trangthai, totolMoney))
+            if (_repos.UpdateHD(idHD, trangthai, totolMoney,httt,magg))
             {
                 return "Cập nhật đơn hàng thành công";
             }

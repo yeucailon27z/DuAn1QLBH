@@ -36,12 +36,15 @@ namespace DAL.Repositories
                 return false;
             }
         }
-        public bool UpdateHD(Guid id, byte statuc, long? totalMoney)
+        public bool UpdateHD(Guid id, byte statuc, decimal? totalMoney,string?httt,string magg)
         {
             try
             {
                 var hd = _context.HoaDons.Find(id);
                 hd.TrangThai = statuc;
+                hd.HinhThucThanhToan = httt;
+                hd.NgayLap = DateTime.Now;
+                hd.GiamGiaId = magg;
                 if (totalMoney != null)
                 {
                     hd.TongTien = totalMoney;

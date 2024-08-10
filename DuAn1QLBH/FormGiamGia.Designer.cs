@@ -28,49 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgv_BangPhieuGiamGia = new DataGridView();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            comboBox1 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            tb_magg = new TextBox();
+            tb_PhanTrum = new TextBox();
+            tb_mote = new TextBox();
+            cb_tthai = new ComboBox();
+            dtp_nbd = new DateTimePicker();
+            dtp_nkt = new DateTimePicker();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             textBox4 = new TextBox();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
-            textBox5 = new TextBox();
+            tb_max = new TextBox();
+            label12 = new Label();
+            tb_min = new TextBox();
+            tb_tengg = new TextBox();
             label7 = new Label();
+            label11 = new Label();
             groupBox3 = new GroupBox();
             button4 = new Button();
             textBox6 = new TextBox();
             label9 = new Label();
             label8 = new Label();
             label10 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_BangPhieuGiamGia).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgv_BangPhieuGiamGia
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(192, 255, 192);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 27);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(660, 400);
-            dataGridView1.TabIndex = 0;
+            dgv_BangPhieuGiamGia.BackgroundColor = Color.FromArgb(192, 255, 192);
+            dgv_BangPhieuGiamGia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_BangPhieuGiamGia.Location = new Point(6, 27);
+            dgv_BangPhieuGiamGia.Margin = new Padding(3, 2, 3, 2);
+            dgv_BangPhieuGiamGia.Name = "dgv_BangPhieuGiamGia";
+            dgv_BangPhieuGiamGia.RowHeadersWidth = 51;
+            dgv_BangPhieuGiamGia.Size = new Size(660, 400);
+            dgv_BangPhieuGiamGia.TabIndex = 0;
+            dgv_BangPhieuGiamGia.CellClick += dgv_BangPhieuGiamGia_CellClick;
             // 
             // label1
             // 
@@ -116,7 +121,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label5.Location = new Point(16, 259);
+            label5.Location = new Point(16, 336);
             label5.Name = "label5";
             label5.Size = new Size(86, 21);
             label5.TabIndex = 5;
@@ -126,69 +131,70 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label6.Location = new Point(15, 325);
+            label6.Location = new Point(17, 377);
             label6.Name = "label6";
             label6.Size = new Size(57, 21);
             label6.TabIndex = 6;
             label6.Text = "Mô tả:";
             // 
-            // textBox1
+            // tb_magg
             // 
-            textBox1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            textBox1.Location = new Point(149, 47);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(296, 27);
-            textBox1.TabIndex = 7;
+            tb_magg.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            tb_magg.Location = new Point(149, 47);
+            tb_magg.Margin = new Padding(3, 2, 3, 2);
+            tb_magg.Name = "tb_magg";
+            tb_magg.Size = new Size(296, 27);
+            tb_magg.TabIndex = 7;
             // 
-            // textBox2
+            // tb_PhanTrum
             // 
-            textBox2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            textBox2.Location = new Point(149, 134);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(296, 27);
-            textBox2.TabIndex = 8;
+            tb_PhanTrum.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            tb_PhanTrum.Location = new Point(149, 134);
+            tb_PhanTrum.Margin = new Padding(3, 2, 3, 2);
+            tb_PhanTrum.Name = "tb_PhanTrum";
+            tb_PhanTrum.Size = new Size(296, 27);
+            tb_PhanTrum.TabIndex = 8;
             // 
-            // textBox3
+            // tb_mote
             // 
-            textBox3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            textBox3.Location = new Point(149, 298);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(296, 90);
-            textBox3.TabIndex = 9;
+            tb_mote.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            tb_mote.Location = new Point(149, 372);
+            tb_mote.Margin = new Padding(3, 2, 3, 2);
+            tb_mote.Multiline = true;
+            tb_mote.Name = "tb_mote";
+            tb_mote.Size = new Size(296, 55);
+            tb_mote.TabIndex = 9;
             // 
-            // comboBox1
+            // cb_tthai
             // 
-            comboBox1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(149, 258);
-            comboBox1.Margin = new Padding(3, 2, 3, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(296, 27);
-            comboBox1.TabIndex = 10;
+            cb_tthai.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            cb_tthai.FormattingEnabled = true;
+            cb_tthai.Items.AddRange(new object[] { "Không hoạt động", "Hoạt động" });
+            cb_tthai.Location = new Point(149, 335);
+            cb_tthai.Margin = new Padding(3, 2, 3, 2);
+            cb_tthai.Name = "cb_tthai";
+            cb_tthai.Size = new Size(296, 27);
+            cb_tthai.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // dtp_nbd
             // 
-            dateTimePicker1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(149, 176);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(296, 27);
-            dateTimePicker1.TabIndex = 11;
+            dtp_nbd.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            dtp_nbd.Format = DateTimePickerFormat.Short;
+            dtp_nbd.Location = new Point(149, 176);
+            dtp_nbd.Margin = new Padding(3, 2, 3, 2);
+            dtp_nbd.Name = "dtp_nbd";
+            dtp_nbd.Size = new Size(296, 27);
+            dtp_nbd.TabIndex = 11;
             // 
-            // dateTimePicker2
+            // dtp_nkt
             // 
-            dateTimePicker2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(149, 217);
-            dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(296, 27);
-            dateTimePicker2.TabIndex = 12;
+            dtp_nkt.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            dtp_nkt.Format = DateTimePickerFormat.Short;
+            dtp_nkt.Location = new Point(149, 217);
+            dtp_nkt.Margin = new Padding(3, 2, 3, 2);
+            dtp_nkt.Name = "dtp_nkt";
+            dtp_nkt.Size = new Size(296, 27);
+            dtp_nkt.TabIndex = 12;
             // 
             // button1
             // 
@@ -203,6 +209,7 @@
             button1.TabIndex = 13;
             button1.Text = "Thêm ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -217,6 +224,7 @@
             button2.TabIndex = 14;
             button2.Text = "Sửa";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -244,7 +252,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(dataGridView1);
+            groupBox1.Controls.Add(dgv_BangPhieuGiamGia);
             groupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(575, 205);
             groupBox1.Name = "groupBox1";
@@ -255,17 +263,21 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox5);
-            groupBox2.Controls.Add(textBox1);
+            groupBox2.Controls.Add(tb_max);
+            groupBox2.Controls.Add(label12);
+            groupBox2.Controls.Add(tb_min);
+            groupBox2.Controls.Add(tb_tengg);
+            groupBox2.Controls.Add(tb_magg);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(label1);
-            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(tb_PhanTrum);
             groupBox2.Controls.Add(label2);
-            groupBox2.Controls.Add(textBox3);
+            groupBox2.Controls.Add(tb_mote);
             groupBox2.Controls.Add(label6);
-            groupBox2.Controls.Add(comboBox1);
-            groupBox2.Controls.Add(dateTimePicker2);
-            groupBox2.Controls.Add(dateTimePicker1);
+            groupBox2.Controls.Add(cb_tthai);
+            groupBox2.Controls.Add(dtp_nkt);
+            groupBox2.Controls.Add(dtp_nbd);
+            groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label4);
@@ -277,12 +289,36 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Chi tiết phiếu giảm giá";
             // 
-            // textBox5
+            // tb_max
             // 
-            textBox5.Location = new Point(149, 90);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(296, 29);
-            textBox5.TabIndex = 8;
+            tb_max.Location = new Point(149, 293);
+            tb_max.Name = "tb_max";
+            tb_max.Size = new Size(296, 29);
+            tb_max.TabIndex = 16;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            label12.Location = new Point(17, 296);
+            label12.Name = "label12";
+            label12.Size = new Size(80, 21);
+            label12.TabIndex = 15;
+            label12.Text = "Tiền Max:";
+            // 
+            // tb_min
+            // 
+            tb_min.Location = new Point(149, 255);
+            tb_min.Name = "tb_min";
+            tb_min.Size = new Size(296, 29);
+            tb_min.TabIndex = 14;
+            // 
+            // tb_tengg
+            // 
+            tb_tengg.Location = new Point(149, 90);
+            tb_tengg.Name = "tb_tengg";
+            tb_tengg.Size = new Size(296, 29);
+            tb_tengg.TabIndex = 8;
             // 
             // label7
             // 
@@ -293,6 +329,16 @@
             label7.Size = new Size(105, 21);
             label7.TabIndex = 1;
             label7.Text = "Tên giảm giá:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            label11.Location = new Point(17, 258);
+            label11.Name = "label11";
+            label11.Size = new Size(77, 21);
+            label11.TabIndex = 5;
+            label11.Text = "Tiền Min:";
             // 
             // groupBox3
             // 
@@ -371,7 +417,8 @@
             Name = "FormGiamGia";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormGiamGia";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += FormGiamGia_Load;
+            ((System.ComponentModel.ISupportInitialize)dgv_BangPhieuGiamGia).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
@@ -383,26 +430,26 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgv_BangPhieuGiamGia;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private ComboBox comboBox1;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private TextBox tb_magg;
+        private TextBox tb_PhanTrum;
+        private TextBox tb_mote;
+        private ComboBox cb_tthai;
+        private DateTimePicker dtp_nbd;
+        private DateTimePicker dtp_nkt;
         private Button button1;
         private Button button2;
         private Button button3;
         private TextBox textBox4;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private TextBox textBox5;
+        private TextBox tb_tengg;
         private Label label7;
         private GroupBox groupBox3;
         private Label label9;
@@ -410,5 +457,9 @@
         private Button button4;
         private TextBox textBox6;
         private Label label10;
+        private TextBox tb_min;
+        private Label label11;
+        private TextBox tb_max;
+        private Label label12;
     }
 }

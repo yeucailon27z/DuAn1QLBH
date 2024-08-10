@@ -19,8 +19,7 @@ namespace DuAn1QLBH
 
         private void lblDangKi_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FormDangKy f = new FormDangKy();
-            f.ShowDialog();
+          
         }
 
         private void btn_DangNhap_Click(object sender, EventArgs e)

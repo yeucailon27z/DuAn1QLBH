@@ -44,11 +44,9 @@
             dgv_HDCT = new DataGridView();
             button2 = new Button();
             groupBox3 = new GroupBox();
-            btn_Sua = new Button();
             lbl_ttsp = new Label();
             label13 = new Label();
             button5 = new Button();
-            btn_Xoa = new Button();
             txt_TienThua = new TextBox();
             txt_TienKhach = new TextBox();
             lbl_tthd = new Label();
@@ -164,6 +162,7 @@
             cbb_MaKH.Name = "cbb_MaKH";
             cbb_MaKH.Size = new Size(162, 29);
             cbb_MaKH.TabIndex = 2;
+            cbb_MaKH.Text = " ";
             // 
             // btn_TaoHoaDon
             // 
@@ -230,11 +229,9 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(btn_Sua);
             groupBox3.Controls.Add(lbl_ttsp);
             groupBox3.Controls.Add(label13);
             groupBox3.Controls.Add(button5);
-            groupBox3.Controls.Add(btn_Xoa);
             groupBox3.Controls.Add(txt_TienThua);
             groupBox3.Controls.Add(txt_TienKhach);
             groupBox3.Controls.Add(lbl_tthd);
@@ -252,19 +249,6 @@
             groupBox3.TabIndex = 17;
             groupBox3.TabStop = false;
             groupBox3.Text = "Tổng hợp";
-            // 
-            // btn_Sua
-            // 
-            btn_Sua.BackColor = Color.FromArgb(255, 128, 128);
-            btn_Sua.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btn_Sua.Image = Properties.Resources.Edit;
-            btn_Sua.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Sua.Location = new Point(150, 249);
-            btn_Sua.Name = "btn_Sua";
-            btn_Sua.Size = new Size(125, 36);
-            btn_Sua.TabIndex = 35;
-            btn_Sua.Text = "Sửa";
-            btn_Sua.UseVisualStyleBackColor = false;
             // 
             // lbl_ttsp
             // 
@@ -297,20 +281,7 @@
             button5.TabIndex = 32;
             button5.Text = "    Thanh toán";
             button5.UseVisualStyleBackColor = false;
-            // 
-            // btn_Xoa
-            // 
-            btn_Xoa.BackColor = Color.FromArgb(255, 128, 128);
-            btn_Xoa.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btn_Xoa.Image = (Image)resources.GetObject("btn_Xoa.Image");
-            btn_Xoa.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_Xoa.Location = new Point(8, 249);
-            btn_Xoa.Margin = new Padding(3, 2, 3, 2);
-            btn_Xoa.Name = "btn_Xoa";
-            btn_Xoa.Size = new Size(125, 36);
-            btn_Xoa.TabIndex = 31;
-            btn_Xoa.Text = "Xóa";
-            btn_Xoa.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // txt_TienThua
             // 
@@ -406,6 +377,7 @@
             cbb_Voucher.Name = "cbb_Voucher";
             cbb_Voucher.Size = new Size(299, 29);
             cbb_Voucher.TabIndex = 22;
+            cbb_Voucher.SelectedIndexChanged += cbb_Voucher_SelectedIndexChanged;
             // 
             // label5
             // 
@@ -528,7 +500,6 @@
         private Button button2;
         private GroupBox groupBox3;
         private Button button5;
-        private Button btn_Xoa;
         private TextBox txt_TienThua;
         private TextBox txt_TienKhach;
         private Label lbl_tthd;
@@ -548,7 +519,6 @@
         private Label lbl_ttsp;
         private Label label13;
         private ComboBox cbb_LoaiHang;
-        private Button btn_Sua;
         private Label lbl_MaHD;
         private Label label1;
         private ComboBox cbb_MaKH;

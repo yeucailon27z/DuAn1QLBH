@@ -196,11 +196,10 @@ public partial class Da1quanLyCuaHangContext : DbContext
             entity.Property(e => e.NhanVienId)
                 .HasMaxLength(50)
                 .HasColumnName("NhanVienID");
-            entity.Property(e => e.DiaChi).HasMaxLength(100);
             entity.Property(e => e.DienThoai)
                 .HasMaxLength(15)
                 .IsUnicode(false);
-            entity.Property(e => e.Email)
+            entity.Property(e => e.ChucVu)
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.HoTen).HasMaxLength(50);

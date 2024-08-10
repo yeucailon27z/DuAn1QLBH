@@ -46,8 +46,8 @@ namespace PRL
             List<string> NCCName = _servicesNCC.GetMaNCC();
             cbb_NCC.DataSource = NCCName;
 
-            
-            cbb_Loai.DataSource = loaiHangName;
+            List<string> loaiHangNames = _servicesLH.GetLoaiHangIDs();
+            cbb_Loai.DataSource = loaiHangNames;
             LoadData();
             ptb_SanPham.SizeMode = PictureBoxSizeMode.StretchImage;
         }
@@ -80,10 +80,18 @@ namespace PRL
                     Anh = anh,
                     TrangThai = trangthai
                 };
-
-                MessageBox.Show(_service.Create(sp));
-                LoadData();
+                DialogResult result = MessageBox.Show("Bạn chắc chắn muốn thêm không", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    MessageBox.Show(_service.Create(sp));
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm đã bị hủy");
+                }
             }
+
             catch (FormatException ex)
             {
                 MessageBox.Show($"Dữ liệu đầu vào không hợp lệ: {ex.Message}");
@@ -173,25 +181,35 @@ namespace PRL
                 string mota = txt_Mota.Text;
                 string loai = cbb_LoaiSP.Text;
                 string ncc = cbb_NCC.Text;
-                DateOnly ngay = DateOnly.FromDateTime(dtp_Ngay.Value);
+                DateOnly ngay = DateOnly.FromDateTime(DateTime.Now);
                 string anh = ptb_SanPham.ImageLocation;
                 byte trangthai = (byte)cbb_TrangThai.SelectedIndex;
+                    SanPham sp = new SanPham()
+                    {
+                        SanPhamId = ma,
+                        TenSanPham = ten,
+                        Gia = gia,
+                        SoLuong = soluong,
+                        MoTa = mota,
+                        LoaiSanPhamId = loai,
+                        MaNhaCungCap = ncc,
+                        NgayCapNhat = ngay,
+                        Anh = anh,
+                        TrangThai = trangthai
+                    };
+                    DialogResult result = MessageBox.Show("Bạn chắc chắn muốn sửa không", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        MessageBox.Show(_service.Updatee(sp, ma));
+                        LoadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa đã bị hủy", "Thông báo");
+                    }
+                
 
-                SanPham sp = new SanPham()
-                {
-                    SanPhamId = ma,
-                    TenSanPham = ten,
-                    Gia = gia,
-                    SoLuong = soluong,
-                    MoTa = mota,
-                    LoaiSanPhamId = loai,
-                    MaNhaCungCap = ncc,
-                    NgayCapNhat = ngay,
-                    Anh = anh,
-                    TrangThai = trangthai
-                };
-                MessageBox.Show(_service.Updatee(sp, ma));
-                LoadData();
+
             }
             catch (FormatException ex)
             {
@@ -220,37 +238,50 @@ namespace PRL
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            // Clear the DataGridView control
-            dgv_SanPham.Rows.Clear();
+            
 
-            // Get the selected index of the combo box for TrangThai
             int trangthai = cbb_tt.SelectedIndex;
 
-            // Get the search text, converted to lower case for case-insensitive comparison
             string ten = txt_Search.Text.ToLower();
 
-            // Get the selected text from the combo box for Loai
             string loai = cbb_Loai.Text;
 
-            // Retrieve and filter the data
             var searchResults = _service.GetALL()
                 .Where(sp => (trangthai == -1 || sp.TrangThai == trangthai) &&
                              (string.IsNullOrEmpty(ten) || sp.TenSanPham.ToLower().Contains(ten)) &&
-                             (string.IsNullOrEmpty(loai) || sp.LoaiSanPhamId==loai))
+                             (string.IsNullOrEmpty(loai) || sp.LoaiSanPhamId == loai))
                 .ToList();
-
-            // Initialize a counter
+            if (searchResults.Count < 1)
+            {
+                MessageBox.Show("Không tìm thấy sản phẩm có Tên: " + ten + " Loại: " + loai + " Trạng thái: " + cbb_tt.Text);
+              
+            }
+            dgv_SanPham.Rows.Clear();
             int i = 0;
-
-            // Iterate through the filtered results and add them to the DataGridView
             foreach (var data in searchResults)
             {
                 i++;
-                dgv_SanPham.Rows.Add(i, data.SanPhamId, data.TenSanPham, data.LoaiSanPhamId, data.MaNhaCungCap, data.Gia, data.SoLuong, data.Anh, data.MoTa, data.NgayCapNhat, data.TrangThai);
+                int rowIndex = dgv_SanPham.Rows.Add(i, data.SanPhamId, data.TenSanPham, data.LoaiSanPhamId, data.MaNhaCungCap, data.Gia, data.SoLuong, data.Anh, data.MoTa, data.NgayCapNhat, data.TrangThai);
+                if (data.SoLuong > 0 && data.SoLuong <= 20)
+                {
+                    dgv_SanPham.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
+                }
+                else if (data.SoLuong > 20 && data.SoLuong <= 40)
+                {
+                    dgv_SanPham.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Orange;
+                }
+                else if (data.SoLuong > 40 && data.SoLuong <= 60)
+                {
+                    dgv_SanPham.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Yellow;
+                }
+                else if (data.SoLuong > 60)
+                {
+                    dgv_SanPham.Rows[rowIndex].DefaultCellStyle.BackColor = Color.White;
+                }
             }
 
             cbb_Loai.Text = "";
-            cbb_LoaiSP.Text = "";
+            cbb_tt.Text = "";
             txt_Search.Text = "";
         }
     }

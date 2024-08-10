@@ -91,7 +91,7 @@
             tool_BanHang.Name = "tool_BanHang";
             tool_BanHang.Padding = new Padding(0, 20, 0, 10);
             tool_BanHang.Size = new Size(240, 77);
-            tool_BanHang.Text = "Bán Hàng";
+            tool_BanHang.Text = "Bán Hàng        ";
             tool_BanHang.Click += tool_BanHang_Click;
             // 
             // sảnPhẩmToolStripMenuItem
@@ -102,7 +102,7 @@
             sảnPhẩmToolStripMenuItem.Name = "sảnPhẩmToolStripMenuItem";
             sảnPhẩmToolStripMenuItem.Padding = new Padding(0, 20, 0, 10);
             sảnPhẩmToolStripMenuItem.Size = new Size(240, 74);
-            sảnPhẩmToolStripMenuItem.Text = "Sản Phẩm";
+            sảnPhẩmToolStripMenuItem.Text = "Sản Phẩm      ";
             sảnPhẩmToolStripMenuItem.Click += sảnPhẩmToolStripMenuItem_Click;
             // 
             // hóaĐơnToolStripMenuItem
@@ -113,7 +113,7 @@
             hóaĐơnToolStripMenuItem.Name = "hóaĐơnToolStripMenuItem";
             hóaĐơnToolStripMenuItem.Padding = new Padding(0, 20, 0, 10);
             hóaĐơnToolStripMenuItem.Size = new Size(240, 76);
-            hóaĐơnToolStripMenuItem.Text = "Hóa Đơn";
+            hóaĐơnToolStripMenuItem.Text = "Hóa Đơn        ";
             hóaĐơnToolStripMenuItem.Click += hóaĐơnToolStripMenuItem_Click;
             // 
             // nhàToolStripMenuItem
@@ -135,7 +135,7 @@
             loạiHàngToolStripMenuItem.Name = "loạiHàngToolStripMenuItem";
             loạiHàngToolStripMenuItem.Padding = new Padding(0, 20, 0, 10);
             loạiHàngToolStripMenuItem.Size = new Size(240, 74);
-            loạiHàngToolStripMenuItem.Text = "Loại Hàng";
+            loạiHàngToolStripMenuItem.Text = "Loại Hàng      ";
             loạiHàngToolStripMenuItem.Click += loạiHàngToolStripMenuItem_Click;
             // 
             // giảmGiáToolStripMenuItem
@@ -146,7 +146,7 @@
             giảmGiáToolStripMenuItem.Name = "giảmGiáToolStripMenuItem";
             giảmGiáToolStripMenuItem.Padding = new Padding(0, 20, 0, 10);
             giảmGiáToolStripMenuItem.Size = new Size(240, 74);
-            giảmGiáToolStripMenuItem.Text = "Giảm Giá";
+            giảmGiáToolStripMenuItem.Text = "Giảm Giá      ";
             giảmGiáToolStripMenuItem.Click += giảmGiáToolStripMenuItem_Click;
             // 
             // kháchHàngToolStripMenuItem

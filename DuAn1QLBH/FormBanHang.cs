@@ -1,4 +1,5 @@
-﻿using BUS.Servisces;
+﻿using Azure.Core.Pipeline;
+using BUS.Servisces;
 using DAL.Models;
 using DAL.Repositories;
 using System;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PRL
 {
@@ -27,6 +29,7 @@ namespace PRL
         List<SanPham> sanPhams;
         List<SanPham> sp;
         HoaDonServices _HDservices;
+        List<GiamGium> activeSale;
         public Guid currentBillId = Guid.Empty;
         public FormBanHang(string idNVs)
         {
@@ -49,11 +52,26 @@ namespace PRL
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string tenKH = "";
+            string maKH = "";
             Guid newGuid = Guid.NewGuid();
-            currentBillId = newGuid;
-            lbl_MaHD.Text = currentBillId.ToString();
-            MessageBox.Show(_HDservices.Creates(currentBillId, idNVz, "KH001"));
-            LoadDataHD();
+            if (cbb_MaKH.Text == "")
+            {
+                MessageBox.Show("Hãy chọn tên khách hàng", "Thông báo");
+            }
+            {
+                tenKH = cbb_MaKH.Text;
+                maKH = _servicesKH.GetALL()
+  .Where(p => p.HoTen == tenKH)
+  .Select(p => p.KhachHangId)
+  .FirstOrDefault() ?? "";
+                currentBillId = newGuid;
+                lbl_MaHD.Text = currentBillId.ToString();
+                MessageBox.Show(_HDservices.Creates(currentBillId, idNVz, maKH));
+                LoadDataHD();
+            }
+            
+            
         }
 
 
@@ -63,16 +81,32 @@ namespace PRL
             List<string> loaiHangName = _servicesLH.GetLoaiHangIDs();
             cbb_LoaiHang.DataSource = loaiHangName;
 
-            List<string> maGiamGia = _servicesGG.GetMaGG();
-            cbb_Voucher.DataSource = maGiamGia;
-            List<string> maKH = _servicesKH.GetKhachHangNames();
-            cbb_MaKH.DataSource = maKH;
+
+
+            string tenKH = cbb_MaKH.Text;
+            if (!string.IsNullOrEmpty(tenKH))
+            {
+                List<string> nameKH = _servicesKH.GetALL()
+                    .Where(kh => kh.HoTen.Contains(tenKH))
+                    .Select(kh => kh.HoTen)
+                    .ToList();
+                foreach (var item in nameKH)
+                {
+                    cbb_MaKH.Items.Add(item);
+                }
+            }
+            else
+            {
+                cbb_MaKH.DataSource = null;
+            }
             LoadSPPanel(1);
             LoadDataHD();
             timer1.Start();
         }
         public void LoadSPPanel(int page)
         {
+            SanPhamRepositories repositories = new SanPhamRepositories();
+            List<SanPham> sanPhams = repositories.GetAll();
             tableLayoutPanel1.Controls.Clear();
             tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
             int numberOfPage = (int)Math.Ceiling((decimal)sanPhams.Count / 4);
@@ -105,8 +139,7 @@ namespace PRL
 
             }
         }
-        public Panel CreatePanelSP(SanPham sp)//Mỗi sản phẩm được tạo ra và nằm trong 1 panel,
-                                              //panel này sẽ được thêm vào tablelayoutpanel//phương thức này trả về 1 panel
+        public Panel CreatePanelSP(SanPham sp)//Mỗi sản phẩm được tạo ra và nằm trong 1 panel,                                         //panel này sẽ được thêm vào tablelayoutpanel//phương thức này trả về 1 panel
         {
             Panel p = new Panel();
             p.Name = sp.SanPhamId.ToString();
@@ -118,8 +151,8 @@ namespace PRL
             pn.Size = new Size(260, 240);
             pn.BorderStyle = BorderStyle.Fixed3D;
             ptb.Size = new Size(260, 240);
-            
-            
+
+
             ptb.Image = Image.FromFile(sp.Anh);
             ptb.SizeMode = PictureBoxSizeMode.StretchImage;
             ptb.Location = new Point(3, 3);
@@ -278,15 +311,16 @@ namespace PRL
                     int Soluong = soluongmua;
                     decimal Gia = giaban;
                     byte trangthai = 1;
-                    MessageBox.Show( _HDCTservices.CheckSPinHD(idSP, idHD, Soluong));
-                    LoadSPPanel(1);
+                    MessageBox.Show(_HDCTservices.CheckSPinHD(idSP, idHD, Soluong));
+                    string httt = cbb_PTTT.Text;
                     dgv_HDCT.DataSource = null;
                     HDCTRepositories hDCTRepos = new HDCTRepositories();
                     var allHDCT = hDCTRepos.GetHDCTbyIDHD(currentBillId);
                     dgv_HDCT.DataSource = allHDCT;
                     long money = _HDCTservices.Caculator(currentBillId);
                     _HDservices = new HoaDonServices();
-                    MessageBox.Show(_HDservices.Update(currentBillId, 1, money));
+                    MessageBox.Show(_HDservices.Update(currentBillId, 1, money,"Chưa có","GG000"));
+                    LoadSPPanel(1);
                     LoadDataHD();
                 }
             }
@@ -297,7 +331,7 @@ namespace PRL
 
 
         }
-      
+
 
         private void lbl_Phai_Click(object sender, EventArgs e)
         {
@@ -394,20 +428,26 @@ namespace PRL
 
         private void dgv_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-           currentBillId = Guid.Parse(dgv_HoaDon.Rows[e.RowIndex].Cells[1].Value.ToString());
+
+            currentBillId = Guid.Parse(dgv_HoaDon.Rows[e.RowIndex].Cells[1].Value.ToString());
             lbl_MaHD.Text = currentBillId.ToString();
-            decimal ttsp = 0;
+
             int i = 0;
             var allDatas = _HDCTservices.GetHDCTbyIDHD(currentBillId);
-           
+
             dgv_HDCT.DataSource = allDatas;
-            decimal tthd = Convert.ToDecimal(dgv_HoaDon.Rows[e.RowIndex].Cells[7].Value.ToString());
-            lbl_tthd.Text = tthd.ToString();
+            decimal ttsp = Convert.ToDecimal(dgv_HoaDon.Rows[e.RowIndex].Cells[7].Value.ToString());
             lbl_ttsp.Text = ttsp.ToString();
-            cbb_PTTT.Text = dgv_HoaDon.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+            //cbb_PTTT.Text = dgv_HoaDon.Rows[e.RowIndex].Cells[6].Value.ToString();
             //cbb_Voucher.Text = dgv_HoaDon.Rows[e.RowIndex].Cells[5].Value.ToString();
             cbb_MaKH.Text = dgv_HoaDon.Rows[e.RowIndex].Cells[3].Value.ToString();
+            activeSale = _servicesGG.GetAll().Where(p => p.TienMin <= Convert.ToDecimal(lbl_ttsp.Text)).ToList();
+            cbb_Voucher.Items.Clear();
+            foreach (var item in activeSale)
+            {
+                cbb_Voucher.Items.Add(item.MaGiamGia);
+            }
         }
 
         private void txt_TienKhach_TextChanged(object sender, EventArgs e)
@@ -443,11 +483,48 @@ namespace PRL
             decimal tthd = Convert.ToDecimal(lbl_tthd.Text);
             txt_TienThua.Text = (tienkhach - tthd).ToString();
         }
-       
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (currentBillId != null)
+            {
+                string magg = _servicesGG.GetAll()
+    .Where(p => p.MaGiamGia == cbb_Voucher.Text)
+    .Select(p => p.GiamGiaId)
+    .FirstOrDefault() ?? "";
+                decimal giagg = 0;
+                if (!string.IsNullOrEmpty(lbl_tthd.Text))
+                {
+                    giagg = decimal.Parse(lbl_tthd.Text);
+                }
+
+                string httt = cbb_PTTT.Text;
+                _HDservices.Update(currentBillId, 0, giagg, httt, magg);
+                MessageBox.Show("Thanh toán thành công");
+
+                LoadDataHD(); dgv_HDCT.DataSource = null;
+            }
+        }
+
+        private void cbb_Voucher_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            decimal discountPercentage = 0;
+            if (!string.IsNullOrEmpty(cbb_Voucher.Text))
+            {
+                discountPercentage = Convert.ToDecimal(_servicesGG.GetAll()
+                    .Where(p => p.MaGiamGia == cbb_Voucher.Text)
+                    .Select(p => p.PhanTramGiam)
+                    .FirstOrDefault());
+            }
+            decimal tthd;
+            tthd = Math.Round(Convert.ToDecimal(lbl_ttsp.Text) - (Convert.ToDecimal(lbl_ttsp.Text) * (discountPercentage / 100)), 2);
+            lbl_tthd.Text = tthd.ToString();
         }
     }
 }

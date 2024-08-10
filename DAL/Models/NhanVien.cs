@@ -13,13 +13,9 @@ public partial class NhanVien
 
     public string? HoTen { get; set; }
 
-    public DateOnly? NgaySinh { get; set; }
-
-    public string? DiaChi { get; set; }
-
     public string? DienThoai { get; set; }
 
-    public string? Email { get; set; }
+    public byte? ChucVu { get; set; }
 
     public byte? TrangThai { get; set; }
 

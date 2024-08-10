@@ -139,7 +139,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Chưa thanh toán", "Đã thanh toán", "Quá hạn", "Đã hủy" });
+            comboBox1.Items.AddRange(new object[] { "Đã thanh toán", "Chưa thanh toán", "Quá hạn", "Đã hủy" });
             comboBox1.Location = new Point(920, 49);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(201, 29);
@@ -253,8 +253,8 @@
             // cbb_TrangThai
             // 
             cbb_TrangThai.FormattingEnabled = true;
-            cbb_TrangThai.Items.AddRange(new object[] { "Chưa thanh toán", "Đã thanh toán", "Quá hạn", "Đã hủy" });
-            cbb_TrangThai.Location = new Point(128, 325);
+            cbb_TrangThai.Items.AddRange(new object[] { "Đã thanh toán", "Chưa thanh toán", "Quá hạn", "Đã hủy" });
+            cbb_TrangThai.Location = new Point(127, 328);
             cbb_TrangThai.Name = "cbb_TrangThai";
             cbb_TrangThai.Size = new Size(202, 29);
             cbb_TrangThai.TabIndex = 14;

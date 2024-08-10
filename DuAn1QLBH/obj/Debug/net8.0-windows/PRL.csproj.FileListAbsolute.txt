@@ -243,7 +243,6 @@ C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\bin\Debug\net8.0-windows\BUS.pdb
 C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\bin\Debug\net8.0-windows\DAL.pdb
 C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\obj\Debug\net8.0-windows\PRL.csproj.AssemblyReference.cache
 C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\obj\Debug\net8.0-windows\PRL.FormBanHang.resources
-C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\obj\Debug\net8.0-windows\PRL.FormDangKy.resources
 C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\obj\Debug\net8.0-windows\DuAn1QLBH.FormDangNhap.resources
 C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\obj\Debug\net8.0-windows\PRL.FormGiamGia.resources
 C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\obj\Debug\net8.0-windows\PRL.FormHoaDon.resources

@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             groupBox3 = new GroupBox();
-            button4 = new Button();
+            cb_trangThai = new ComboBox();
+            btn_Search = new Button();
             label9 = new Label();
             label8 = new Label();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
+            btn_Them = new Button();
+            btn_Sua = new Button();
+            btn_Xoa = new Button();
             txt_TenloaiSearch = new TextBox();
             groupBox2 = new GroupBox();
             dgv_LoaiSP = new DataGridView();
@@ -48,7 +49,6 @@
             label7 = new Label();
             label14 = new Label();
             label2 = new Label();
-            cb_trangThai = new ComboBox();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_LoaiSP).BeginInit();
@@ -58,12 +58,12 @@
             // groupBox3
             // 
             groupBox3.Controls.Add(cb_trangThai);
-            groupBox3.Controls.Add(button4);
+            groupBox3.Controls.Add(btn_Search);
             groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(label8);
-            groupBox3.Controls.Add(button5);
-            groupBox3.Controls.Add(button6);
-            groupBox3.Controls.Add(button7);
+            groupBox3.Controls.Add(btn_Them);
+            groupBox3.Controls.Add(btn_Sua);
+            groupBox3.Controls.Add(btn_Xoa);
             groupBox3.Controls.Add(txt_TenloaiSearch);
             groupBox3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox3.Location = new Point(73, 144);
@@ -73,17 +73,27 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Các chức năng";
             // 
-            // button4
+            // cb_trangThai
             // 
-            button4.BackColor = Color.Yellow;
-            button4.Image = Properties.Resources.Search;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(1014, 32);
-            button4.Name = "button4";
-            button4.Size = new Size(140, 42);
-            button4.TabIndex = 20;
-            button4.Text = "Lọc";
-            button4.UseVisualStyleBackColor = false;
+            cb_trangThai.FormattingEnabled = true;
+            cb_trangThai.Items.AddRange(new object[] { "Ngưng hoạt động", "Hoạt động" });
+            cb_trangThai.Location = new Point(781, 45);
+            cb_trangThai.Name = "cb_trangThai";
+            cb_trangThai.Size = new Size(191, 29);
+            cb_trangThai.TabIndex = 21;
+            // 
+            // btn_Search
+            // 
+            btn_Search.BackColor = Color.Yellow;
+            btn_Search.Image = Properties.Resources.Search;
+            btn_Search.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_Search.Location = new Point(1014, 32);
+            btn_Search.Name = "btn_Search";
+            btn_Search.Size = new Size(140, 42);
+            btn_Search.TabIndex = 20;
+            btn_Search.Text = "Lọc";
+            btn_Search.UseVisualStyleBackColor = false;
+            btn_Search.Click += btn_Search_Click_1;
             // 
             // label9
             // 
@@ -103,47 +113,50 @@
             label8.TabIndex = 17;
             label8.Text = "Tên loại:";
             // 
-            // button5
+            // btn_Them
             // 
-            button5.BackColor = Color.Fuchsia;
-            button5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            button5.Image = Properties.Resources.Add;
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(38, 32);
-            button5.Margin = new Padding(3, 2, 3, 2);
-            button5.Name = "button5";
-            button5.Size = new Size(140, 42);
-            button5.TabIndex = 13;
-            button5.Text = "Thêm ";
-            button5.UseVisualStyleBackColor = false;
+            btn_Them.BackColor = Color.Fuchsia;
+            btn_Them.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btn_Them.Image = Properties.Resources.Add;
+            btn_Them.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_Them.Location = new Point(38, 32);
+            btn_Them.Margin = new Padding(3, 2, 3, 2);
+            btn_Them.Name = "btn_Them";
+            btn_Them.Size = new Size(140, 42);
+            btn_Them.TabIndex = 13;
+            btn_Them.Text = "Thêm ";
+            btn_Them.UseVisualStyleBackColor = false;
+            btn_Them.Click += btn_Them_Click_1;
             // 
-            // button6
+            // btn_Sua
             // 
-            button6.BackColor = Color.Fuchsia;
-            button6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            button6.Image = Properties.Resources.Edit;
-            button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(210, 32);
-            button6.Margin = new Padding(3, 2, 3, 2);
-            button6.Name = "button6";
-            button6.Size = new Size(140, 42);
-            button6.TabIndex = 14;
-            button6.Text = "Sửa";
-            button6.UseVisualStyleBackColor = false;
+            btn_Sua.BackColor = Color.Fuchsia;
+            btn_Sua.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btn_Sua.Image = Properties.Resources.Edit;
+            btn_Sua.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_Sua.Location = new Point(210, 32);
+            btn_Sua.Margin = new Padding(3, 2, 3, 2);
+            btn_Sua.Name = "btn_Sua";
+            btn_Sua.Size = new Size(140, 42);
+            btn_Sua.TabIndex = 14;
+            btn_Sua.Text = "Sửa";
+            btn_Sua.UseVisualStyleBackColor = false;
+            btn_Sua.Click += btn_Sua_Click_1;
             // 
-            // button7
+            // btn_Xoa
             // 
-            button7.BackColor = Color.Fuchsia;
-            button7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            button7.Image = Properties.Resources.Delete;
-            button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(386, 32);
-            button7.Margin = new Padding(3, 2, 3, 2);
-            button7.Name = "button7";
-            button7.Size = new Size(140, 42);
-            button7.TabIndex = 15;
-            button7.Text = "Xóa";
-            button7.UseVisualStyleBackColor = false;
+            btn_Xoa.BackColor = Color.Fuchsia;
+            btn_Xoa.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btn_Xoa.Image = Properties.Resources.Delete;
+            btn_Xoa.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_Xoa.Location = new Point(386, 32);
+            btn_Xoa.Margin = new Padding(3, 2, 3, 2);
+            btn_Xoa.Name = "btn_Xoa";
+            btn_Xoa.Size = new Size(140, 42);
+            btn_Xoa.TabIndex = 15;
+            btn_Xoa.Text = "Xóa";
+            btn_Xoa.UseVisualStyleBackColor = false;
+            btn_Xoa.Click += btn_Xoa_Click_1;
             // 
             // txt_TenloaiSearch
             // 
@@ -176,6 +189,7 @@
             dgv_LoaiSP.RowHeadersWidth = 51;
             dgv_LoaiSP.Size = new Size(651, 391);
             dgv_LoaiSP.TabIndex = 20;
+            dgv_LoaiSP.CellClick += dgv_LoaiSP_CellClick;
             // 
             // groupBox1
             // 
@@ -233,6 +247,7 @@
             // 
             cbb_TrangThai.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             cbb_TrangThai.FormattingEnabled = true;
+            cbb_TrangThai.Items.AddRange(new object[] { "Ngưng hoạt động", "Hoạt động" });
             cbb_TrangThai.Location = new Point(141, 285);
             cbb_TrangThai.Margin = new Padding(3, 2, 3, 2);
             cbb_TrangThai.Name = "cbb_TrangThai";
@@ -278,14 +293,6 @@
             label2.TabIndex = 27;
             label2.Text = "Quản Lý Loại Sản Phẩm";
             // 
-            // cb_trangThai
-            // 
-            cb_trangThai.FormattingEnabled = true;
-            cb_trangThai.Location = new Point(781, 45);
-            cb_trangThai.Name = "cb_trangThai";
-            cb_trangThai.Size = new Size(191, 29);
-            cb_trangThai.TabIndex = 21;
-            // 
             // FormLoaiSP
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -312,12 +319,12 @@
         #endregion
 
         private GroupBox groupBox3;
-        private Button button4;
+        private Button btn_Search;
         private Label label9;
         private Label label8;
-        private Button button5;
-        private Button button6;
-        private Button button7;
+        private Button btn_Them;
+        private Button btn_Sua;
+        private Button btn_Xoa;
         private TextBox txt_TenloaiSearch;
         private GroupBox groupBox2;
         private DataGridView dgv_LoaiSP;

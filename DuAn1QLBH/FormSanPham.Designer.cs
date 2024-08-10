@@ -243,6 +243,7 @@
             txt_Ma.Location = new Point(374, 69);
             txt_Ma.Name = "txt_Ma";
             txt_Ma.PlaceholderText = "Mã sản phẩm...";
+            txt_Ma.ReadOnly = true;
             txt_Ma.Size = new Size(281, 29);
             txt_Ma.TabIndex = 31;
             // 
@@ -259,7 +260,7 @@
             // 
             cbb_TrangThai.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             cbb_TrangThai.FormattingEnabled = true;
-            cbb_TrangThai.Items.AddRange(new object[] { "Hoạt động", "Không hoạt động", "Tạm ngừng", "Ngừng sản xuất" });
+            cbb_TrangThai.Items.AddRange(new object[] { "Hoạt động", "Không hoạt động", "Ngưng" });
             cbb_TrangThai.Location = new Point(976, 230);
             cbb_TrangThai.Name = "cbb_TrangThai";
             cbb_TrangThai.Size = new Size(281, 29);
@@ -387,7 +388,7 @@
             // cbb_tt
             // 
             cbb_tt.FormattingEnabled = true;
-            cbb_tt.Items.AddRange(new object[] { "Hoạt động", "Không hoạt động", "Tạm ngừng", "Ngừng sản xuất" });
+            cbb_tt.Items.AddRange(new object[] { "Hoạt động", "Không hoạt động" });
             cbb_tt.Location = new Point(515, 59);
             cbb_tt.Name = "cbb_tt";
             cbb_tt.Size = new Size(121, 29);

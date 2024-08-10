@@ -139,12 +139,16 @@ namespace PRL
 
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
-            /*if (idNVs == "NV001")
+            if (idNVs != "NV001")
             {
-                thoátToolStripMenuItem.Visible = false;
-            }*/
+                sảnPhẩmToolStripMenuItem.Visible = false;
+                hóaĐơnToolStripMenuItem.Visible = false;
+                nhàToolStripMenuItem.Visible = false;
+                loạiHàngToolStripMenuItem.Visible = false;
+                giảmGiáToolStripMenuItem.Visible = false;
+                kháchHàngToolStripMenuItem.Visible = false;
+            }
             lbl_TenNV.Text = tenNVs+" ("+idNVs+")";
-            lb_Time.TopLevelControl.Text = Text; lb_Time.Visible = true;
             
             timer1.Start();
 

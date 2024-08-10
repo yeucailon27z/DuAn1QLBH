@@ -4,9 +4,6 @@
     <Compile Update="FormBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormDangKy.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -55,8 +55,8 @@ namespace DAL.Repositories
             try
             {
                 var updateItems = _context.SanPhams.Find(id); // Phương Thức này tìm kiếm đối tượng theo khóa chính
-                  updateItems.TenSanPham=sp.TenSanPham;
-                 updateItems.LoaiSanPham=sp.LoaiSanPham;
+                updateItems.TenSanPham=sp.TenSanPham;
+                updateItems.LoaiSanPhamId=sp.LoaiSanPhamId;
                 updateItems.MaNhaCungCap = sp.MaNhaCungCap;
                 updateItems.NgayCapNhat = sp.NgayCapNhat;
                 updateItems.Anh = sp.Anh;

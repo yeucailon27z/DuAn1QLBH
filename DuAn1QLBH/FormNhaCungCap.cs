@@ -48,12 +48,6 @@ namespace PRL
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void FormNhaCungCap_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -61,7 +55,6 @@ namespace PRL
 
         private void button5_Click(object sender, EventArgs e)
         {
-            dgv_NhaCC.Rows.Clear();
             try
             {
                 string ma = txt_Ma.Text;
@@ -79,9 +72,17 @@ namespace PRL
                     Email = email,
                     TrangThai = trangthai
                 };
-                MessageBox.Show(_service.Create(ncc));
-                LoadData();
-                reset();
+                DialogResult result = MessageBox.Show("Bạn chắc chắn muốn thêm không", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    MessageBox.Show(_service.Create(ncc));
+                    LoadData();
+                    reset();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm đã bị hủy");
+                }
             }
             catch (FormatException ex)
             {
@@ -95,12 +96,12 @@ namespace PRL
             txt_SDT.Text = "";
             txt_DiaChi.Text = "";
             txt_Email.Text = "";
-            cbb_TrangThai.Text="";
+            cbb_TrangThai.Text = "";
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            dgv_NhaCC.Rows.Clear();
+
             try
             {
                 string ma = txt_Ma.Text;
@@ -119,9 +120,26 @@ namespace PRL
                     Email = email,
                     TrangThai = trangthai
                 };
-                MessageBox.Show(_service.Updatee(ncc, ma));
-                LoadData();
-                reset();
+                DialogResult result = MessageBox.Show(
+    "Bạn chắc chắn muốn sửa không?",
+    "Thông báo",
+    MessageBoxButtons.OKCancel,
+    MessageBoxIcon.Information
+);
+
+                if (result == DialogResult.Cancel)
+                {
+                    MessageBox.Show("Sửa đã bị hủy");
+                    reset();
+                }
+                else
+                {
+                    string updateResult = _service.Updatee(ncc, ma);
+                    MessageBox.Show(updateResult);
+                    LoadData();
+                    reset();
+                }
+
             }
             catch (FormatException ex)
             {
@@ -132,7 +150,7 @@ namespace PRL
 
         private void button7_Click(object sender, EventArgs e)
         {
-            dgv_NhaCC.Rows.Clear();
+
             try
             {
                 string ma = txt_Ma.Text.Trim();
@@ -164,17 +182,25 @@ namespace PRL
 
         private void dgv_NhaCC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dgv_NhaCC.Rows.Count)
+            try
             {
-                DataGridViewRow row = dgv_NhaCC.Rows[e.RowIndex];
-                txt_Ma.Text = row.Cells[1].Value.ToString();
-                txt_Ten.Text = row.Cells[2].Value.ToString();
-                txt_SDT.Text = row.Cells[3].Value.ToString();
-                txt_DiaChi.Text = row.Cells[4].Value.ToString();
-                txt_Email.Text = row.Cells[5].Value.ToString();
-                cbb_TrangThai.SelectedIndex = Convert.ToByte(row.Cells[6].Value);
-
+                if (e.RowIndex >= 0 && e.RowIndex < dgv_NhaCC.Rows.Count)
+                {
+                    DataGridViewRow row = dgv_NhaCC.Rows[e.RowIndex];
+                    txt_Ma.Text = row.Cells[1].Value.ToString();
+                    txt_Ten.Text = row.Cells[2].Value.ToString();
+                    txt_SDT.Text = row.Cells[3].Value.ToString();
+                    txt_DiaChi.Text = row.Cells[4].Value.ToString();
+                    txt_Email.Text = row.Cells[5].Value.ToString();
+                    cbb_TrangThai.SelectedIndex = Convert.ToByte(row.Cells[6].Value);
+                }
+               
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Click vào khoảng trống "+ex.Message,"Cảnh bảo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
 
         }
 
@@ -182,11 +208,11 @@ namespace PRL
         {
             SearchData();
             txt_SearchTen.Text = "";
-            cbb_SearcTT.Text="";
+            cbb_SearcTT.Text = "";
         }
         private void SearchData()
         {
-            dgv_NhaCC.Rows.Clear();
+
             int trangthai = cbb_SearcTT.SelectedIndex;
             string ten = txt_SearchTen.Text.ToLower();
 
@@ -194,24 +220,22 @@ namespace PRL
                 .Where(ncc => (trangthai == -1 || ncc.TrangThai == trangthai) &&
                               (string.IsNullOrEmpty(ten) || ncc.TenNhaCungCap.ToLower().Contains(ten)))
                 .ToList();
-
-            int i = 0;
-            foreach (var data in searchResults)
+            if (searchResults.Count < 1)
             {
-                i++;
-                dgv_NhaCC.Rows.Add(i, data.MaNhaCungCap, data.TenNhaCungCap, data.SoDienThoai, data.DiaChi, data.Email, data.TrangThai);
+                MessageBox.Show("Không tìm thấy Nhà cung cấp có Tên: " + ten + " và Trạng thái: " + trangthai);
+            }
+            else
+            {
+                dgv_NhaCC.Rows.Clear();
+                int i = 0;
+                foreach (var data in searchResults)
+                {
+                    i++;
+                    dgv_NhaCC.Rows.Add(i, data.MaNhaCungCap, data.TenNhaCungCap, data.SoDienThoai, data.DiaChi, data.Email, data.TrangThai);
+                }
             }
 
-        }
 
-        private void txt_SearchTen_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void cbb_SearcTT_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
         }
     }
 }
