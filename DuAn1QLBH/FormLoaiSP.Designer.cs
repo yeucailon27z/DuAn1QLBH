@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLoaiSP));
             groupBox3 = new GroupBox();
             cb_trangThai = new ComboBox();
             btn_Search = new Button();
@@ -49,10 +50,12 @@
             label7 = new Label();
             label14 = new Label();
             label2 = new Label();
+            pictureBox1 = new PictureBox();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_LoaiSP).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // groupBox3
@@ -66,7 +69,7 @@
             groupBox3.Controls.Add(btn_Xoa);
             groupBox3.Controls.Add(txt_TenloaiSearch);
             groupBox3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox3.Location = new Point(73, 144);
+            groupBox3.Location = new Point(73, 166);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(1175, 94);
             groupBox3.TabIndex = 26;
@@ -100,9 +103,9 @@
             label9.AutoSize = true;
             label9.Location = new Point(781, 24);
             label9.Name = "label9";
-            label9.Size = new Size(67, 21);
+            label9.Size = new Size(86, 21);
             label9.TabIndex = 18;
-            label9.Text = "Mã loại:";
+            label9.Text = "Trạng thái:";
             // 
             // label8
             // 
@@ -147,14 +150,14 @@
             // 
             btn_Xoa.BackColor = Color.Fuchsia;
             btn_Xoa.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            btn_Xoa.Image = Properties.Resources.Delete;
+            btn_Xoa.Image = Properties.Resources.reset;
             btn_Xoa.ImageAlign = ContentAlignment.MiddleLeft;
             btn_Xoa.Location = new Point(386, 32);
             btn_Xoa.Margin = new Padding(3, 2, 3, 2);
             btn_Xoa.Name = "btn_Xoa";
             btn_Xoa.Size = new Size(140, 42);
             btn_Xoa.TabIndex = 15;
-            btn_Xoa.Text = "Xóa";
+            btn_Xoa.Text = "Làm mới";
             btn_Xoa.UseVisualStyleBackColor = false;
             btn_Xoa.Click += btn_Xoa_Click_1;
             // 
@@ -172,7 +175,7 @@
             // 
             groupBox2.Controls.Add(dgv_LoaiSP);
             groupBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(581, 244);
+            groupBox2.Location = new Point(581, 266);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(663, 423);
             groupBox2.TabIndex = 25;
@@ -202,7 +205,7 @@
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label14);
             groupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(80, 244);
+            groupBox1.Location = new Point(80, 266);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(451, 423);
             groupBox1.TabIndex = 24;
@@ -287,17 +290,28 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(355, 60);
+            label2.Location = new Point(449, 60);
             label2.Name = "label2";
             label2.Size = new Size(521, 54);
             label2.TabIndex = 27;
             label2.Text = "Quản Lý Loại Sản Phẩm";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(301, 26);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(142, 118);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 30;
+            pictureBox1.TabStop = false;
             // 
             // FormLoaiSP
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1334, 811);
+            Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -312,6 +326,7 @@
             ((System.ComponentModel.ISupportInitialize)dgv_LoaiSP).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -339,5 +354,6 @@
         private Label label14;
         private Label label2;
         private ComboBox cb_trangThai;
+        private PictureBox pictureBox1;
     }
 }

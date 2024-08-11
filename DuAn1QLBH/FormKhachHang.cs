@@ -143,6 +143,9 @@ namespace PRL
                 i++;
                 dataGridView1.Rows.Add(i, data.KhachHangId, data.HoTen, data.NgaySinh, data.DienThoai, data.DiaChi, data.Email, data.TrangThai);
             }
+            tb_searchTen.Text = "";
+
+            cb_search.Text = "";
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -188,33 +191,10 @@ namespace PRL
 
         private void button7_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
-            try
-            {
-                string Id = tbt_makhachhang.Text.Trim();
-
-                if (string.IsNullOrWhiteSpace(Id))
-                {
-                    MessageBox.Show("Mã khách hàng không thể để trống.");
-                    return;
-                }
-
-                // Gọi phương thức xóa dữ liệu từ dịch vụ với mã nhà cung cấp
-                string resultMessage = _service.Delete(Id);
-                MessageBox.Show(resultMessage);
-
-                // Tải lại dữ liệu sau khi xóa
-                LoadData();
-                reset();
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show($"Dữ liệu đầu vào không hợp lệ: {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}");
-            }
+            reset();
+            tb_searchTen.Text = "";
+            
+            cb_search.Text = "";
         }
     }
 }

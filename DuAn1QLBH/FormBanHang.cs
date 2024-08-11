@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,7 @@ namespace PRL
         HDCTServices _HDCTservices;
         SanPhamServisces _services;
         GiamGiaServices _servicesGG;
+        DoanhThuServices _DTservices;
         KhachHangServices _servicesKH;
         List<SanPham> sanPhams;
         List<SanPham> sp;
@@ -33,6 +35,7 @@ namespace PRL
         public Guid currentBillId = Guid.Empty;
         public FormBanHang(string idNVs)
         {
+            _DTservices = new DoanhThuServices();
             _NVservices = new NhanVienServices();
             _HDCTservices = new HDCTServices();
             _HDservices = new HoaDonServices();
@@ -54,45 +57,69 @@ namespace PRL
         {
             string tenKH = "";
             string maKH = "";
-            Guid newGuid = Guid.NewGuid();
-            if (cbb_MaKH.Text == "")
+
+            if (cbb_MaKH.SelectedItem == null)
             {
-                MessageBox.Show("Hãy chọn tên khách hàng", "Thông báo");
+                MessageBox.Show("Vui lòng chọn một khách hàng.");
+                return;
             }
+            else
             {
+                // Lấy tên khách hàng từ ComboBox
                 tenKH = cbb_MaKH.Text;
+
+                // Tìm mã khách hàng dựa trên tên khách hàng
                 maKH = _servicesKH.GetALL()
-  .Where(p => p.HoTen == tenKH)
-  .Select(p => p.KhachHangId)
-  .FirstOrDefault() ?? "";
-                currentBillId = newGuid;
+                    .Where(p => p.HoTen == tenKH)
+                    .Select(p => p.KhachHangId)
+                    .FirstOrDefault() ?? "";
+
+                // Nếu không tìm thấy khách hàng
+                if (string.IsNullOrEmpty(maKH))
+                {
+                    MessageBox.Show("Không tìm thấy mã khách hàng.");
+                    return;
+                }
+
+                // Tạo Guid mới cho hóa đơn
+                currentBillId = Guid.NewGuid();
+
+                // Hiển thị mã hóa đơn trên giao diện
                 lbl_MaHD.Text = currentBillId.ToString();
-                MessageBox.Show(_HDservices.Creates(currentBillId, idNVz, maKH));
+
+                // Tạo hóa đơn và hiển thị kết quả
+                string result = _HDservices.Creates(currentBillId, idNVz, maKH);
+                MessageBox.Show(result);
+
+                // Tải lại dữ liệu hóa đơn sau khi tạo
                 LoadDataHD();
             }
-            
-            
+
         }
 
 
 
         private void FormBanHang_Load(object sender, EventArgs e)
         {
-            List<string> loaiHangName = _servicesLH.GetLoaiHangIDs();
-            cbb_LoaiHang.DataSource = loaiHangName;
+
+            List<LoaiSanPham> loaiHangName = _servicesLH.GetAll().ToList();
+            foreach (var item in loaiHangName)
+            {
+                cbb_LoaiHang.Items.Add(item.TenLoai);
+            }
+
 
 
 
             string tenKH = cbb_MaKH.Text;
             if (!string.IsNullOrEmpty(tenKH))
             {
-                List<string> nameKH = _servicesKH.GetALL()
-                    .Where(kh => kh.HoTen.Contains(tenKH))
-                    .Select(kh => kh.HoTen)
+                List<KhachHang> nameKH = _servicesKH.GetALL()
+
                     .ToList();
                 foreach (var item in nameKH)
                 {
-                    cbb_MaKH.Items.Add(item);
+                    cbb_MaKH.Items.Add(item.HoTen);
                 }
             }
             else
@@ -314,13 +341,14 @@ namespace PRL
                     MessageBox.Show(_HDCTservices.CheckSPinHD(idSP, idHD, Soluong));
                     string httt = cbb_PTTT.Text;
                     dgv_HDCT.DataSource = null;
-                    HDCTRepositories hDCTRepos = new HDCTRepositories();
-                    var allHDCT = hDCTRepos.GetHDCTbyIDHD(currentBillId);
+                    _HDCTservices = new HDCTServices();
+                    decimal money = _HDCTservices.Caculator(currentBillId);
+                    var allHDCT = _HDCTservices.GetHDCTViewModel(currentBillId);
                     dgv_HDCT.DataSource = allHDCT;
-                    long money = _HDCTservices.Caculator(currentBillId);
+
                     _HDservices = new HoaDonServices();
-                    MessageBox.Show(_HDservices.Update(currentBillId, 1, money,"Chưa có","GG000"));
-                    LoadSPPanel(1);
+                    MessageBox.Show(_HDservices.Update(currentBillId, 1, money, "Chưa có", "GG000"));
+                    LoadSPPanel(Convert.ToInt32(lbl_Trang.Text));
                     LoadDataHD();
                 }
             }
@@ -355,17 +383,15 @@ namespace PRL
 
         private void button6_Click(object sender, EventArgs e)
         {
-            LoadSPPanelSearch(1);
+            LoadSPPanelSearch(Convert.ToInt32(lbl_Trang.Text));
         }
         public void LoadSPPanelSearch(int page)
         {
             tableLayoutPanel1.Controls.Clear();
-            string searchTen = txt_SearchTen.Text;
-            string searchLoai = cbb_LoaiHang.Text;
+            string searchTen = txt_SearchTen.Text.ToLower(); // Chuyển chuỗi tìm kiếm về chữ thường
+            var searchLoai = _servicesLH.GetAll().Where(p => p.TenLoai == cbb_LoaiHang.Text).Select(p => p.LoaiSanPhamId).FirstOrDefault();
 
-
-
-            List<SanPham> searchResults = sanPhams.Where(p => (string.IsNullOrEmpty(searchLoai) || p.LoaiSanPhamId == searchLoai) &&
+            List<SanPham> searchResults = sanPhams.Where(p => (searchLoai == null || p.LoaiSanPhamId == searchLoai) &&
                               (string.IsNullOrEmpty(searchTen) || p.TenSanPham.ToLower().Contains(searchTen))).ToList();
 
             tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
@@ -425,22 +451,32 @@ namespace PRL
             }
 
         }
-
+        public HoaDon hd;
         private void dgv_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            DataGridViewRow row = dgv_HoaDon.Rows[e.RowIndex];
+            DateTime ngay = DateTime.Parse(row.Cells[2].Value.ToString());
+            Convert.ToDecimal(lbl_tthd.Text);
+
+            string makh = row.Cells[3].Value.ToString();
+            string tenkh = _servicesKH.GetALL()
+                         .Where(p => p.KhachHangId == makh)
+                         .Select(p => p.HoTen)
+                         .FirstOrDefault();
+
             currentBillId = Guid.Parse(dgv_HoaDon.Rows[e.RowIndex].Cells[1].Value.ToString());
             lbl_MaHD.Text = currentBillId.ToString();
-
             int i = 0;
-            var allDatas = _HDCTservices.GetHDCTbyIDHD(currentBillId);
+            var allDatas = _HDCTservices.GetHDCTViewModel(currentBillId);
 
             dgv_HDCT.DataSource = allDatas;
             decimal ttsp = Convert.ToDecimal(dgv_HoaDon.Rows[e.RowIndex].Cells[7].Value.ToString());
             lbl_ttsp.Text = ttsp.ToString();
 
-            //cbb_PTTT.Text = dgv_HoaDon.Rows[e.RowIndex].Cells[6].Value.ToString();
-            //cbb_Voucher.Text = dgv_HoaDon.Rows[e.RowIndex].Cells[5].Value.ToString();
+            cbb_PTTT.Text = null;
+            cbb_Voucher.Text = null;
+            lbl_tthd.Text = "0";
             cbb_MaKH.Text = dgv_HoaDon.Rows[e.RowIndex].Cells[3].Value.ToString();
             activeSale = _servicesGG.GetAll().Where(p => p.TienMin <= Convert.ToDecimal(lbl_ttsp.Text)).ToList();
             cbb_Voucher.Items.Clear();
@@ -448,6 +484,14 @@ namespace PRL
             {
                 cbb_Voucher.Items.Add(item.MaGiamGia);
             }
+            hd = new HoaDon()
+            {
+                HoaDonId = currentBillId,
+                NgayLap = ngay,
+
+                KhachHangId = makh,
+                NhanVienId = tenkh,
+            };
         }
 
         private void txt_TienKhach_TextChanged(object sender, EventArgs e)
@@ -503,12 +547,20 @@ namespace PRL
                 {
                     giagg = decimal.Parse(lbl_tthd.Text);
                 }
-
+                string maggs = cbb_Voucher.Text;
+                hd.GiamGiaId = maggs;
+                hd.TongTien = Convert.ToDecimal(lbl_tthd.Text);
                 string httt = cbb_PTTT.Text;
                 _HDservices.Update(currentBillId, 0, giagg, httt, magg);
                 MessageBox.Show("Thanh toán thành công");
-
+                DialogResult xuathd = MessageBox.Show("Bạn có muốn xuất hóa đơn không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (xuathd == DialogResult.Yes)
+                {
+                    InHoaDon();
+                };
                 LoadDataHD(); dgv_HDCT.DataSource = null;
+                MessageBox.Show(_DTservices.AddDoanhThu(currentBillId, giagg));
+
             }
         }
 
@@ -525,6 +577,200 @@ namespace PRL
             decimal tthd;
             tthd = Math.Round(Convert.ToDecimal(lbl_ttsp.Text) - (Convert.ToDecimal(lbl_ttsp.Text) * (discountPercentage / 100)), 2);
             lbl_tthd.Text = tthd.ToString();
+        }
+
+        private void btn_HuyHD_Click(object sender, EventArgs e)
+        {
+            if (currentBillId != null)
+            {
+                MessageBox.Show(_HDservices.DeleteHD(currentBillId));
+                LoadDataHD(); dgv_HDCT.DataSource = null;
+                LoadSPPanel(Convert.ToInt32(lbl_Trang.Text));
+            }
+
+        }
+
+        private void printDocument_HD_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            var tencuahang = "Pet Food Shop";
+            var diachi = "2 P. Lê Văn Hiến, Đông Ngạc, Bắc Từ Liêm, Hà Nội";
+            var sdt = "0855 886 660";
+            var now = DateTime.Now;
+            var formattedDate = now.ToString("dd/MM/yyyy HH:mm:ss"); // Định dạng ngày giờ hiện tại
+            var idhd = currentBillId;
+
+            var w = printDocument_HD.DefaultPageSettings.PaperSize.Width;
+
+            // Vẽ tên cửa hàng lên tài liệu in
+            e.Graphics.DrawString(
+                tencuahang.ToUpper(),
+                new Font("Courier New", 14, FontStyle.Bold),
+                Brushes.Black,
+                new Point(10, 20)
+            );
+            e.Graphics.DrawString(
+                string.Format(hd.KhachHangId),
+                new Font("Courier New", 12, FontStyle.Bold),
+                Brushes.Black,
+                new Point(w / 2 + 150, 20)
+            );
+            e.Graphics.DrawString(
+                string.Format(hd.NhanVienId),
+                new Font("Courier New", 12, FontStyle.Bold),
+                Brushes.Black,
+                new Point(w / 2 + 300, 20)
+            );
+
+            string text = string.Format("HD:{0}", currentBillId);
+            e.Graphics.DrawString(
+                text,
+                new Font("Courier New", 12, FontStyle.Bold),
+                Brushes.Black,
+                new PointF(w / 2, 100)
+            );
+            string texts = string.Format("Địa chỉ: " + diachi);
+            e.Graphics.DrawString(
+    texts,
+    new Font("Courier New", 10, FontStyle.Regular),
+    Brushes.Black,
+    new PointF(10, 45) // Vị trí cần điều chỉnh nếu cần
+);
+            string textz = string.Format("Số điện thoại: " + sdt);
+            e.Graphics.DrawString(
+    textz,
+    new Font("Courier New", 10, FontStyle.Regular),
+    Brushes.Black,
+    new PointF(10, 70) // Vị trí cần điều chỉnh nếu cần
+);
+            e.Graphics.DrawString(
+    formattedDate,
+    new Font("Courier New", 10, FontStyle.Regular),
+    Brushes.Black,
+    new PointF(w / 2 + 200, 45) // Vị trí cần điều chỉnh nếu cần
+);
+            Pen pen = new Pen(Color.Black, 1);
+
+            var y = 90;
+
+            Point p1 = new Point(10, y);
+            Point p2 = new Point(w - 10, y);
+
+            e.Graphics.DrawLine(pen, p1, p2);
+
+            y += 10;
+
+            e.Graphics.DrawString(
+   string.Format("Ngày tạo HD: {0}", hd.NgayLap),
+   new Font("Courier New", 10, FontStyle.Bold),
+   Brushes.Black,
+   new PointF(10, y));
+            y += 20;
+            Point p3 = new Point(10, y);
+            Point p4 = new Point(w - 10, y);
+            e.Graphics.DrawLine(pen, p3, p4);
+            y += 20;
+            e.Graphics.DrawString(string.Format("STT"),
+   new Font("Courier New", 10, FontStyle.Bold),
+   Brushes.Black,
+   new PointF(50, y));
+            e.Graphics.DrawString(
+  string.Format("Mã sản phẩm"),
+  new Font("Courier New", 10, FontStyle.Bold),
+  Brushes.Black,
+  new PointF(150, y));
+            e.Graphics.DrawString(
+string.Format("Tên sản phẩm"),
+new Font("Courier New", 10, FontStyle.Bold),
+Brushes.Black,
+new PointF(w / 2 - 50, y));
+            e.Graphics.DrawString(
+ string.Format("Số lượng"),
+ new Font("Courier New", 10, FontStyle.Bold),
+ Brushes.Black,
+ new PointF(w / 2 + 150, y));
+            e.Graphics.DrawString(
+string.Format("Đơn giá"),
+new Font("Courier New", 10, FontStyle.Bold),
+Brushes.Black,
+new PointF(w / 2 + 300, y));
+
+            int i = 0;
+            var allDatas = _HDCTservices.GetHDCTViewModel(idhd);
+            decimal tongtien = 0;
+            foreach (var data in allDatas)
+            {
+                i++;
+                y += 20;
+                e.Graphics.DrawString(
+   string.Format(i.ToString()),
+   new Font("Courier New", 10, FontStyle.Bold),
+   Brushes.Black,
+   new PointF(50, y));
+                e.Graphics.DrawString(
+string.Format(data.SanPhamID),
+new Font("Courier New", 10, FontStyle.Bold),
+Brushes.Black,
+new PointF(150, y));
+                e.Graphics.DrawString(
+string.Format(data.TenSanPham),
+new Font("Courier New", 10, FontStyle.Bold),
+Brushes.Black,
+new PointF(w / 2 - 50, y));
+                e.Graphics.DrawString(string.Format(data.SoLuong.ToString()),
+ new Font("Courier New", 10, FontStyle.Bold),
+ Brushes.Black,
+ new PointF(w / 2 + 150, y));
+                e.Graphics.DrawString(string.Format(data.DonGia.ToString() + " đ"),
+new Font("Courier New", 10, FontStyle.Bold),
+Brushes.Black,
+new PointF(w / 2 + 300, y));
+
+                tongtien += Convert.ToDecimal(data.DonGia.Value);
+            }
+            y += 20;
+            Point p5 = new Point(10, y);
+            Point p6 = new Point(w - 10, y);
+            e.Graphics.DrawLine(pen, p5, p6);
+            y += 20;
+            e.Graphics.DrawString(
+  string.Format("Mã Giảm Giá:"),
+  new Font("Courier New", 10, FontStyle.Regular),
+  Brushes.Black,
+  new PointF(50, y));
+            e.Graphics.DrawString(
+  string.Format(hd.GiamGiaId),
+  new Font("Courier New", 10, FontStyle.Regular),
+  Brushes.Black,
+  new PointF(150, y));
+            e.Graphics.DrawString(string.Format("Tổng tiền:"),
+new Font("Courier New", 10, FontStyle.Bold),
+Brushes.Black,
+new PointF(w / 2 + 150, y));
+            e.Graphics.DrawString(string.Format(tongtien + " đ"),
+new Font("Courier New", 10, FontStyle.Bold),
+Brushes.Black,
+new PointF(w / 2 + 300, y));
+            y += 20;
+            e.Graphics.DrawString(string.Format("Thành tiền:"),
+new Font("Courier New", 10, FontStyle.Bold),
+Brushes.Black,
+new PointF(w / 2 + 150, y));
+            e.Graphics.DrawString(string.Format(hd.TongTien + " đ"),
+new Font("Courier New", 10, FontStyle.Bold),
+Brushes.Black,
+new PointF(w / 2 + 300, y));
+            y += 30;
+            e.Graphics.DrawString(
+string.Format("Cảm ơn quý khách đã mua hàng, chúc quý khách một ngày tốt lành!"),
+new Font("Courier New", 10, FontStyle.Italic),
+Brushes.Black,
+new PointF(200, y));
+        }
+
+        private void InHoaDon()
+        {
+            printPreviewHD.Document = printDocument_HD;
+            printPreviewHD.ShowDialog();
         }
     }
 }

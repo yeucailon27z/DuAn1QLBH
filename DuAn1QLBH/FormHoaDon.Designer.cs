@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHoaDon));
             groupBox1 = new GroupBox();
             cbb_TenKH = new ComboBox();
             cbb_TenNV = new ComboBox();
@@ -72,6 +73,8 @@
             groupBox4 = new GroupBox();
             groupBox5 = new GroupBox();
             dgv_HDCT = new DataGridView();
+            printDocument1 = new System.Drawing.Printing.PrintDocument();
+            printPreviewDialog1 = new PrintPreviewDialog();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_HoaDon).BeginInit();
             groupBox2.SuspendLayout();
@@ -214,6 +217,7 @@
             dgv_HoaDon.Size = new Size(944, 339);
             dgv_HoaDon.TabIndex = 1;
             dgv_HoaDon.CellClick += dgv_HoaDon_CellClick;
+            dgv_HoaDon.CellDoubleClick += dgv_HoaDon_CellDoubleClick;
             // 
             // groupBox2
             // 
@@ -530,6 +534,20 @@
             dgv_HDCT.TabIndex = 0;
             dgv_HDCT.CellClick += dgv_HDCT_CellClick;
             // 
+            // printDocument1
+            // 
+            printDocument1.PrintPage += printDocument1_PrintPage;
+            // 
+            // printPreviewDialog1
+            // 
+            printPreviewDialog1.AutoScrollMargin = new Size(0, 0);
+            printPreviewDialog1.AutoScrollMinSize = new Size(0, 0);
+            printPreviewDialog1.ClientSize = new Size(400, 300);
+            printPreviewDialog1.Enabled = true;
+            printPreviewDialog1.Icon = (Icon)resources.GetObject("printPreviewDialog1.Icon");
+            printPreviewDialog1.Name = "printPreviewDialog1";
+            printPreviewDialog1.Visible = false;
+            // 
             // FormHoaDon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -604,5 +622,7 @@
         private TextBox txt_MaHD;
         private Label label11;
         private Label label12;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private PrintPreviewDialog printPreviewDialog1;
     }
 }

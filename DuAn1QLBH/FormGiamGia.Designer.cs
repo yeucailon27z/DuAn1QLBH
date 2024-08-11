@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGiamGia));
             dgv_BangPhieuGiamGia = new DataGridView();
             label1 = new Label();
             label2 = new Label();
@@ -44,7 +45,7 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            textBox4 = new TextBox();
+            txt_SearchTen = new TextBox();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
             tb_max = new TextBox();
@@ -55,14 +56,16 @@
             label11 = new Label();
             groupBox3 = new GroupBox();
             button4 = new Button();
-            textBox6 = new TextBox();
+            txt_KhoangGG = new TextBox();
             label9 = new Label();
             label8 = new Label();
             label10 = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgv_BangPhieuGiamGia).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgv_BangPhieuGiamGia
@@ -230,31 +233,32 @@
             // 
             button3.BackColor = Color.Fuchsia;
             button3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            button3.Image = Properties.Resources.Delete;
+            button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;
             button3.Location = new Point(386, 32);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(144, 42);
             button3.TabIndex = 15;
-            button3.Text = "Xóa";
+            button3.Text = "Làm mới";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
-            // textBox4
+            // txt_SearchTen
             // 
-            textBox4.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(559, 47);
-            textBox4.Margin = new Padding(3, 2, 3, 2);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "Tìm kiếm...";
-            textBox4.Size = new Size(206, 27);
-            textBox4.TabIndex = 16;
+            txt_SearchTen.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txt_SearchTen.Location = new Point(559, 47);
+            txt_SearchTen.Margin = new Padding(3, 2, 3, 2);
+            txt_SearchTen.Name = "txt_SearchTen";
+            txt_SearchTen.PlaceholderText = "Tìm kiếm...";
+            txt_SearchTen.Size = new Size(206, 27);
+            txt_SearchTen.TabIndex = 16;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(dgv_BangPhieuGiamGia);
             groupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(575, 205);
+            groupBox1.Location = new Point(575, 263);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(672, 436);
             groupBox1.TabIndex = 17;
@@ -282,7 +286,7 @@
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label4);
             groupBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(72, 205);
+            groupBox2.Location = new Point(72, 263);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(474, 436);
             groupBox2.TabIndex = 18;
@@ -343,15 +347,15 @@
             // groupBox3
             // 
             groupBox3.Controls.Add(button4);
-            groupBox3.Controls.Add(textBox6);
+            groupBox3.Controls.Add(txt_KhoangGG);
             groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(label8);
             groupBox3.Controls.Add(button1);
             groupBox3.Controls.Add(button2);
             groupBox3.Controls.Add(button3);
-            groupBox3.Controls.Add(textBox4);
+            groupBox3.Controls.Add(txt_SearchTen);
             groupBox3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox3.Location = new Point(72, 105);
+            groupBox3.Location = new Point(72, 163);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(1175, 94);
             groupBox3.TabIndex = 19;
@@ -369,13 +373,14 @@
             button4.TabIndex = 20;
             button4.Text = "Lọc";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
-            // textBox6
+            // txt_KhoangGG
             // 
-            textBox6.Location = new Point(781, 45);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(210, 29);
-            textBox6.TabIndex = 19;
+            txt_KhoangGG.Location = new Point(781, 45);
+            txt_KhoangGG.Name = "txt_KhoangGG";
+            txt_KhoangGG.Size = new Size(210, 29);
+            txt_KhoangGG.TabIndex = 19;
             // 
             // label9
             // 
@@ -399,17 +404,28 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Times New Roman", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label10.Location = new Point(355, 60);
+            label10.Location = new Point(496, 66);
             label10.Name = "label10";
             label10.Size = new Size(534, 54);
             label10.TabIndex = 28;
             label10.Text = "Quản Lý Phiếu Giảm Giá";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(323, 36);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(142, 118);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 30;
+            pictureBox1.TabStop = false;
             // 
             // FormGiamGia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1334, 790);
+            Controls.Add(pictureBox1);
             Controls.Add(label10);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -424,6 +440,7 @@
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -446,7 +463,7 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private TextBox textBox4;
+        private TextBox txt_SearchTen;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private TextBox tb_tengg;
@@ -455,11 +472,12 @@
         private Label label9;
         private Label label8;
         private Button button4;
-        private TextBox textBox6;
+        private TextBox txt_KhoangGG;
         private Label label10;
         private TextBox tb_min;
         private Label label11;
         private TextBox tb_max;
         private Label label12;
+        private PictureBox pictureBox1;
     }
 }

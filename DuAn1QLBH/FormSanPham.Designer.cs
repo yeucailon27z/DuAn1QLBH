@@ -260,7 +260,7 @@
             // 
             cbb_TrangThai.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             cbb_TrangThai.FormattingEnabled = true;
-            cbb_TrangThai.Items.AddRange(new object[] { "Hoạt động", "Không hoạt động", "Ngưng" });
+            cbb_TrangThai.Items.AddRange(new object[] { "Hoạt động", "Không hoạt động" });
             cbb_TrangThai.Location = new Point(976, 230);
             cbb_TrangThai.Name = "cbb_TrangThai";
             cbb_TrangThai.Size = new Size(281, 29);

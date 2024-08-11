@@ -150,33 +150,9 @@ namespace PRL
 
         private void button7_Click(object sender, EventArgs e)
         {
-
-            try
-            {
-                string ma = txt_Ma.Text.Trim();
-
-                if (string.IsNullOrWhiteSpace(ma))
-                {
-                    MessageBox.Show("Mã nhà cung cấp không thể để trống.");
-                    return;
-                }
-
-                // Gọi phương thức xóa dữ liệu từ dịch vụ với mã nhà cung cấp
-                string resultMessage = _service.Delete(ma);
-                MessageBox.Show(resultMessage);
-
-                // Tải lại dữ liệu sau khi xóa
-                LoadData();
-                reset();
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show($"Dữ liệu đầu vào không hợp lệ: {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}");
-            }
+            reset();
+            txt_SearchTen.Text = "";
+            cbb_SearcTT.Text = "";
 
         }
 
@@ -234,6 +210,8 @@ namespace PRL
                     dgv_NhaCC.Rows.Add(i, data.MaNhaCungCap, data.TenNhaCungCap, data.SoDienThoai, data.DiaChi, data.Email, data.TrangThai);
                 }
             }
+            txt_SearchTen.Text = "";
+            cbb_SearcTT.Text = "";
 
 
         }

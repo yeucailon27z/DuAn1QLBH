@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKhachHang));
             groupBox1 = new GroupBox();
             tbt_makhachhang = new TextBox();
             label7 = new Label();
@@ -55,10 +56,12 @@
             button7 = new Button();
             tb_searchTen = new TextBox();
             label10 = new Label();
+            pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -78,7 +81,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(85, 215);
+            groupBox1.Location = new Point(85, 269);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(451, 423);
             groupBox1.TabIndex = 18;
@@ -224,7 +227,7 @@
             // 
             groupBox2.Controls.Add(dataGridView1);
             groupBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(586, 215);
+            groupBox2.Location = new Point(586, 269);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(663, 423);
             groupBox2.TabIndex = 19;
@@ -254,7 +257,7 @@
             groupBox3.Controls.Add(button7);
             groupBox3.Controls.Add(tb_searchTen);
             groupBox3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox3.Location = new Point(85, 115);
+            groupBox3.Location = new Point(85, 169);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(1175, 94);
             groupBox3.TabIndex = 20;
@@ -334,14 +337,14 @@
             // 
             button7.BackColor = Color.Fuchsia;
             button7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            button7.Image = Properties.Resources.Delete;
+            button7.Image = Properties.Resources.reset;
             button7.ImageAlign = ContentAlignment.MiddleLeft;
             button7.Location = new Point(386, 32);
             button7.Margin = new Padding(3, 2, 3, 2);
             button7.Name = "button7";
             button7.Size = new Size(144, 42);
             button7.TabIndex = 15;
-            button7.Text = "Xóa";
+            button7.Text = "Làm mới";
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
@@ -359,17 +362,28 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Times New Roman", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label10.Location = new Point(355, 60);
+            label10.Location = new Point(542, 66);
             label10.Name = "label10";
             label10.Size = new Size(465, 54);
             label10.TabIndex = 28;
             label10.Text = "Quản Lý Khách Hàng";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(394, 31);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(142, 118);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 30;
+            pictureBox1.TabStop = false;
             // 
             // FormKhachHang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1334, 811);
+            Controls.Add(pictureBox1);
             Controls.Add(label10);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -384,6 +398,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -416,5 +431,6 @@
         private Label label7;
         private Label label10;
         private ComboBox cb_search;
+        private PictureBox pictureBox1;
     }
 }

@@ -265,3 +265,5 @@ C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\obj\Debug\net8.0-windows\refint\PRL.dll
 C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\obj\Debug\net8.0-windows\PRL.pdb
 C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\obj\Debug\net8.0-windows\PRL.genruntimeconfig.cache
 C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\obj\Debug\net8.0-windows\ref\PRL.dll
+C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\obj\Debug\net8.0-windows\PRL.FormDoanhThu.resources
+C:\Users\Admin\Desktop\duAn1a\DuAn1QLBH\obj\Debug\net8.0-windows\PRL.FormNhanVien.resources

@@ -44,6 +44,7 @@
             dgv_HDCT = new DataGridView();
             button2 = new Button();
             groupBox3 = new GroupBox();
+            btn_HuyHD = new Button();
             lbl_ttsp = new Label();
             label13 = new Label();
             button5 = new Button();
@@ -64,6 +65,8 @@
             label11 = new Label();
             txt_SearchTen = new TextBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            printDocument_HD = new System.Drawing.Printing.PrintDocument();
+            printPreviewHD = new PrintPreviewDialog();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_HoaDon).BeginInit();
             groupBox2.SuspendLayout();
@@ -229,6 +232,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(btn_HuyHD);
             groupBox3.Controls.Add(lbl_ttsp);
             groupBox3.Controls.Add(label13);
             groupBox3.Controls.Add(button5);
@@ -249,6 +253,20 @@
             groupBox3.TabIndex = 17;
             groupBox3.TabStop = false;
             groupBox3.Text = "Tổng hợp";
+            // 
+            // btn_HuyHD
+            // 
+            btn_HuyHD.BackColor = Color.FromArgb(255, 128, 255);
+            btn_HuyHD.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btn_HuyHD.Image = (Image)resources.GetObject("btn_HuyHD.Image");
+            btn_HuyHD.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_HuyHD.Location = new Point(131, 249);
+            btn_HuyHD.Name = "btn_HuyHD";
+            btn_HuyHD.Size = new Size(144, 36);
+            btn_HuyHD.TabIndex = 35;
+            btn_HuyHD.Text = "Hủy";
+            btn_HuyHD.UseVisualStyleBackColor = false;
+            btn_HuyHD.Click += btn_HuyHD_Click;
             // 
             // lbl_ttsp
             // 
@@ -455,6 +473,20 @@
             // 
             timer1.Tick += timer1_Tick;
             // 
+            // printDocument_HD
+            // 
+            printDocument_HD.PrintPage += printDocument_HD_PrintPage;
+            // 
+            // printPreviewHD
+            // 
+            printPreviewHD.AutoScrollMargin = new Size(0, 0);
+            printPreviewHD.AutoScrollMinSize = new Size(0, 0);
+            printPreviewHD.ClientSize = new Size(400, 300);
+            printPreviewHD.Enabled = true;
+            printPreviewHD.Icon = (Icon)resources.GetObject("printPreviewHD.Icon");
+            printPreviewHD.Name = "printPreviewHD";
+            printPreviewHD.Visible = false;
+            // 
             // FormBanHang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -523,5 +555,8 @@
         private Label label1;
         private ComboBox cbb_MaKH;
         private System.Windows.Forms.Timer timer1;
+        private Button btn_HuyHD;
+        private System.Drawing.Printing.PrintDocument printDocument_HD;
+        private PrintPreviewDialog printPreviewHD;
     }
 }

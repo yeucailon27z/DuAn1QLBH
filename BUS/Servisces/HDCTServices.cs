@@ -12,9 +12,11 @@ namespace BUS.Servisces
     public class HDCTServices
     {
         HDCTRepositories _repos;
+        SanPhamRepositories _sprepos;
         public HDCTServices()
         {
             _repos = new HDCTRepositories();
+            _sprepos = new SanPhamRepositories();
         }
         public List<HoaDonChiTiet> GetHDCTbyIDHD(Guid id)
         {
@@ -45,15 +47,43 @@ namespace BUS.Servisces
             }
 
         }
-        public long Caculator(Guid idHD)
+        public decimal Caculator(Guid idHD)
         {
             List<HoaDonChiTiet> hdcts = _repos.GetHDCTbyIDHD(idHD);
-            long sum = 0;
+            decimal sum = 0;
             foreach (var item in hdcts)
             {
-                sum += (long)item.DonGia * (long)item.SoLuong;
+                sum += (decimal)item.DonGia * (decimal)item.SoLuong;
             }
             return sum;
+        }
+        public List<HDCTViewModel> GetHDCTViewModel(Guid idhd)
+        {
+            var hdct = _repos.GetHDCTbyIDHD(idhd);
+            var sp = _sprepos.GetAll();
+            var hdctjoin = from p in hdct
+                           join c in sp
+                          on p.SanPhamID equals c.SanPhamId
+                           select new HDCTViewModel
+                           {
+                               HoaDonChiTietID = p.HoaDonChiTietID,
+                               HoaDonID = p.HoaDonID,
+                               TenSanPham = c.TenSanPham,
+                               SoLuong = p.SoLuong,
+                               DonGia = p.DonGia*p.SoLuong,
+                               SanPhamID = p.SanPhamID
+                           };
+            return hdctjoin.ToList();
+        }
+        public class HDCTViewModel()
+        {
+            public int HoaDonChiTietID { get; set; }
+
+            public Guid? HoaDonID { get; set; }
+            public string? TenSanPham { get; set; }
+            public int? SoLuong { get; set; }
+            public decimal? DonGia { get; set; }
+            public string? SanPhamID { get; set; }
         }
     }
 }

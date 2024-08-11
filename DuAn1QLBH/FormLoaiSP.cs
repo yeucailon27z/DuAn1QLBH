@@ -68,8 +68,7 @@ namespace PRL
         }
         public void Search()
         {
-           
-
+         
             int trangThai = cb_trangThai.SelectedIndex;
             string ten = txt_TenloaiSearch.Text.ToLower();
             var search = services.GetAll().Where(loaiSanPham => (trangThai == -1 || loaiSanPham.TrangThai == trangThai) &&
@@ -85,6 +84,8 @@ namespace PRL
                 i++;
                 dgv_LoaiSP.Rows.Add(i, item.LoaiSanPhamId, item.TenLoai, item.MoTa, item.TrangThai);
             }
+            txt_TenloaiSearch.Text = "";
+            cb_trangThai.Text = "";
         }
 
         private void txt_Tenloai_TextChanged(object sender, EventArgs e)
@@ -181,27 +182,9 @@ namespace PRL
 
         private void btn_Xoa_Click_1(object sender, EventArgs e)
         {
-            dgv_LoaiSP.Rows.Clear();
-
-            try
-            {
-                string ma = txt_MaLoai.Text.Trim();
-
-                if (string.IsNullOrWhiteSpace(ma))
-                {
-                    MessageBox.Show("Mã loại không thể để trống", "Thông báo", MessageBoxButtons.OK);
-                    return;
-                }
-                string result = services.DeleteLoaiSP(ma);
-                MessageBox.Show(result);
-                LoadData();
-                Reset();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi rùi");
-            }
+            Reset();
+            txt_TenloaiSearch.Text = "";
+            cb_trangThai.Text = "";
         }
 
         private void btn_Search_Click_1(object sender, EventArgs e)

@@ -193,6 +193,7 @@
             Name = "FormDangNhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng Nhập Tài Khoản";
+            FormClosed += FormDangNhap_FormClosed;
             Load += FormDangNhap_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);

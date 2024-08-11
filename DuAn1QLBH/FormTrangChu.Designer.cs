@@ -39,6 +39,8 @@
             loạiHàngToolStripMenuItem = new ToolStripMenuItem();
             giảmGiáToolStripMenuItem = new ToolStripMenuItem();
             kháchHàngToolStripMenuItem = new ToolStripMenuItem();
+            doanhThuToolStripMenuItem = new ToolStripMenuItem();
+            nhânViênToolStripMenuItem = new ToolStripMenuItem();
             thoátToolStripMenuItem = new ToolStripMenuItem();
             pn_content = new Panel();
             pictureBox2 = new PictureBox();
@@ -61,7 +63,7 @@
             pictureBox1.Image = Properties.Resources.Remove_bg1;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(254, 190);
+            pictureBox1.Size = new Size(246, 190);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -74,11 +76,11 @@
             mstr_Menu.Font = new Font("Times New Roman", 21.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             mstr_Menu.GripStyle = ToolStripGripStyle.Visible;
             mstr_Menu.ImageScalingSize = new Size(20, 20);
-            mstr_Menu.Items.AddRange(new ToolStripItem[] { tool_BanHang, sảnPhẩmToolStripMenuItem, hóaĐơnToolStripMenuItem, nhàToolStripMenuItem, loạiHàngToolStripMenuItem, giảmGiáToolStripMenuItem, kháchHàngToolStripMenuItem, thoátToolStripMenuItem });
+            mstr_Menu.Items.AddRange(new ToolStripItem[] { tool_BanHang, sảnPhẩmToolStripMenuItem, hóaĐơnToolStripMenuItem, nhàToolStripMenuItem, loạiHàngToolStripMenuItem, giảmGiáToolStripMenuItem, kháchHàngToolStripMenuItem, doanhThuToolStripMenuItem, nhânViênToolStripMenuItem, thoátToolStripMenuItem });
             mstr_Menu.Location = new Point(0, 0);
             mstr_Menu.Name = "mstr_Menu";
             mstr_Menu.Padding = new Padding(6, 180, 0, 2);
-            mstr_Menu.Size = new Size(253, 840);
+            mstr_Menu.Size = new Size(246, 840);
             mstr_Menu.TabIndex = 2;
             mstr_Menu.Text = "menuStrip1";
             mstr_Menu.ItemClicked += mstr_Menu_ItemClicked;
@@ -86,33 +88,33 @@
             // tool_BanHang
             // 
             tool_BanHang.Image = (Image)resources.GetObject("tool_BanHang.Image");
-            tool_BanHang.ImageAlign = ContentAlignment.MiddleRight;
+            tool_BanHang.ImageAlign = ContentAlignment.MiddleLeft;
             tool_BanHang.ImageScaling = ToolStripItemImageScaling.None;
             tool_BanHang.Name = "tool_BanHang";
-            tool_BanHang.Padding = new Padding(0, 20, 0, 10);
-            tool_BanHang.Size = new Size(240, 77);
-            tool_BanHang.Text = "Bán Hàng        ";
+            tool_BanHang.Padding = new Padding(0, 9, 0, 9);
+            tool_BanHang.Size = new Size(233, 65);
+            tool_BanHang.Text = "Bán Hàng       ";
             tool_BanHang.Click += tool_BanHang_Click;
             // 
             // sảnPhẩmToolStripMenuItem
             // 
             sảnPhẩmToolStripMenuItem.Image = (Image)resources.GetObject("sảnPhẩmToolStripMenuItem.Image");
-            sảnPhẩmToolStripMenuItem.ImageAlign = ContentAlignment.MiddleRight;
+            sảnPhẩmToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
             sảnPhẩmToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             sảnPhẩmToolStripMenuItem.Name = "sảnPhẩmToolStripMenuItem";
-            sảnPhẩmToolStripMenuItem.Padding = new Padding(0, 20, 0, 10);
-            sảnPhẩmToolStripMenuItem.Size = new Size(240, 74);
+            sảnPhẩmToolStripMenuItem.Padding = new Padding(0, 9, 0, 9);
+            sảnPhẩmToolStripMenuItem.Size = new Size(233, 62);
             sảnPhẩmToolStripMenuItem.Text = "Sản Phẩm      ";
             sảnPhẩmToolStripMenuItem.Click += sảnPhẩmToolStripMenuItem_Click;
             // 
             // hóaĐơnToolStripMenuItem
             // 
             hóaĐơnToolStripMenuItem.Image = (Image)resources.GetObject("hóaĐơnToolStripMenuItem.Image");
-            hóaĐơnToolStripMenuItem.ImageAlign = ContentAlignment.MiddleRight;
+            hóaĐơnToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
             hóaĐơnToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             hóaĐơnToolStripMenuItem.Name = "hóaĐơnToolStripMenuItem";
-            hóaĐơnToolStripMenuItem.Padding = new Padding(0, 20, 0, 10);
-            hóaĐơnToolStripMenuItem.Size = new Size(240, 76);
+            hóaĐơnToolStripMenuItem.Padding = new Padding(0, 9, 0, 9);
+            hóaĐơnToolStripMenuItem.Size = new Size(233, 64);
             hóaĐơnToolStripMenuItem.Text = "Hóa Đơn        ";
             hóaĐơnToolStripMenuItem.Click += hóaĐơnToolStripMenuItem_Click;
             // 
@@ -122,62 +124,84 @@
             nhàToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
             nhàToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             nhàToolStripMenuItem.Name = "nhàToolStripMenuItem";
-            nhàToolStripMenuItem.Padding = new Padding(0, 20, 0, 10);
-            nhàToolStripMenuItem.Size = new Size(240, 78);
-            nhàToolStripMenuItem.Text = "Nhà Cung Cấp ";
+            nhàToolStripMenuItem.Padding = new Padding(0, 9, 0, 9);
+            nhàToolStripMenuItem.Size = new Size(233, 66);
+            nhàToolStripMenuItem.Text = "Nhà Cung Cấp";
             nhàToolStripMenuItem.Click += nhàToolStripMenuItem_Click;
             // 
             // loạiHàngToolStripMenuItem
             // 
             loạiHàngToolStripMenuItem.Image = (Image)resources.GetObject("loạiHàngToolStripMenuItem.Image");
-            loạiHàngToolStripMenuItem.ImageAlign = ContentAlignment.MiddleRight;
+            loạiHàngToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
             loạiHàngToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             loạiHàngToolStripMenuItem.Name = "loạiHàngToolStripMenuItem";
-            loạiHàngToolStripMenuItem.Padding = new Padding(0, 20, 0, 10);
-            loạiHàngToolStripMenuItem.Size = new Size(240, 74);
+            loạiHàngToolStripMenuItem.Padding = new Padding(0, 9, 0, 9);
+            loạiHàngToolStripMenuItem.Size = new Size(233, 62);
             loạiHàngToolStripMenuItem.Text = "Loại Hàng      ";
             loạiHàngToolStripMenuItem.Click += loạiHàngToolStripMenuItem_Click;
             // 
             // giảmGiáToolStripMenuItem
             // 
             giảmGiáToolStripMenuItem.Image = (Image)resources.GetObject("giảmGiáToolStripMenuItem.Image");
-            giảmGiáToolStripMenuItem.ImageAlign = ContentAlignment.MiddleRight;
+            giảmGiáToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
             giảmGiáToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             giảmGiáToolStripMenuItem.Name = "giảmGiáToolStripMenuItem";
-            giảmGiáToolStripMenuItem.Padding = new Padding(0, 20, 0, 10);
-            giảmGiáToolStripMenuItem.Size = new Size(240, 74);
+            giảmGiáToolStripMenuItem.Padding = new Padding(0, 9, 0, 9);
+            giảmGiáToolStripMenuItem.Size = new Size(233, 62);
             giảmGiáToolStripMenuItem.Text = "Giảm Giá      ";
             giảmGiáToolStripMenuItem.Click += giảmGiáToolStripMenuItem_Click;
             // 
             // kháchHàngToolStripMenuItem
             // 
             kháchHàngToolStripMenuItem.Image = (Image)resources.GetObject("kháchHàngToolStripMenuItem.Image");
-            kháchHàngToolStripMenuItem.ImageAlign = ContentAlignment.MiddleRight;
+            kháchHàngToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
             kháchHàngToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            kháchHàngToolStripMenuItem.Padding = new Padding(0, 20, 0, 10);
-            kháchHàngToolStripMenuItem.Size = new Size(240, 78);
+            kháchHàngToolStripMenuItem.Padding = new Padding(0, 9, 0, 9);
+            kháchHàngToolStripMenuItem.Size = new Size(233, 66);
             kháchHàngToolStripMenuItem.Text = "Khách Hàng";
             kháchHàngToolStripMenuItem.Click += kháchHàngToolStripMenuItem_Click;
+            // 
+            // doanhThuToolStripMenuItem
+            // 
+            doanhThuToolStripMenuItem.Image = (Image)resources.GetObject("doanhThuToolStripMenuItem.Image");
+            doanhThuToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            doanhThuToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            doanhThuToolStripMenuItem.Name = "doanhThuToolStripMenuItem";
+            doanhThuToolStripMenuItem.Padding = new Padding(0, 9, 0, 9);
+            doanhThuToolStripMenuItem.Size = new Size(233, 62);
+            doanhThuToolStripMenuItem.Text = "Doanh Thu";
+            doanhThuToolStripMenuItem.Click += doanhThuToolStripMenuItem_Click;
+            // 
+            // nhânViênToolStripMenuItem
+            // 
+            nhânViênToolStripMenuItem.Image = (Image)resources.GetObject("nhânViênToolStripMenuItem.Image");
+            nhânViênToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            nhânViênToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
+            nhânViênToolStripMenuItem.Padding = new Padding(0, 9, 0, 9);
+            nhânViênToolStripMenuItem.Size = new Size(233, 72);
+            nhânViênToolStripMenuItem.Text = "Nhân Viên";
+            nhânViênToolStripMenuItem.Click += nhânViênToolStripMenuItem_Click;
             // 
             // thoátToolStripMenuItem
             // 
             thoátToolStripMenuItem.Image = Properties.Resources.cancelpng;
-            thoátToolStripMenuItem.ImageAlign = ContentAlignment.MiddleRight;
+            thoátToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
             thoátToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            thoátToolStripMenuItem.Padding = new Padding(0, 20, 0, 10);
-            thoátToolStripMenuItem.Size = new Size(240, 67);
-            thoátToolStripMenuItem.Text = "Thoát";
+            thoátToolStripMenuItem.Padding = new Padding(0, 9, 0, 9);
+            thoátToolStripMenuItem.Size = new Size(233, 55);
+            thoátToolStripMenuItem.Text = "  Thoát";
             thoátToolStripMenuItem.Click += thoátToolStripMenuItem_Click;
             // 
             // pn_content
             // 
             pn_content.BackColor = Color.FromArgb(255, 224, 192);
             pn_content.Controls.Add(pictureBox2);
-            pn_content.Location = new Point(254, 23);
+            pn_content.Location = new Point(243, 23);
             pn_content.Name = "pn_content";
-            pn_content.Size = new Size(1350, 828);
+            pn_content.Size = new Size(1361, 828);
             pn_content.TabIndex = 3;
             // 
             // pictureBox2
@@ -210,7 +234,8 @@
             // 
             lbl_TenNV.AutoSize = true;
             lbl_TenNV.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            lbl_TenNV.Location = new Point(1288, -1);
+            lbl_TenNV.LinkColor = Color.Black;
+            lbl_TenNV.Location = new Point(1242, 0);
             lbl_TenNV.Name = "lbl_TenNV";
             lbl_TenNV.Size = new Size(22, 21);
             lbl_TenNV.TabIndex = 21;
@@ -221,18 +246,20 @@
             // 
             linkLabel2.AutoSize = true;
             linkLabel2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            linkLabel2.Location = new Point(1489, -1);
+            linkLabel2.LinkColor = Color.Black;
+            linkLabel2.Location = new Point(1468, 1);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(83, 21);
             linkLabel2.TabIndex = 22;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Đăng xuất";
+            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1474, -2);
+            label1.Location = new Point(1453, 0);
             label1.Name = "label1";
             label1.Size = new Size(14, 21);
             label1.TabIndex = 23;
@@ -242,7 +269,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(1213, 0);
+            label2.Location = new Point(1167, 1);
             label2.Name = "label2";
             label2.Size = new Size(76, 21);
             label2.TabIndex = 23;
@@ -309,5 +336,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private ToolStripMenuItem doanhThuToolStripMenuItem;
+        private ToolStripMenuItem nhânViênToolStripMenuItem;
     }
 }

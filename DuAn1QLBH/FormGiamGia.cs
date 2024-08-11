@@ -23,8 +23,28 @@ namespace PRL
         }
         public void LoadData()
         {
-            dgv_BangPhieuGiamGia.DataSource = null;
-            dgv_BangPhieuGiamGia.DataSource = _service.GetAll();
+            dgv_BangPhieuGiamGia.Rows.Clear();
+
+            dgv_BangPhieuGiamGia.BorderStyle = BorderStyle.None;
+
+            var allDatas = _service.GetAll();
+            dgv_BangPhieuGiamGia.ColumnCount = 10;
+            dgv_BangPhieuGiamGia.Columns[0].HeaderText = "STT";
+            dgv_BangPhieuGiamGia.Columns[1].HeaderText = "ID Giảm Giá";
+            dgv_BangPhieuGiamGia.Columns[2].HeaderText = "Mã Giảm Giá";
+            dgv_BangPhieuGiamGia.Columns[3].HeaderText = "Mô tả";
+            dgv_BangPhieuGiamGia.Columns[4].HeaderText = "Tiền Min";
+            dgv_BangPhieuGiamGia.Columns[5].HeaderText = "Tiền Max";
+            dgv_BangPhieuGiamGia.Columns[6].HeaderText = "Phần Trăm Giảm";
+            dgv_BangPhieuGiamGia.Columns[7].HeaderText = "Ngày Bắt Đầu";
+            dgv_BangPhieuGiamGia.Columns[8].HeaderText = "Ngày Kết Thúc";
+            dgv_BangPhieuGiamGia.Columns[9].HeaderText = "Trạng Thái";
+            int i = 0;
+            foreach (var data in allDatas)
+            {
+                i++;
+                dgv_BangPhieuGiamGia.Rows.Add(i, data.GiamGiaId, data.MaGiamGia, data.MoTa, data.TienMin, data.TienMax, data.PhanTramGiam, data.NgayBatDau, data.NgayKetThuc, data.TrangThai);
+            }
         }
 
         private void FormGiamGia_Load(object sender, EventArgs e)
@@ -39,15 +59,15 @@ namespace PRL
                 if (e.RowIndex >= 0 && e.RowIndex < dgv_BangPhieuGiamGia.Rows.Count)
                 {
                     DataGridViewRow row = dgv_BangPhieuGiamGia.Rows[e.RowIndex];
-                    tb_magg.Text = row.Cells[0].Value.ToString();
-                    tb_tengg.Text = row.Cells[1].Value.ToString();
-                    tb_PhanTrum.Text = row.Cells[5].Value.ToString();
-                    tb_mote.Text = row.Cells[2].Value.ToString();
-                    tb_min.Text = row.Cells[3].Value.ToString();
-                    tb_max.Text = row.Cells[4].Value.ToString();
-                    dtp_nbd.Value = DateTime.Parse(row.Cells[6].Value.ToString());
-                    dtp_nkt.Value = DateTime.Parse(row.Cells[7].Value.ToString());
-                    cb_tthai.SelectedIndex = Convert.ToByte(row.Cells[8].Value);
+                    tb_magg.Text = row.Cells[1].Value.ToString();
+                    tb_tengg.Text = row.Cells[2].Value.ToString();
+                    tb_PhanTrum.Text = row.Cells[6].Value.ToString();
+                    tb_mote.Text = row.Cells[3].Value.ToString();
+                    tb_min.Text = row.Cells[4].Value.ToString();
+                    tb_max.Text = row.Cells[5].Value.ToString();
+                    dtp_nbd.Value = DateTime.Parse(row.Cells[7].Value.ToString());
+                    dtp_nkt.Value = DateTime.Parse(row.Cells[8].Value.ToString());
+                    cb_tthai.SelectedIndex = Convert.ToByte(row.Cells[9].Value);
                 }
             }
             catch (Exception)
@@ -84,17 +104,22 @@ namespace PRL
                     TienMin = TienMin,
                     TienMax = TienMax,
                 };
-               
-                    MessageBox.Show(_service.UpdateGG(g, ma));
-                    LoadData();
-                
+
+                MessageBox.Show(_service.UpdateGG(g, ma));
+                LoadData();
+
             }
 
             catch (FormatException ex)
             {
                 MessageBox.Show($"Dữ liệu đầu vào không hợp lệ: {ex.Message}");
             }
-
+            tb_magg.Text = "";
+            tb_max.Text = "";
+            tb_min.Text = "";
+            tb_mote.Text = "";
+            tb_PhanTrum.Text = "";
+            tb_tengg.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -120,7 +145,8 @@ namespace PRL
                     NgayBatDau = ngaybatdau,
                     NgayKetThuc = ngayketthuc,
                     TrangThai = trangthai,
-                    TienMin = TienMin,TienMax=TienMax,
+                    TienMin = TienMin,
+                    TienMax = TienMax,
 
 
                 };
@@ -132,7 +158,63 @@ namespace PRL
             {
                 MessageBox.Show($"Dữ liệu đầu vào không hợp lệ: {ex.Message}");
             }
+            tb_magg.Text = "";
+            tb_max.Text = "";
+            tb_min.Text = "";
+            tb_mote.Text = "";
+            tb_PhanTrum.Text = "";
+            tb_tengg.Text = "";
+            cb_tthai.SelectedIndex = 0;
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SearchData();
+        }
+        private void SearchData()
+        {
+            // Xóa các hàng hiện có trong DataGridView
+            dgv_BangPhieuGiamGia.Rows.Clear();
+
+            string ten = txt_SearchTen.Text;
+            decimal gia;
+            bool isGiaValid = decimal.TryParse(txt_KhoangGG.Text, out gia);
+
+            // Tìm các phiếu giảm giá dựa trên điều kiện tìm kiếm
+            var searchResults = _service.GetAll()
+                .Where(gg => (string.IsNullOrEmpty(ten) || gg.MaGiamGia.ToLower().Contains(ten.ToLower())) &&
+                             (!isGiaValid || gg.TienMin <= gia))
+                .ToList();
+
+            // Kiểm tra kết quả tìm kiếm
+            if (searchResults.Count < 1)
+            {
+                // Thông báo nếu không tìm thấy kết quả
+                MessageBox.Show("Không tìm thấy giảm giá với Tên: " + ten + " và Khoảng giá: " + (isGiaValid ? gia.ToString() : "Không xác định"));
+                return;
+            }
+
+            // Hiển thị kết quả tìm kiếm lên DataGridView
+            int i = 0;
+            foreach (var data in searchResults)
+            {
+                i++;
+                dgv_BangPhieuGiamGia.Rows.Add(i, data.GiamGiaId, data.MaGiamGia, data.MoTa, data.TienMin, data.TienMax, data.PhanTramGiam, data.NgayBatDau, data.NgayKetThuc, data.TrangThai);
+            }
+            txt_KhoangGG.Text = "";
+            txt_SearchTen.Text = "";
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            txt_KhoangGG.Text = "";
+            txt_SearchTen.Text = "";
+            tb_magg.Text = "";
+            tb_max.Text = "";
+            tb_min.Text = "";
+            tb_mote.Text = "";
+            tb_PhanTrum.Text = "";
+            tb_tengg.Text = "";
+            cb_tthai.SelectedIndex = 0;
         }
     }
 }
