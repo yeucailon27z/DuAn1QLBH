@@ -2918,32 +2918,39 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\PRL.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN\\source\\repos\\DuAn1QLBH\\DuAn1QLBH\\PRL.csproj",
       "projectName": "PRL",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\PRL.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\duAn1a\\DuAn1QLBH\\obj\\",
+      "projectPath": "C:\\Users\\ADMIN\\source\\repos\\DuAn1QLBH\\DuAn1QLBH\\PRL.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ADMIN\\source\\repos\\DuAn1QLBH\\DuAn1QLBH\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\Admin\\Desktop\\duAn1a\\BUS\\BUS.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\duAn1a\\BUS\\BUS.csproj"
+            "C:\\Users\\ADMIN\\source\\repos\\DuAn1QLBH\\BUS\\BUS.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\source\\repos\\DuAn1QLBH\\BUS\\BUS.csproj"
             }
           }
         }
@@ -2957,7 +2964,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -2981,7 +2989,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
